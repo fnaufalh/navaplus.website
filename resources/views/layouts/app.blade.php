@@ -64,13 +64,13 @@
             &copy;2018 NAVAPLUS GROUP INDONESIA
         </div>
         <div class="center-holder text-center">
-            <div class="social-logo text-white" style="background-color:#c52529">
+            <div class="social-logo text-white">
                 <i class="fa fa-facebook"></i>
             </div>
-            <div class="social-logo text-white" style="background-color:#c52529">
+            <div class="social-logo text-white">
                 <i class="fa fa-instagram"></i>
             </div>
-            <div class="social-logo text-white" style="background-color:#c52529">
+            <div class="social-logo text-white">
                 <i class="fa fa-linkedin"></i>
             </div>
         </div>
