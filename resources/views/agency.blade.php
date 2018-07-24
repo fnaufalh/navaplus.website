@@ -45,13 +45,13 @@
         </div>
     </div>
     <div class="section-content max-width d-flex flex-wrap">
-        <div class="section-content-item p-3">
+        <!-- <div class="section-content-item p-3">
             <div>
                 <div class="info">
                     <ul class="flex-container">
                       <li class="flex-item">
                         <div class="picture">
-                            <img src="assets/images/02%20Agency/Pathfinders/key%20people/irvan%20permana.png" alt="">
+                            <img src="images/agency/Pathfinders/key%20people/irvan%20permana.png" alt="">
                         </div>
                         <h5>Ivan Permana</h5>
                         <h6>Head of Pathfinders</h6>
@@ -70,7 +70,7 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </section>
 
@@ -141,6 +141,7 @@
 @section('script')
     <script type="text/javascript">
     $(document).ready(function(){
+      var color;
       $.ajax({
         type: 'GET',
         url: 'https://www.aashari.id/form-asia/navaplus/cms/public/api/agency/'+{{$id}},
@@ -156,6 +157,21 @@
           $('.icon-more').css('color', data.background_color);
           $('#key-people > .section-header').css('background-color', data.background_color);
           $('#lets-connect').css('background-color', data.background_color);
+           color = data.background_color;
+
+           $.ajax({
+             type: 'GET',
+             url: 'https://www.aashari.id/form-asia/navaplus/cms/public/api/people?agency_id='+{{$id}},
+             dataType: 'json',
+             success: function(data){
+               var data = data;
+               if (data.length != 0 ) {
+                 for (var i = 0; i < data.length; i++) {
+                   $('#key-people').find('.section-content').append('<div class="section-content-item p-3"><div><div class="info"><ul class="flex-container"><li class="flex-item"><div class="picture"><img src="'+ data[i].image_link +'" alt="'+ data[i].name +'"></div><h5>'+ data[i].name +'</h5><h6>'+ data[i].department +'</h6><div class="email-holder"><div class="email"><span class="email-icon align-middle" style="color:'+ color +'"><i class="fa fa-envelope-square fa-1x"></i></span><span class="align-middle" style="padding-left:5px;">'+ data[i].email +'</span></div></div><p>'+ data[i].description +'</p></li></ul></div></div></div>');
+                 }
+               }
+             }
+           });
         }
       });
     });
