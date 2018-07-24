@@ -2,104 +2,24 @@
 
 @section('content')
 <section id="site-banner" class='max-width'>
-    <div class="max-width" style="background-image: url('assets/images/image pathfinders.png')"></div>
+    <div class="max-width"></div>
 </section>
 
 <section id="site-about" class="max-width">
     <div class="max-width display-flex ptb-100">
         <div class="about-left">
-            <img src="assets/images/Logo_pathfindrs@2x.png" alt="Pathfinder">
+
         </div>
         <div class="about-right">
-            <h1 class="text-white">Every brand <br>
-                has its own path</h1>
+            <h1 class="text-white"></h1>
             <div class="top-border"></div>
-            <p class="text-white">Pathfinders is a brand and retail design consulting unit that helps define the optimum direction for your
-                brand. Starting from brand audit, strategic brand development, communication strategy and brand
-                visualization, Pathfinders redefines the brand and retail experiences that are relevant to the consumer
-                behaviour. We believe that every brand has its own path. We exist to craft the path for your brand, set
-                the right direction for the brand, make your "own-able" brand story and consumer connected experiences
-                in the channels. We go beyond the mainstream to cut through and create tailor-made solutions to develop
-                your brand craftsmanship as well as changing the brand and consumer behavior - we integrate or we
-                customize!</p>
+            <p class="text-white"></p>
         </div>
     </div>
 </section>
 
 <section id="whats-going-on" class="section-holder whats-going-on-site">
     <div class="section-content max-width d-flex flex-wrap">
-        <div class="section-content-item">
-            <div class="image-project">
-                <div class="info">
-                    <div class="title">
-                      <h5>IKEA: Integrated Campaign: Offline to Online to Onair</h5>
-                    </div>
-                    <div class="sub-title">
-                        IKEA
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section-content-item">
-            <div class="image-project">
-                <div class="info">
-                    <div class="title">
-                      <h5>IKEA: Integrated Campaign: Offline to Online to Onair</h5>
-                    </div>
-                    <div class="sub-title">
-                        IKEA
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section-content-item">
-            <div class="image-project">
-                <div class="info">
-                    <div class="title">
-                      <h5>IKEA: Integrated Campaign: Offline to Online to Onair</h5>
-                    </div>
-                    <div class="sub-title">
-                        IKEA
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section-content-item">
-            <div class="image-project">
-                <div class="info">
-                    <div class="title">
-                      <h5>IKEA: Integrated Campaign: Offline to Online to Onair</h5>
-                    </div>
-                    <div class="sub-title">
-                        IKEA
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section-content-item">
-            <div class="image-project">
-                <div class="info">
-                    <div class="title">
-                      <h5>IKEA: Integrated Campaign: Offline to Online to Onair</h5>
-                    </div>
-                    <div class="sub-title">
-                        IKEA
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section-content-item">
-            <div class="image-project">
-                <div class="info">
-                    <div class="title">
-                      <h5>IKEA: Integrated Campaign: Offline to Online to Onair</h5>
-                    </div>
-                    <div class="sub-title">
-                        IKEA
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <div class="text-center">
         <div class="load-more">
@@ -219,7 +139,26 @@
 </section>
 @endsection
 @section('script')
-    <script type="text/javascript" src="{{asset("js/agency.js")}}">
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $.ajax({
+        type: 'GET',
+        url: 'https://www.aashari.id/form-asia/navaplus/cms/public/api/agency/'+{{$id}},
+        dataType: 'json',
+        success: function(data){
+          var data = data;
+          $('#site-banner').find('div').css('background-image', 'url:('+ data.banner +')');
+          $('.about-left').html('<img src="'+ data.logo_link +'" alt="'+ data.name +'">');
+          $('.about-right').find('h1').html(data.motto);
+          $('.about-right').find('p').html(data.description);
+          $('#site-about > .max-width').css('background-color', data.background_color);
+          $('.text-more').css('color', data.background_color);
+          $('.icon-more').css('color', data.background_color);
+          $('#key-people > .section-header').css('background-color', data.background_color);
+          $('#lets-connect').css('background-color', data.background_color);
+        }
+      });
+    });
 
     </script>
 @endsection
