@@ -1338,7 +1338,7 @@ h6 {
         padding: 0 0;
     }
 
-    #whats-going-on .section-header {
+    #whats-going-on .section-header, #lets-connect .section-header {
         padding: 0 20px;
     }
 

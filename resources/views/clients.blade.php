@@ -8,69 +8,11 @@
         </div>
     </div>
     <div class="section-content max-width display-flex flex-wrap" style="margin-top: 50px">
-        <div class="client-holder">
-            <div class="item"></div>
-        </div>
-        <div class="client-holder">
-            <div class="item"></div>
-        </div>
-        <div class="client-holder">
-            <div class="item"></div>
-        </div>
-        <div class="client-holder">
-            <div class="item"></div>
-        </div>
-        <div class="client-holder">
-            <div class="item"></div>
-        </div>
-        <div class="client-holder">
-            <div class="item"></div>
-        </div>
-        <div class="client-holder">
-            <div class="item"></div>
-        </div>
-        <div class="client-holder">
-            <div class="item"></div>
-        </div>
-        <div class="client-holder">
-            <div class="item"></div>
-        </div>
-        <div class="client-holder">
-            <div class="item"></div>
-        </div>
-        <div class="client-holder">
-            <div class="item"></div>
-        </div>
-        <div class="client-holder">
-            <div class="item"></div>
-        </div>
-        <div class="client-holder">
-            <div class="item"></div>
-        </div>
-        <div class="client-holder">
-            <div class="item"></div>
-        </div>
-        <div class="client-holder">
-            <div class="item"></div>
-        </div>
-        <div class="client-holder">
-            <div class="item"></div>
-        </div>
-        <div class="client-holder">
-            <div class="item"></div>
-        </div>
-        <div class="client-holder">
-            <div class="item"></div>
-        </div>
-        <div class="client-holder">
-            <div class="item"></div>
-        </div>
-        <div class="client-holder">
-            <div class="item"></div>
-        </div>
     </div>
 </section>
 @endsection
 @section('script')
+  <script type="text/javascript" src="{{asset("js/clients.js")}}">
 
+  </script>
 @endsection

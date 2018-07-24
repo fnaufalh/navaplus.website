@@ -27,20 +27,20 @@
                         <li><a href="about">About</a></li>
                         <li><a href="#" onclick="return false" class="open-agencies">Agency</a>
                             <ul class="ml-1">
-                                <li><a href="site-01">Pathfinders</a></li>
-                                <li><a href="site-02">Iris</a></li>
-                                <li><a href="site-03">Tribecloud</a></li>
-                                <li><a href="site-04">Interface</a></li>
-                                <li><a href="site-05">Skor</a></li>
-                                <li><a href="site-06">Optima Media</a></li>
-                                <li><a href="site-07">Diageo</a></li>
-                                <li><a href="site-08">Advis</a></li>
+                                <li><a href="1">Pathfinders</a></li>
+                                <li><a href="2">Iris</a></li>
+                                <li><a href="3">Tribecloud</a></li>
+                                <li><a href="4">Interface</a></li>
+                                <li><a href="5">Skor</a></li>
+                                <li><a href="6">Optima Media</a></li>
+                                <li><a href="7">Diageo</a></li>
+                                <li><a href="8">Advis</a></li>
                             </ul>
                         </li>
                         <li><a href="work">Work</a></li>
                         <li><a href="clients">Clients</a></li>
                         <li><a href="news">News</a></li>
-                        <li><a href="#" scroll-to="/#lets-connect">Contact</a></li>
+                        <li><a href="/" scroll-to="#lets-connect">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -64,13 +64,13 @@
             &copy;2018 NAVAPLUS GROUP INDONESIA
         </div>
         <div class="center-holder text-center">
-            <div class="social-logo text-white" style="background-color:#c52529">
+            <div class="social-logo text-white">
                 <i class="fa fa-facebook"></i>
             </div>
-            <div class="social-logo text-white" style="background-color:#c52529">
+            <div class="social-logo text-white">
                 <i class="fa fa-instagram"></i>
             </div>
-            <div class="social-logo text-white" style="background-color:#c52529">
+            <div class="social-logo text-white">
                 <i class="fa fa-linkedin"></i>
             </div>
         </div>
