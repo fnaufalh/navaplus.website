@@ -10,7 +10,6 @@ $(document).ready(function(){
           $('#whats-going-on').find('.section-content').append('<div class="section-content-item"><div class="image-project" style="background-image:url('+ data[i].image_link +')"><div class="info" style="text-align:left;"><div class="sub-title" style="text-transform:uppercase;">'+ data[i].date_formated +'</div><div class="title"><h5>'+ data[i].name +'</h5></div></div></div></div>');
         }
       }
-      console.log(data);
     }
   });
 });

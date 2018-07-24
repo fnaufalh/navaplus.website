@@ -23,18 +23,18 @@
             <div class="menu-holder">
                 <div class="nav-menu-holder">
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="about">About</a></li>
+                        <li><a href="{{url('/')}}">Home</a></li>
+                        <li><a href="{{url('/about')}}">About</a></li>
                         <li><a href="#" onclick="return false" class="open-agencies">Agency</a>
                             <ul class="ml-1">
-                                <li><a href="1">Pathfinders</a></li>
-                                <li><a href="2">Iris</a></li>
-                                <li><a href="3">Tribecloud</a></li>
-                                <li><a href="4">Interface</a></li>
-                                <li><a href="5">Skor</a></li>
-                                <li><a href="6">Optima Media</a></li>
-                                <li><a href="7">Diageo</a></li>
-                                <li><a href="8">Advis</a></li>
+                                <li><a href="{{url('/agency/1')}}">Pathfinders</a></li>
+                                <li><a href="{{url('/agency/2')}}">Iris</a></li>
+                                <li><a href="{{url('/agency/3')}}">Tribecloud</a></li>
+                                <li><a href="{{url('/agency/4')}}">Interface</a></li>
+                                <li><a href="{{url('/agency/5')}}">Skor</a></li>
+                                <li><a href="{{url('/agency/6')}}">Optima Media</a></li>
+                                <li><a href="{{url('/agency/7')}}">Diageo</a></li>
+                                <li><a href="{{url('/agency/8')}}">Advis</a></li>
                             </ul>
                         </li>
                         <li><a href="work">Work</a></li>
@@ -46,7 +46,9 @@
             </div>
         </div>
         <div class="title-holder text-center">
-            <img src="{{asset("images/title.png")}}" alt="Nava+">
+            <a href="{{url('/')}}">
+                <img src="{{asset("images/title.png")}}" alt="Nava+">
+            </a>
         </div>
         <div class="right-holder">
 

@@ -186,44 +186,24 @@
                 <div><h3 class="text-white">What's going on</h3></div>
             </div>
         </div>
-        <div class="section-content max-width d-flex flex-wrap">
-            <div class="section-content-item">
+
+            {{-- TEMPLATE - BEGIN --}}
+            <div class="section-content-item" id="template">
                 <div class="image-project">
-                    <div class="info">
-                        <div class="title">
-                            <h5>IKEA: Integrated Campaign: Offline to Online to Onair</h5>
+                    <a href="">
+                        <div class="info" style="text-align:left;">
+                            <div class="sub-title" style="text-transform:uppercase;"></div>
+                            <div class="title"><h5></h5></div>
                         </div>
-                        <div class="sub-title">
-                            IKEA
-                        </div>
-                    </div>
+                    </a>
                 </div>
             </div>
-            <div class="section-content-item">
-                <div class="image-project">
-                    <div class="info">
-                        <div class="title">
-                            <h5>IKEA: Integrated Campaign: Offline to Online to Onair</h5>
-                        </div>
-                        <div class="sub-title">
-                            IKEA
-                        </div>
-                    </div>
-                </div>
+            {{-- TEMPLATE - END --}}
+
+
+            <div class="section-content max-width d-flex flex-wrap" id="section-container">
+
             </div>
-            <div class="section-content-item">
-                <div class="image-project">
-                    <div class="info">
-                        <div class="title">
-                            <h5>IKEA: Integrated Campaign: Offline to Online to Onair</h5>
-                        </div>
-                        <div class="sub-title">
-                            IKEA
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
     </section>
 
@@ -291,7 +271,44 @@
     </section>
 @endsection
 @section('script')
-<script type="text/javascript" src="{{asset("js/index.js")}}">
+    <script>
+        $(document).ready(function () {
 
-</script>
+            $.ajax({
+                type: 'GET',
+                url: "https://www.aashari.id/form-asia/navaplus/cms/public/api/news?take=3",
+                dataType: 'json',
+                success: function (data) {
+                    var data = data;
+                    $('#image-banner').css('background-image', 'url(\'' + data.image_link + '\')');
+                    $('#date').html(data.date_formated + " | " + data.type);
+                    $('#headline').html(data.headline);
+                    $('#description').html(data.description);
+
+                    $.ajax({
+                        type: 'GET',
+                        url: 'https://www.aashari.id/form-asia/navaplus/cms/public/api/news?take=3',
+                        dataType: 'json',
+                        success: function (data) {
+                            var data = data;
+                            var section = $('#section-container');
+
+                            $.each(data, function (i, val) {
+                                var template = $('#template').clone();
+                                $(template.find('a')).attr('href', "{{url('/news')}}/" + val.id);
+                                $(template.find('.image-project')).css('background-image', 'url(\'' + val.image_link + '\')');
+                                $(template.find('.title h5')).html(val.name);
+                                $(template.find('.sub-title')).html(val.date_formated + " | " + val.type);
+                                template.removeAttr('id');
+                                section.append(template);
+
+                            });
+                        }
+                    });
+
+                }
+            });
+
+        });
+    </script>
 @endsection
