@@ -2,10 +2,10 @@
 
 @section('content')
 <section id="work-detail-banner" class="max-width">
-    <div style="background-image: url('assets/work n news page/03 Work/Box 1@2x.png'); object-fit:cover;background-position:center;"></div>
+    <div id="main_image" style="object-fit:cover;background-position:center;"></div>
     <div class="display-flex flex-wrap">
-        <div class="col-md-6 col-xs-12" style="background-image: url('assets/work n news page/03 Work/Box 2@2x.png'); object-fit:cover;background-position:center;"></div>
-        <div class="col-md-6 col-xs-12" style="background-image: url('assets/work n news page/03 Work/Box 3@2x.png'); object-fit:cover;background-position:center;"></div>
+        <div id="image_1" class="col-md-6 col-xs-12" style="object-fit:cover;background-position:center;"></div>
+        <div id="image_2" class="col-md-6 col-xs-12" style="object-fit:cover;background-position:center;"></div>
     </div>
 </section>
 <section id="sites-section" class="work-detail-page" style="background-color: white">
@@ -15,95 +15,114 @@
                 <div class="metainfo">
                     <div class="display-flex">
                         <div>Project</div>
-                        <div>Sampoerna Step Up</div>
+                        <div id="project"></div>
                     </div>
                     <div class="display-flex">
                         <div>Client</div>
-                        <div>Sampoerna Academy</div>
+                        <div id="client"></div>
                     </div>
                     <div class="display-flex">
                         <div>Agency</div>
-                        <div>Pathfindrs</div>
+                        <div id="agency"></div>
                     </div>
                     <div class="display-flex">
                         <div>Service</div>
-                        <div>Branding, Communication</div>
+                        <div id="service"></div>
                     </div>
                 </div>
             </div>
-            <h3>Donec dictum fermentum neque, eget tempus felis semper ac. Curabitur vestibulum elit sed purus eleifend
-                sollicitudin. Etiam scelerisque.</h3>
-            <p>Cras et nunc erat. Proin molestie eget lorem id vulputate. Aenean posuere dolor eget ante accumsan,
-                consequat fermentum velit ullamcorper. Donec ultrices tincidunt feugiat. Mauris mollis sapien at posuere
-                sodales. Sed neque velit, mattis sed arcu nec, dapibus venenatis augue. Integer non tempor massa, id
-                consequat purus. Vestibulum maximus tortor ipsum, a condimentum risus volutpat at. Curabitur sed velit
-                lobortis, commodo sem quis, ultricies felis. Proin id metus dapibus, fermentum neque nec, commodo lorem.
-                <br>
-                <br>
-                Etiam hendrerit ultrices enim rhoncus luctus. Fusce et convallis enim. Mauris eget pretium lacus. Lorem
-                ipsum dolor sit amet, consectetur adipiscing elit. Donec neque enim, tempor in tristique faucibus,
-                tempor a eros. Praesent scelerisque leo id ante auctor scelerisque. Pellentesque vel ultrices urna, in
-                varius ante. Morbi mi metus, bibendum a dui ac, feugiat mollis dolor. Aliquam mattis, purus in venenatis
-                rutrum, massa sapien scelerisque nunc, at consectetur leo metus id orci. Quisque luctus vel nunc ut
-                egestas. Nullam maximus, libero vel tempor posuere, diam mi facilisis diam, et feugiat leo dui nec sem.
-                Cras ornare, urna lacinia ullamcorper mollis, turpis velit pretium dolor, ac fringilla leo sem ac
-                nibh.</p>
-                <div style="padding-top: 45px;padding-bottom: 71px;text-align: right">
-                    <div class="text-right" style="display: inline-block">
-                        <a class="display-flex" href="work.html">
-                            <div class="icon-back">
-                                <i class="fa fa-chevron-left"></i>
-                            </div>
-                            <div class="text-back-works">
-                                Back to works
-                            </div>
-                        </a>
-                    </div>
+            <h3 id="headline"></h3>
+            <p id="description"></p>
+            <div style="padding-top: 45px;padding-bottom: 71px;text-align: right">
+                <div class="text-right" style="display: inline-block">
+                    <a class="display-flex" href="{{url('/work')}}">
+                        <div class="icon-back">
+                            <i class="fa fa-chevron-left"></i>
+                        </div>
+                        <div class="text-back-works">
+                            Back to works
+                        </div>
+                    </a>
                 </div>
+            </div>
         </div>
     </div>
 </section>
+
 <section id="whats-going-on" class="section-holder" style="padding-bottom:70px; background-color: white">
-  <div class="section-content max-width d-flex flex-wrap">
-      <div class="section-content-item">
-          <div class="image-project">
-              <div class="info">
-                  <div class="title">
-                    <h5>IKEA: Integrated Campaign: Offline to Online to Onair</h5>
-                  </div>
-                  <div class="sub-title">
-                      IKEA
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="section-content-item">
-          <div class="image-project">
-              <div class="info">
-                  <div class="title">
-                    <h5>IKEA: Integrated Campaign: Offline to Online to Onair</h5>
-                  </div>
-                  <div class="sub-title">
-                      IKEA
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="section-content-item">
-          <div class="image-project">
-              <div class="info">
-                  <div class="title">
-                    <h5>IKEA: Integrated Campaign: Offline to Online to Onair</h5>
-                  </div>
-                  <div class="sub-title">
-                      IKEA
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+
+    {{-- TEMPLATE - BEGIN --}}
+    <div class="section-content-item" id="template">
+        <div class="image-project">
+            <a href="" target="_blank">
+                <div class="info">
+                    <div class="title">
+                        <h5></h5>
+                    </div>
+                    <div class="sub-title"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    {{-- TEMPLATE - END --}}
+
+    <div class="section-content max-width d-flex flex-wrap" id="section-container">
+
+    </div>
 </section>
 @endsection
 @section('script')
-    <script type="text/javascript" src="{{asset("js/work-detail.js")}}"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $.ajax({
+                type: 'GET',
+                url: "https://www.aashari.id/form-asia/navaplus/cms/public/api/work/{{$id}}",
+                dataType: 'json',
+                success: function (data) {
+                    var data = data;
+                    $('#main_image').css('background-image', 'url(\'' + data.main_image_link + '\')');
+                    $('#image_1').css('background-image', 'url(\'' + data.main_1_link + '\')');
+                    $('#image_2').css('background-image', 'url(\'' + data.main_2_link + '\')');
+                    $('#project').html(data.name);
+                    $('#client').html(data.client);
+                    $('#agency').html(data.agency.name);
+
+                    var services = [];
+                    $.each(data.categories, function(i, val){
+                        services.push(val.name);
+                    });
+                    $('#service').html(services.join(', '));
+
+                    $('#headline').html(data.quote);
+                    $('#description').html(data.description);
+
+                    $.ajax({
+                        type: 'GET',
+                        url: "https://www.aashari.id/form-asia/navaplus/cms/public/api/work?agency_id="+data.agency.id,
+                        dataType: 'json',
+                        success: function (data) {
+                            var data = data;
+                            var section = $('#section-container');
+
+                            $.each(data, function (i, val) {
+                                var template = $('#template').clone();
+                                $(template.find('a')).attr('href', "{{url('/work')}}/"+val.id);
+                                $(template.find('.image-project')).css('background-image', 'url(\'' + val.main_image_link + '\')');
+                                $(template.find('.title h5')).html(val.name);
+                                $(template.find('.sub-title')).html(val.client);
+                                template.removeAttr('id');
+                                section.append(template);
+
+                            });
+                        }
+                    });
+
+                }
+            });
+
+        });
+
+    </script>
 @endsection

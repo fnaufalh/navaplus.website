@@ -5,6 +5,10 @@ html, body {
     background-color: #f7f7f7;
 }
 
+#template {
+    display: none !important;
+}
+
 .max-width {
     max-width: 1178px;
     box-sizing: border-box;
