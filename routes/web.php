@@ -41,6 +41,13 @@ Route::get('/work/{id}', function ($id) {
         ]);
 });
 
+Route::get('/agency/{id}', function ($id) {
+    return view('agency')
+        ->with([
+            'id' => $id
+        ]);
+});
+
 Route::get('/clients', function () {
     return view('clients');
 });
