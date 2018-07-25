@@ -942,7 +942,7 @@ h6 {
 }
 
 .d-flex > img {
-  align-self: center;
+  align-self: flex-start;
 }
 
 .zoomed {
@@ -1319,10 +1319,6 @@ h6 {
     header .logo-holder .menu-holder {
         width: 100vw;
         height: 100vh;
-    }
-
-    #sites-section .max-width {
-        padding: 0 0;
     }
 
     .section-holder .section-header {

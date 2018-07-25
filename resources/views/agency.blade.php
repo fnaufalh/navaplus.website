@@ -19,7 +19,7 @@
 </section>
 
 <section id="whats-going-on" class="section-holder whats-going-on-site">
-    
+
     {{-- TEMPLATE - BEGIN --}}
     <div class="section-content-item" id="template">
         <div class="image-project">
@@ -39,9 +39,9 @@
 
     </div>
 </section>
-    
+
     <div class="section-content max-width d-flex flex-wrap">
-      
+
     </div>
     <div class="text-center">
         <div class="load-more">
@@ -189,7 +189,7 @@
                var data = data;
                if (data.length != 0 ) {
                  for (var i = 0; i < data.length; i++) {
-                   $('#key-people').find('.section-content').append('<div class="section-content-item p-3"><div><div class="info"><ul class="flex-container"><li class="flex-item"><div class="picture"><img src="'+ data[i].image_link +'" alt="'+ data[i].name +'"></div><h5>'+ data[i].name +'</h5><h6>'+ data[i].department +'</h6><div class="email-holder"><div class="email"><span class="email-icon align-middle" style="color:'+ color +'"><i class="fa fa-envelope-square fa-1x"></i></span><span class="align-middle" style="padding-left:5px;">'+ data[i].email +'</span></div></div><p>'+ data[i].description +'</p></li></ul></div></div></div>');
+                   $('#key-people').find('.section-content').append('<div class="section-content-item p-3"><div><div class="info"><ul class="flex-container"><li class="flex-item"><div class="picture"><img src="'+ data[i].image_link +'" alt="'+ data[i].name +'"></div><h5>'+ data[i].name +'</h5><h6>'+ data[i].department +'</h6><div class="email-holder"><div class="email"><span class="email-icon align-middle" style="color:'+ color +'"><i class="fa fa-envelope-square fa-1x"></i></span><a href="mailto:'+ data[i].email +'"><span class="align-middle" style="padding-left:5px;">'+ data[i].email +'</span></a></div></div><p>'+ data[i].description +'</p></li></ul></div></div></div>');
                  }
                }
              }
@@ -197,7 +197,7 @@
         }
       });
     });
-    
+
     $.ajax({
         type: 'GET',
         url: '{{url('/api/work?agency_id='.$id)}}',
