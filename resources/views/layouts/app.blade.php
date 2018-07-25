@@ -66,15 +66,21 @@
             &copy;2018 NAVAPLUS GROUP INDONESIA
         </div>
         <div class="center-holder text-center">
-            <div class="social-logo text-white">
+            <a target="_blank" href="https://www.facebook.com/navaplusid/">
+              <div class="social-logo text-white">
                 <i class="fa fa-facebook"></i>
-            </div>
-            <div class="social-logo text-white">
+              </div>
+            </a>
+            <a target="_blank" href="https://www.instagram.com/navaplus.id/">
+              <div class="social-logo text-white">
                 <i class="fa fa-instagram"></i>
-            </div>
-            <div class="social-logo text-white">
+              </div>
+            </a>
+            <a target="_blank" href="#">
+              <div class="social-logo text-white">
                 <i class="fa fa-linkedin"></i>
-            </div>
+              </div>
+            </a>
         </div>
         <div class="right-holder"></div>
     </div>

@@ -180,6 +180,7 @@
           $('#key-people > .section-header').css('background-color', data.background_color);
           $('#lets-connect').css('background-color', data.background_color);
            color = data.background_color;
+           $('.load-more').find('a').css('color', color);
 
            $.ajax({
              type: 'GET',

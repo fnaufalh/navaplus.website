@@ -6,13 +6,25 @@
             <div class="max-width display-flex">
                 <div><h3 class="text-white">Our Works</h3></div>
                 <div class="btn-dropdow">
-                    <select class="category select form-control">
-                        <option value="0">Category</option>
-                    </select>
-                    <select class="agency select form-control">
-                        <option value="0">Agency</option>
-                    </select>
+                <div class="select">
+                    <div class="selected dropdown-selected">
+                        <div class="arrow-down"><img src="{{asset('images/arrow.svg')}}" alt="">
+                        </div>
+                        Category
+                    </div>
+                    <div class="category selectList">
+                    </div>
                 </div>
+                <div class="select">
+                    <div class="selected dropdown-selected">
+                        <div class="arrow-down"><img src="{{asset('images/arrow.svg')}}" alt="">
+                        </div>
+                        Agency
+                    </div>
+                    <div class="agency selectList">
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     </section>
@@ -54,7 +66,7 @@
                     var section = $('.category');
 
                     $.each(data, function (i, val) {
-                        section.append("<option value='" + val.id + "'>" + val.name + "</option>");
+                        section.append('<div class="select" data-id=' + val.id + '><div>' + val.name + '</div></div>');
                     });
                 }
             });
@@ -68,7 +80,7 @@
                     var section = $('.agency');
 
                     $.each(data, function (i, val) {
-                        section.append("<option value='" + val.id + "'>" + val.name + "</option>");
+                        section.append('<div class="select" data-id=' + val.id + '><div>' + val.name + '</div></div>');
                     });
                 }
             });
@@ -88,7 +100,7 @@
         var workByAgency = function () {
 
             $('.category').val(0);
-            var agencyId = $('.agency').val();
+            var agencyId = $('.agency > .select').data('id');
             $('#section-container').html('');
             $.ajax({
                 type: 'GET',
@@ -115,7 +127,8 @@
         var workByCategory = function () {
 
             $('.agency').val(0);
-            var categoryId = $('.category').val();
+            var categoryId = $('.category > .select').data('id');
+            alert(categoryId);
             if (categoryId == 0)
                 workByAgency();
 
