@@ -24,12 +24,14 @@ class SettingController extends Controller
 
     public function detail()
     {
-        $email = Setting::where('key', 'general_email')
-            ->orWhere('key', 'career_email')
-            ->get();
+        $data = Setting::get();
+        
+        $generalEmail = collect($data)->where('key', 'general_email')->first();
+        $careerEmail = collect($data)->where('key', 'career_email')->first();
 
         $data = [
-            'email' => $email
+            'general_email' => $generalEmail->value,
+            'career_email' => $careerEmail->value
         ];
 
         return json_encode($data);

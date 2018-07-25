@@ -37,9 +37,9 @@
                                 <li><a href="{{url('/agency/8')}}">Advis</a></li>
                             </ul>
                         </li>
-                        <li><a href="work">Work</a></li>
-                        <li><a href="clients">Clients</a></li>
-                        <li><a href="news">News</a></li>
+                        <li><a href="{{url('/work')}}">Work</a></li>
+                        <li><a href="{{url('/clients')}}">Clients</a></li>
+                        <li><a href="{{url('/news')}}">News</a></li>
                         <li><a href="{{url('/'.'#lets-connect')}}">Contact</a></li>
                     </ul>
                 </div>

@@ -73,7 +73,7 @@
 
             $.ajax({
                 type: 'GET',
-                url: "https://www.aashari.id/form-asia/navaplus/cms/public/api/news/{{$id}}",
+                url: '{{url('/api/news/'.$id)}}',
                 dataType: 'json',
                 success: function (data) {
                     var data = data;
