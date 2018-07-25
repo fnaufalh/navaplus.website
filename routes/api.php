@@ -13,6 +13,29 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::get('/agency', 'AgencyController@list');
+Route::get('/agency/{id}', 'AgencyController@detail');
+
+Route::get('/work', 'WorkController@list');
+Route::get('/work/{id}', 'WorkController@detail');
+
+Route::get('/people', 'PeopleController@list');
+Route::get('/people/{id}', 'PeopleController@detail');
+
+Route::get('/news', 'NewsController@list');
+Route::get('/news/{id}', 'NewsController@detail');
+
+Route::get('/category', 'CategoryController@list');
+Route::get('/category/{id}', 'CategoryController@detail');
+
+Route::get('/client', 'ClientController@list');
+Route::get('/client/{id}', 'ClientController@detail');
+
+Route::get('/about', 'AboutController@detail');
+
+Route::get('/slider', 'SliderController@list');
+Route::get('/setting', 'SettingController@detail');

@@ -40,7 +40,7 @@
                         <li><a href="work">Work</a></li>
                         <li><a href="clients">Clients</a></li>
                         <li><a href="news">News</a></li>
-                        <li><a href="/" scroll-to="#lets-connect">Contact</a></li>
+                        <li><a href="{{url('/'.'#lets-connect')}}">Contact</a></li>
                     </ul>
                 </div>
             </div>

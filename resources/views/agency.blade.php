@@ -19,7 +19,29 @@
 </section>
 
 <section id="whats-going-on" class="section-holder whats-going-on-site">
+    
+    {{-- TEMPLATE - BEGIN --}}
+    <div class="section-content-item" id="template">
+        <div class="image-project">
+            <a href="" target="_blank">
+                <div class="info">
+                    <div class="title">
+                        <h5></h5>
+                    </div>
+                    <div class="sub-title"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    {{-- TEMPLATE - END --}}
+
+    <div class="section-content max-width d-flex flex-wrap" id="section-container">
+
+    </div>
+</section>
+    
     <div class="section-content max-width d-flex flex-wrap">
+      
     </div>
     <div class="text-center">
         <div class="load-more">
@@ -144,11 +166,11 @@
       var color;
       $.ajax({
         type: 'GET',
-        url: 'https://www.aashari.id/form-asia/navaplus/cms/public/api/agency/'+{{$id}},
+        url: '{{url('/api/agency/'.$id)}}',
         dataType: 'json',
         success: function(data){
           var data = data;
-          $('#site-banner').find('div').css('background-image', 'url:('+ data.banner +')');
+          $('#site-banner .max-width').css('background-image', 'url(\'' + data.banner_link + '\')');
           $('.about-left').html('<img src="'+ data.logo_link +'" alt="'+ data.name +'">');
           $('.about-right').find('h1').html(data.motto);
           $('.about-right').find('p').html(data.description);
@@ -161,7 +183,7 @@
 
            $.ajax({
              type: 'GET',
-             url: 'https://www.aashari.id/form-asia/navaplus/cms/public/api/people?agency_id='+{{$id}},
+             url: '{{url('/api/people?agency_id='.$id)}}',
              dataType: 'json',
              success: function(data){
                var data = data;
@@ -174,6 +196,27 @@
            });
         }
       });
+    });
+    
+    $.ajax({
+        type: 'GET',
+        url: '{{url('/api/work?agency_id='.$id)}}',
+        dataType: 'json',
+        success: function (data) {
+            var data = data;
+            var section = $('#section-container');
+
+            $.each(data, function (i, val) {
+                var template = $('#template').clone();
+                $(template.find('a')).attr('href', "{{url('/work')}}/"+val.id);
+                $(template.find('.image-project')).css('background-image', 'url(\'' + val.main_image_link + '\')');
+                $(template.find('.title h5')).html(val.name);
+                $(template.find('.sub-title')).html(val.client);
+                template.removeAttr('id');
+                section.append(template);
+
+            });
+        }
     });
 
     </script>

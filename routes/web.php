@@ -11,6 +11,8 @@
 |
 */
 
+use App\News;
+
 Route::get('/', function () {
     return view('home');
 });

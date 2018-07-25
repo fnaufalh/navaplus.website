@@ -1,7 +1,7 @@
 $(document).ready(function(){
   $.ajax({
     type: 'GET',
-    url: 'https://www.aashari.id/form-asia/navaplus/cms/public/api/client?order_by=id&order_type=asc',
+    url: 'https://www.aashari.id/form-asia/navaplus/cms/public/api/client?order_by=id&order_type=asc&all=n',
     dataType: 'json',
     success: function(data){
       var data = data;

@@ -12,19 +12,19 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item item active">
-                            <img class="d-block w-100" src="https://placeimg.com/350/150/animals" alt="First slide">
+                            <img class="d-block w-100" src="{{asset('images/4.jpeg')}}" alt="First slide">
                             <div class="carousel-caption d-md-block">
                                 <h5>We Are House of Brands</h5>
                             </div>
                         </div>
                         <div class="carousel-item item">
-                            <img class="d-block w-100" src="https://placeimg.com/350/150/tech" alt="Second slide">
+                            <img class="d-block w-100" src="{{asset('images/5.jpeg')}}" alt="Second slide">
                             <div class="carousel-caption d-md-block">
                                 <h5>We Are House of Brands 2</h5>
                             </div>
                         </div>
                         <div class="carousel-item item">
-                            <img class="d-block w-100" src="https://placeimg.com/350/150/arch" alt="Third slide">
+                            <img class="d-block w-100" src="{{asset('images/6.jpeg')}}" alt="Third slide">
                             <div class="carousel-caption d-md-block">
                                 <h5>We Are House of Brands 3</h5>
                             </div>
@@ -39,19 +39,19 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item item active">
-                            <img class="d-block w-100" src="https://placeimg.com/350/510/animals" alt="First slide">
+                            <img class="d-block w-100" src="{{asset('images/1.jpeg')}}" alt="First slide">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>We Are House of Brands</h5>
                             </div>
                         </div>
                         <div class="carousel-item item">
-                            <img class="d-block w-100" src="https://placeimg.com/350/510/nature" alt="Second slide">
+                            <img class="d-block w-100" src="{{asset('images/2.jpeg')}}" alt="Second slide">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>We Are House of Brands 2</h5>
                             </div>
                         </div>
                         <div class="carousel-item item">
-                            <img class="d-block w-100" src="https://placeimg.com/350/510/people" alt="Third slide">
+                            <img class="d-block w-100" src="{{asset('images/3.jpeg')}}" alt="Third slide">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>We Are House of Brands 3</h5>
                             </div>
@@ -62,7 +62,7 @@
         </div>
         <div class="right-section site-holder">
             <div class="display-flex">
-                <a href="site-01.html" class="site-item" style="background-color: #5a2b81;">
+                <a href="{{url('/agency/1')}}" class="site-item" style="background-color: #5a2b81;">
                     <div class="hover-holder display-flex">
                         <div>Every brand has it's own path</div>
                         <div><img src="{{asset("images/right-arrow.png")}}" alt=""></div>
@@ -75,7 +75,7 @@
                     <div class="bar-white-vertical"></div>
                     <div class="bar-white-horizontal"></div>
                 </a>
-                <a href="site-02.html" class="site-item" style="background-color: #f93958">
+                <a href="{{url('/agency/2')}}" class="site-item" style="background-color: #f93958">
                     <div class="hover-holder display-flex">
                         <div>For the Forward</div>
                         <div><img src="{{asset("images/right-arrow.png")}}" alt=""></div>
@@ -90,7 +90,7 @@
                     <div class="bar-white-vertical"></div>
                     <div class="bar-white-horizontal"></div>
                 </a>
-                <a href="site-03.html" class="site-item" style="background-color: #00a4bd">
+                <a href="{{url('/agency/3')}}" class="site-item" style="background-color: #00a4bd">
                     <div class="hover-holder display-flex">
                         <div>Engagement Strategies for Your Digital Business</div>
                         <div><img src="{{asset("images/right-arrow.png")}}" alt=""></div>
@@ -105,7 +105,7 @@
                     <div class="bar-white-vertical"></div>
                     <div class="bar-white-horizontal"></div>
                 </a>
-                <a href="site-04.html" class="site-item" style="background-color: #676767">
+                <a href="{{url('/agency/4')}}" class="site-item" style="background-color: #676767">
                     <div class="hover-holder display-flex">
                         <div>Unleashing the power of collaboration</div>
                         <div><img src="{{asset("images/right-arrow.png")}}" alt=""></div>
@@ -118,7 +118,7 @@
                     <div class="bar-white-vertical left"></div>
                     <div class="bar-white-horizontal left"></div>
                 </a>
-                <a href="site-05.html" class="site-item" style="background-color: #ef4d24">
+                <a href="{{url('/agency/5')}}" class="site-item" style="background-color: #ef4d24">
                     <div class="hover-holder display-flex">
                         <div>Work is more rewarding</div>
                         <div><img src="{{asset("images/right-arrow.png")}}" alt=""></div>
@@ -131,7 +131,7 @@
                     <div class="bar-white-vertical top"></div>
                     <div class="bar-white-horizontal top"></div>
                 </a>
-                <a href="site-06.html" class="site-item" style="background-color: #00adee">
+                <a href="{{url('/agency/6')}}" class="site-item" style="background-color: #00adee">
                     <div class="hover-holder display-flex">
                         <div>Creativity & innovation in media science</div>
                         <div><img src="{{asset("images/right-arrow.png")}}" alt=""></div>
@@ -146,7 +146,7 @@
                     <div class="bar-white-vertical top"></div>
                     <div class="bar-white-horizontal top"></div>
                 </a>
-                <a href="site-07.html" class="site-item" style="background-color: #c70651">
+                <a href="{{url('/agency/7')}}" class="site-item" style="background-color: #c70651">
                     <div class="hover-holder display-flex">
                         <div></div>
                         <div><img src="{{asset("images/right-arrow.png")}}" alt=""></div>
@@ -161,7 +161,7 @@
                     <div class="bar-white-vertical top"></div>
                     <div class="bar-white-horizontal top"></div>
                 </a>
-                <a href="site-08.html" class="site-item" style="background-color: #d62027">
+                <a href="{{url('/agency/8')}}" class="site-item" style="background-color: #d62027">
                     <div class="hover-holder display-flex">
                         <div>Delivering Products and Brands Into
                             the Indonesian Market
@@ -187,23 +187,23 @@
             </div>
         </div>
 
-            {{-- TEMPLATE - BEGIN --}}
-            <div class="section-content-item" id="template">
-                <div class="image-project">
-                    <a href="">
-                        <div class="info" style="text-align:left;">
-                            <div class="sub-title" style="text-transform:uppercase;"></div>
-                            <div class="title"><h5></h5></div>
-                        </div>
-                    </a>
-                </div>
+        {{-- TEMPLATE - BEGIN --}}
+        <div class="section-content-item" id="template">
+            <div class="image-project">
+                <a href="">
+                    <div class="info" style="text-align:left;">
+                        <div class="sub-title" style="text-transform:uppercase;"></div>
+                        <div class="title"><h5></h5></div>
+                    </div>
+                </a>
             </div>
-            {{-- TEMPLATE - END --}}
+        </div>
+        {{-- TEMPLATE - END --}}
 
 
-            <div class="section-content max-width d-flex flex-wrap" id="section-container">
+        <div class="section-content max-width d-flex flex-wrap" id="section-container">
 
-            </div>
+        </div>
 
     </section>
 
@@ -227,7 +227,7 @@
                       <span class="align-middle">
                         <i class="fa fa-envelope fa-1x"></i>
                       </span>
-                                <span class="align-middle">hello@navaplus.com</span>
+                                <a href="mailto:recruitment@navaplus.com" class="text-white"><span class="align-middle">hello@navaplus.com</span></a>
                             </div>
                         </div>
                     </div>
@@ -242,7 +242,7 @@
                       <span class="align-middle">
                         <i class="fa fa-envelope fa-1x"></i>
                       </span>
-                                <span class="align-middle">recruitment@navaplus.com</span>
+                                <a href="mailto:recruitment@navaplus.com" class="text-white"><span class="align-middle">recruitment@navaplus.com</span></a>
                             </div>
                         </div>
                     </div>
@@ -276,36 +276,23 @@
 
             $.ajax({
                 type: 'GET',
-                url: "https://www.aashari.id/form-asia/navaplus/cms/public/api/news?take=3",
+                url: '{{url('/api/news?take=3&all=n')}}',
                 dataType: 'json',
                 success: function (data) {
+                    console.log(data);
                     var data = data;
-                    $('#image-banner').css('background-image', 'url(\'' + data.image_link + '\')');
-                    $('#date').html(data.date_formated + " | " + data.type);
-                    $('#headline').html(data.headline);
-                    $('#description').html(data.description);
+                    var section = $('#section-container');
 
-                    $.ajax({
-                        type: 'GET',
-                        url: 'https://www.aashari.id/form-asia/navaplus/cms/public/api/news?take=3',
-                        dataType: 'json',
-                        success: function (data) {
-                            var data = data;
-                            var section = $('#section-container');
+                    $.each(data, function (i, val) {
+                        var template = $('#template').clone();
+                        $(template.find('a')).attr('href', "{{url('/news')}}/" + val.id);
+                        $(template.find('.image-project')).css('background-image', 'url(\'' + val.image_link + '\')');
+                        $(template.find('.title h5')).html(val.name);
+                        $(template.find('.sub-title')).html(val.date_formated + " | " + val.type);
+                        template.removeAttr('id');
+                        section.append(template);
 
-                            $.each(data, function (i, val) {
-                                var template = $('#template').clone();
-                                $(template.find('a')).attr('href', "{{url('/news')}}/" + val.id);
-                                $(template.find('.image-project')).css('background-image', 'url(\'' + val.image_link + '\')');
-                                $(template.find('.title h5')).html(val.name);
-                                $(template.find('.sub-title')).html(val.date_formated + " | " + val.type);
-                                template.removeAttr('id');
-                                section.append(template);
-
-                            });
-                        }
                     });
-
                 }
             });
 

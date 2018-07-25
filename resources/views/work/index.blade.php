@@ -47,7 +47,7 @@
 
             $.ajax({
                 type: 'GET',
-                url: 'https://www.aashari.id/form-asia/navaplus/cms/public/api/category?order_type=asc',
+                url: '{{url('/api/category?order_type=asc&all=n')}}',
                 dataType: 'json',
                 success: function (data) {
                     var data = data;
@@ -61,7 +61,7 @@
 
             $.ajax({
                 type: 'GET',
-                url: 'https://www.aashari.id/form-asia/navaplus/cms/public/api/agency?order_type=asc',
+                url: '{{url('/api/agency?order_type=asc&all=n')}}',
                 dataType: 'json',
                 success: function (data) {
                     var data = data;
@@ -90,10 +90,9 @@
             $('.category').val(0);
             var agencyId = $('.agency').val();
             $('#section-container').html('');
-
             $.ajax({
                 type: 'GET',
-                url: 'https://www.aashari.id/form-asia/navaplus/cms/public/api/work?agency_id=' + agencyId + '&order_type=desc',
+                url: '{!! url('/api/work?order_type=desc&all=n&agency_id=') !!}' + agencyId,
                 dataType: 'json',
                 success: function (data) {
                     var data = data;
@@ -121,10 +120,9 @@
                 workByAgency();
 
             $('#section-container').html('');
-
             $.ajax({
                 type: 'GET',
-                url: 'https://www.aashari.id/form-asia/navaplus/cms/public/api/category/' + categoryId,
+                url: '{{url('/api/category')}}' + '/' + categoryId,
                 dataType: 'json',
                 success: function (data) {
                     var data = data;

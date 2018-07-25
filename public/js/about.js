@@ -16,7 +16,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   $.ajax({
     type: 'GET',
-    url: 'https://www.aashari.id/form-asia/navaplus/cms/public/api/people?agency_id=9',
+    url: 'https://www.aashari.id/form-asia/navaplus/cms/public/api/people?agency_id=9&order_type=asc',
     dataType: 'json',
     success: function(data){
       var data = data;

@@ -78,7 +78,7 @@
 
             $.ajax({
                 type: 'GET',
-                url: "https://www.aashari.id/form-asia/navaplus/cms/public/api/work/{{$id}}",
+                url: '{{url("/api/work/".$id)}}',
                 dataType: 'json',
                 success: function (data) {
                     var data = data;
@@ -100,7 +100,7 @@
 
                     $.ajax({
                         type: 'GET',
-                        url: "https://www.aashari.id/form-asia/navaplus/cms/public/api/work?agency_id="+data.agency.id,
+                        url: '{!! url("/api/work?take=3&agency_id=") !!}'+data.agency.id,
                         dataType: 'json',
                         success: function (data) {
                             var data = data;

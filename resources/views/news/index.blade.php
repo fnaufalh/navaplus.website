@@ -46,7 +46,7 @@
         $(document).ready(function () {
             $.ajax({
                 type: 'GET',
-                url: 'https://www.aashari.id/form-asia/navaplus/cms/public/api/news',
+                url: '{{url('/api/news?all=n')}}',
                 dataType: 'json',
                 success: function (data) {
                     var data = data;
