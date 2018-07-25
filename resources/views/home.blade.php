@@ -227,7 +227,7 @@
                       <span class="align-middle">
                         <i class="fa fa-envelope fa-1x"></i>
                       </span>
-                                <a href="mailto:recruitment@navaplus.com" class="text-white"><span class="align-middle">hello@navaplus.com</span></a>
+                                <a href="mailto:recruitment@navaplus.com" class="text-white" id="general_email"><span class="align-middle">hello@navaplus.com</span></a>
                             </div>
                         </div>
                     </div>
@@ -242,7 +242,7 @@
                       <span class="align-middle">
                         <i class="fa fa-envelope fa-1x"></i>
                       </span>
-                                <a href="mailto:recruitment@navaplus.com" class="text-white"><span class="align-middle">recruitment@navaplus.com</span></a>
+                                <a href="mailto:recruitment@navaplus.com" class="text-white" id="career_email"><span class="align-middle">recruitment@navaplus.com</span></a>
                             </div>
                         </div>
                     </div>
@@ -276,7 +276,23 @@
 
             $.ajax({
                 type: 'GET',
-                url: '{{url('/api/news?take=3&all=n')}}',
+                url: '{{ url('/api/setting') }}',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    var data = data;
+                    
+                    $('#general_email').html(data.general_email);
+                    $('#career_email').html(data.career_email);
+                    
+                    $('#general_email').attr('href', 'mailto:'+data.general_email);
+                    $('#career_email').attr('href', 'mail_to:'+data.career_email);
+                }
+            });
+
+            $.ajax({
+                type: 'GET',
+                url: '{!! url('/api/news?take=3&all=n') !!}',
                 dataType: 'json',
                 success: function (data) {
                     console.log(data);

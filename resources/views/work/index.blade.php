@@ -22,7 +22,7 @@
         {{-- TEMPLATE - BEGIN --}}
         <div class="section-content-item" id="template">
             <div class="image-project">
-                <a href="" target="_blank">
+                <a href="">
                     <div class="info">
                         <div class="title">
                             <h5></h5>
