@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section id="our-works" class="section-holder">
+<section id="our-works" class="section-holder" style="padding-bottom:50px;">
     <div class="section-header">
         <div class="max-width display-flex">
             <div><h3 class="text-white">Our Clients</h3></div>

@@ -6,56 +6,37 @@
             <div class="quotes-home">
                 <div id="carousel-nava-landscape" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
-                        <li data-target="#carousel-nava-landscape" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-nava-landscape" data-slide-to="1"></li>
-                        <li data-target="#carousel-nava-landscape" data-slide-to="2"></li>
+
+                        {{-- TEMPLATE-BEGIN --}}
+                        <li data-target="#carousel-nava-landscape" data-slide-to="0" class="indicators active"></li>
+                        {{-- TEMPLATE-END --}}
                     </ol>
                     <div class="carousel-inner">
+                        {{-- TEMPLATE-BEGIN --}}
                         <div class="carousel-item item active">
-                            <img class="d-block w-100" src="{{asset('images/4.jpeg')}}" alt="First slide">
+                            <img class="d-block w-100 img-slider">
                             <div class="carousel-caption d-md-block">
-                                <h5>We Are House of Brands</h5>
+                                <h5></h5>
                             </div>
                         </div>
-                        <div class="carousel-item item">
-                            <img class="d-block w-100" src="{{asset('images/5.jpeg')}}" alt="Second slide">
-                            <div class="carousel-caption d-md-block">
-                                <h5>We Are House of Brands 2</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item item">
-                            <img class="d-block w-100" src="{{asset('images/6.jpeg')}}" alt="Third slide">
-                            <div class="carousel-caption d-md-block">
-                                <h5>We Are House of Brands 3</h5>
-                            </div>
-                        </div>
+                        {{-- TEMPLATE-END --}}
                     </div>
                 </div>
-                <div id="carousel-nava-portrait" class="carousel slide" data-ride="carousel">
+                <div id="carousel-nava-potrait" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
-                        <li data-target="#carousel-nava-portrait" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-nava-portrait" data-slide-to="1"></li>
-                        <li data-target="#carousel-nava-portrait" data-slide-to="2"></li>
+                        {{-- TEMPLATE-BEGIN --}}
+                        <li data-target="#carousel-nava-potrait" data-slide-to="0" class="indicators active"></li>
+                        {{-- TEMPLATE-END --}}
                     </ol>
                     <div class="carousel-inner">
+                      {{-- TEMPLATE-BEGIN --}}
                         <div class="carousel-item item active">
-                            <img class="d-block w-100" src="{{asset('images/1.jpeg')}}" alt="First slide">
+                            <img class="d-block w-100 img-slider">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>We Are House of Brands</h5>
+                                <h5></h5>
                             </div>
                         </div>
-                        <div class="carousel-item item">
-                            <img class="d-block w-100" src="{{asset('images/2.jpeg')}}" alt="Second slide">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>We Are House of Brands 2</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item item">
-                            <img class="d-block w-100" src="{{asset('images/3.jpeg')}}" alt="Third slide">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>We Are House of Brands 3</h5>
-                            </div>
-                        </div>
+                        {{-- TEMPLATE-END --}}
                     </div>
                 </div>
             </div>
@@ -281,10 +262,10 @@
                 success: function (data) {
                     console.log(data);
                     var data = data;
-                    
+
                     $('#general_email').html(data.general_email);
                     $('#career_email').html(data.career_email);
-                    
+
                     $('#general_email').attr('href', 'mailto:'+data.general_email);
                     $('#career_email').attr('href', 'mail_to:'+data.career_email);
                 }
@@ -295,7 +276,6 @@
                 url: '{!! url('/api/news?take=3&all=n') !!}',
                 dataType: 'json',
                 success: function (data) {
-                    console.log(data);
                     var data = data;
                     var section = $('#section-container');
 
@@ -310,6 +290,43 @@
 
                     });
                 }
+            });
+
+            $.ajax({
+              type: 'GET',
+              url: '{!! url('/api/slider') !!}',
+              dataType: 'json',
+              success: function (data) {
+                var x = 0;
+                var data = data;
+                var landscape = $('#carousel-nava-landscape');
+                var landscape_item = $('#carousel-nava-landscape').find('.carousel-item');
+                var potrait = $('#carousel-nava-potrait');
+                var potrait_item = $('#carousel-nava-potrait').find('.carousel-item');
+
+                $.each(data, function (i, val) {
+                  var potrait_template = potrait.find('.indicators').clone();
+                  potrait_template.data('slide-to', x).removeClass('active');
+                  potrait.find('ol').append(potrait_template);
+
+                  var potrait_slider =  potrait_item.removeClass('active');
+                  potrait_item.find('img').attr('src', data.image_potrait).attr('alt', data.quote);
+                  potrait_item.find('h5').html(data.quote);
+                  potrait_item.append(potrait_slider);
+
+                  var landscape_template = landscape.find('.indicators').clone();
+                  landscape.find('.indicators').data('slide-to', x).removeClass('active');
+                  landscape.append(landscape_template);
+
+                  var landscape_slider =  landscape_item.removeClass('active');
+                  landscape_item.find('img').attr('src', data.image_horizontal).attr('alt', data.quote);
+                  landscape_item.find('h5').html(data.quote);
+                  landscape_item.append(landscape_slider);
+
+                  x++;
+
+                });
+              }
             });
 
         });
