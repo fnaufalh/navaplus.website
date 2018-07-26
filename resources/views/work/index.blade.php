@@ -5,9 +5,34 @@
         <div class="section-header">
             <div class="max-width display-flex">
                 <div><h3 class="text-white">Our Works</h3></div>
-                <div class="btn-dropdow">
-                <div class="select">
-                    <div class="selected dropdown-selected">
+                <div class="btn-dropdow no-mobile">
+                  <div class="select select-category" is_active="false">
+                      <div class="selected dropdown-selected dropdown-category">
+                          <div class="arrow-down"><img src="{{asset('images/arrow.svg')}}" alt="">
+                          </div>
+                          Category
+                      </div>
+                      <div class="category selectList">
+                      </div>
+                  </div>
+                  <div class="select select-agency" is_active="false">
+                      <div class="selected dropdown-selected dropdown-agency">
+                          <div class="arrow-down"><img src="{{asset('images/arrow.svg')}}" alt="">
+                          </div>
+                          Agency
+                      </div>
+                      <div class="agency selectList">
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+        <div class="section-header mobile">
+          <div class="max-width display-flex">
+            <div class="dropdow-mobile">
+              <div class="btn-dropdow">
+                <div class="select select-category" is_active="false">
+                    <div class="selected dropdown-selected dropdown-category">
                         <div class="arrow-down"><img src="{{asset('images/arrow.svg')}}" alt="">
                         </div>
                         Category
@@ -15,8 +40,8 @@
                     <div class="category selectList">
                     </div>
                 </div>
-                <div class="select">
-                    <div class="selected dropdown-selected">
+                <div class="select select-agency" is_active="false">
+                    <div class="selected dropdown-selected dropdown-agency">
                         <div class="arrow-down"><img src="{{asset('images/arrow.svg')}}" alt="">
                         </div>
                         Agency
@@ -26,6 +51,7 @@
                 </div>
             </div>
             </div>
+          </div>
         </div>
     </section>
 
@@ -55,6 +81,26 @@
 @section('script')
 
     <script>
+    $(document).on('click', '.dropdown-selected', function () {
+        var isActive = $(this).parent().eq(0).attr('is_active');
+        if (isActive === 'true') {
+            $(this).parent().eq(0).attr('is_active', 'false');
+            $(this).parent().eq(0).children('.selectList').removeClass('active');
+        } else {
+            $(this).parent().eq(0).attr('is_active', 'true');
+            $(this).parent().eq(0).children('.selectList').addClass('active');
+        }
+    });
+
+    $(document).on('click', '.dropdown-category', function(){
+      $('.agency.selectList').removeClass('active'); $('.dropdown-selected.dropdown-agency').parent().removeAttr('is_active');
+    });
+
+    $(document).on('click', '.dropdown-agency', function(){
+      $('.category.selectList').removeClass('active');
+      $('.dropdown-selected.dropdown-category').parent().removeAttr('is_active');
+    });
+
         $(document).ready(function () {
 
             $.ajax({
@@ -66,7 +112,7 @@
                     var section = $('.category');
 
                     $.each(data, function (i, val) {
-                        section.append('<div class="select" data-id=' + val.id + '><div>' + val.name + '</div></div>');
+                        section.append('<div class="select" data-id="' + val.id + '" onclick="workByCategory(\''+ val.id +'\')"><div>' + val.name + '</div></div>');
                     });
                 }
             });
@@ -80,27 +126,16 @@
                     var section = $('.agency');
 
                     $.each(data, function (i, val) {
-                        section.append('<div class="select" data-id=' + val.id + '><div>' + val.name + '</div></div>');
+                        section.append('<div class="select" data-id=' + val.id + '" onclick="workByAgency(\''+ val.id +'\')"><div>' + val.name + '</div></div>');
                     });
                 }
             });
-
-            workByAgency();
-
-            $('.agency').change(function () {
-                workByAgency();
-            });
-
-            $('.category').change(function () {
-                workByCategory();
-            });
-
         });
 
-        var workByAgency = function () {
+        var workByAgency = function workByAgency(c) {
 
             $('.category').val(0);
-            var agencyId = $('.agency > .select').data('id');
+            var agencyId = c;
             $('#section-container').html('');
             $.ajax({
                 type: 'GET',
@@ -122,13 +157,14 @@
                     });
                 }
             });
+            $('.agency.selectList').removeClass('active');
+            console.log(a); $('.dropdown-selected.dropdown-agency').parent().removeAttr('is_active');
         }
 
-        var workByCategory = function () {
+        var workByCategory = function workByCategory(c) {
 
             $('.agency').val(0);
-            var categoryId = $('.category > .select').data('id');
-            alert(categoryId);
+            var categoryId = c;
             if (categoryId == 0)
                 workByAgency();
 
@@ -152,7 +188,32 @@
                     });
                 }
             });
+            $('.category.selectList').removeClass('active');
+            $('.dropdown-selected.dropdown-category').parent().removeAttr('is_active');
         }
+
+        $(document).ready(function () {
+            $.ajax({
+                type: 'GET',
+                url: '{{url('/api/work?all=n')}}',
+                dataType: 'json',
+                success: function (data) {
+                    var data = data;
+                    var section = $('#section-container');
+
+                    $.each(data, function (i, val) {
+                        var template = $('#template').clone();
+                        $(template.find('a')).attr('href', "{{url('/news')}}/" + val.id);
+                        $(template.find('.image-project')).css('background-image', 'url(\'' + val.image_link + '\')');
+                        $(template.find('.title h5')).html(val.name);
+                        $(template.find('.sub-title')).html(val.date_formated + " | " + val.type);
+                        template.removeAttr('id');
+                        section.append(template);
+
+                    });
+                }
+            });
+        });
     </script>
 
 @endsection
