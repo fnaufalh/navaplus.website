@@ -31,17 +31,6 @@ $(document).on('click', '.hamburger', function () {
     }
 });
 
-$(document).on('click', '.dropdown-selected', function () {
-    var isActive = $(this).parent().eq(0).attr('is_active');
-    if (isActive === 'true') {
-        $(this).parent().eq(0).attr('is_active', 'false');
-        $(this).parent().eq(0).children('.selectList').removeClass('active');
-    } else {
-        $(this).parent().eq(0).attr('is_active', 'true');
-        $(this).parent().eq(0).children('.selectList').addClass('active');
-    }
-});
-
 $(document).on('click', '.open-agencies', function () {
     var isActive = $(this).parent().eq(0).attr('is_active');
     if (isActive === 'true') {
