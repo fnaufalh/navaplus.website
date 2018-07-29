@@ -6,3 +6,5 @@
  in Unknown on line 0
 [29-Jul-2018 12:38:15 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ext\php_mysql.dll' - The specified module could not be found.
  in Unknown on line 0
+[29-Jul-2018 13:58:56 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ext\php_mysql.dll' - The specified module could not be found.
+ in Unknown on line 0
