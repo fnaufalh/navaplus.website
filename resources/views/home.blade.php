@@ -4,34 +4,59 @@
     <div class="max-width display-flex">
         <div class="left-section">
             <div class="quotes-home">
-                <div id="carousel-nava-landscape" class="carousel slide" data-ride="carousel">
+                <div id="carousel-nava-landscape" class="carousel slide mobile" data-ride="carousel">
                     <ol class="carousel-indicators">
-
-                        {{-- TEMPLATE-BEGIN --}}
                         <li data-target="#carousel-nava-landscape" data-slide-to="0" class="indicators active"></li>
-                        {{-- TEMPLATE-END --}}
+                        <li data-target="#carousel-nava-landscape" data-slide-to="1" class="indicators"></li>
+                        <li data-target="#carousel-nava-landscape" data-slide-to="2" class="indicators"></li>
                     </ol>
                     <div class="carousel-inner">
-                        {{-- TEMPLATE-BEGIN --}}
                         <div class="carousel-item item active">
-                            <img class="d-block w-100 img-slider">
+                            <img class="d-block w-100 img-slider" src="https://placeimg.com/350/150/animals">
                             <div class="carousel-caption d-md-block">
                                 <h5></h5>
                             </div>
                         </div>
-                        {{-- TEMPLATE-END --}}
+
+                        <div class="carousel-item item">
+                            <img class="d-block w-100 img-slider" src="https://placeimg.com/350/150/animals">
+                            <div class="carousel-caption d-md-block">
+                                <h5></h5>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item item">
+                            <img class="d-block w-100 img-slider" src="https://placeimg.com/350/150/animals">
+                            <div class="carousel-caption d-md-block">
+                                <h5></h5>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="carousel-nava-potrait" class="carousel slide" data-ride="carousel">
+                <div id="carousel-nava-potrait" class="carousel slide no-mobile" data-ride="carousel">
                     <ol class="carousel-indicators">
-                        {{-- TEMPLATE-BEGIN --}}
                         <li data-target="#carousel-nava-potrait" data-slide-to="0" class="indicators active"></li>
-                        {{-- TEMPLATE-END --}}
+                        <li data-target="#carousel-nava-potrait" data-slide-to="1" class="indicators"></li>
+                        <li data-target="#carousel-nava-potrait" data-slide-to="2" class="indicators"></li>
                     </ol>
                     <div class="carousel-inner">
                       {{-- TEMPLATE-BEGIN --}}
                         <div class="carousel-item item active">
-                            <img class="d-block w-100 img-slider">
+                            <img class="d-block w-100 img-slider" src="{{asset('images/1.jpg')}}">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5></h5>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item item">
+                            <img class="d-block w-100 img-slider" src="{{asset('images/2.jpeg')}}">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5></h5>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item item">
+                            <img class="d-block w-100 img-slider" src="{{asset('images/3.jpeg')}}">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5></h5>
                             </div>
@@ -292,42 +317,42 @@
                 }
             });
 
-            $.ajax({
-              type: 'GET',
-              url: '{!! url('/api/slider') !!}',
-              dataType: 'json',
-              success: function (data) {
-                var x = 0;
-                var data = data;
-                var landscape = $('#carousel-nava-landscape');
-                var landscape_item = $('#carousel-nava-landscape').find('.carousel-item');
-                var potrait = $('#carousel-nava-potrait');
-                var potrait_item = $('#carousel-nava-potrait').find('.carousel-item');
+            {{--$.ajax({--}}
+              {{--type: 'GET',--}}
+              {{--url: '{!! url('/api/slider') !!}',--}}
+              {{--dataType: 'json',--}}
+              {{--success: function (data) {--}}
+                {{--var x = 0;--}}
+                {{--var data = data;--}}
+                {{--var landscape = $('#carousel-nava-landscape');--}}
+                {{--var landscape_item = $('#carousel-nava-landscape').find('.carousel-item');--}}
+                {{--var potrait = $('#carousel-nava-potrait');--}}
+                {{--var potrait_item = $('#carousel-nava-potrait').find('.carousel-item');--}}
 
-                $.each(data, function (i, val) {
-                  var potrait_template = potrait.find('.indicators').clone();
-                  potrait_template.data('slide-to', x).removeClass('active');
-                  potrait.find('ol').append(potrait_template);
+                {{--$.each(data, function (i, val) {--}}
+                  {{--var potrait_template = potrait.find('.indicators').clone();--}}
+                  {{--potrait_template.data('slide-to', x).removeClass('active');--}}
+                  {{--potrait.find('ol').append(potrait_template);--}}
 
-                  var potrait_slider =  potrait_item.removeClass('active');
-                  potrait_item.find('img').attr('src', data.image_potrait).attr('alt', data.quote);
-                  potrait_item.find('h5').html(data.quote);
-                  potrait_item.append(potrait_slider);
+                  {{--var potrait_slider =  potrait_item.removeClass('active');--}}
+                  {{--potrait_item.find('img').attr('src', data.image_potrait).attr('alt', data.quote);--}}
+                  {{--potrait_item.find('h5').html(data.quote);--}}
+                  {{--potrait_item.append(potrait_slider);--}}
 
-                  var landscape_template = landscape.find('.indicators').clone();
-                  landscape.find('.indicators').data('slide-to', x).removeClass('active');
-                  landscape.append(landscape_template);
+                  {{--var landscape_template = landscape.find('.indicators').clone();--}}
+                  {{--landscape.find('.indicators').data('slide-to', x).removeClass('active');--}}
+                  {{--landscape.append(landscape_template);--}}
 
-                  var landscape_slider =  landscape_item.removeClass('active');
-                  landscape_item.find('img').attr('src', data.image_horizontal).attr('alt', data.quote);
-                  landscape_item.find('h5').html(data.quote);
-                  landscape_item.append(landscape_slider);
+                  {{--var landscape_slider =  landscape_item.removeClass('active');--}}
+                  {{--landscape_item.find('img').attr('src', data.image_horizontal).attr('alt', data.quote);--}}
+                  {{--landscape_item.find('h5').html(data.quote);--}}
+                  {{--landscape_item.append(landscape_slider);--}}
 
-                  x++;
+                  {{--x++;--}}
 
-                });
-              }
-            });
+                {{--});--}}
+              {{--}--}}
+            {{--});--}}
 
         });
     </script>

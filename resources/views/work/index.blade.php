@@ -10,7 +10,7 @@
                       <div class="selected dropdown-selected dropdown-category">
                           <div class="arrow-down"><img src="{{asset('images/arrow.svg')}}" alt="">
                           </div>
-                          Category
+                          <div class="label-category">Category</div>
                       </div>
                       <div class="category selectList">
                       </div>
@@ -19,7 +19,7 @@
                       <div class="selected dropdown-selected dropdown-agency">
                           <div class="arrow-down"><img src="{{asset('images/arrow.svg')}}" alt="">
                           </div>
-                          Agency
+                          <div class="label-agency">Agency</div>
                       </div>
                       <div class="agency selectList">
                       </div>
@@ -93,7 +93,8 @@
     });
 
     $(document).on('click', '.dropdown-category', function(){
-      $('.agency.selectList').removeClass('active'); $('.dropdown-selected.dropdown-agency').parent().removeAttr('is_active');
+      $('.agency.selectList').removeClass('active');
+      $('.dropdown-selected.dropdown-agency').parent().removeAttr('is_active');
     });
 
     $(document).on('click', '.dropdown-agency', function(){

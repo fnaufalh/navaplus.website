@@ -31,7 +31,7 @@
                         </a>
                     </div>
                     <div class="pull-left">
-                        <a class="display-flex" href="#">
+                        <a class="display-flex" id="news" href="" data-toggle="modal" data-target="#share-modal">
                             <div class="icon-share">
                                 <i class="fa fa-share"></i>
                             </div>
@@ -65,11 +65,32 @@
 
         </div>
     </section>
+
+    <div class="modal" tabindex="-1" role="dialog" id="share-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Share this news!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" readonly class="form-control url-news" value="function()">
+                    <p style="text-align: right"><small>Copy this link to share.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 @section('script')
     <script>
 
         $(document).ready(function () {
+            $('.url-news').val(window.location.hrefp);
+            $('#share-modal').on('shown.bs.modal', function () {
+                $('#news').trigger('focus')
+            })
 
             $.ajax({
                 type: 'GET',
