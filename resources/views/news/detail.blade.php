@@ -103,7 +103,7 @@
 
             $.ajax({
                 type: 'GET',
-                url: '{{url('/api/news?all=n&paginate=3')}}',
+                url: '{!! url("/api/news?all=n&except=$id&paginate=3")  !!}',
                 dataType: 'json',
                 success: function (data) {
                     var data = data;

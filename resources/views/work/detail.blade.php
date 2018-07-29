@@ -100,7 +100,7 @@
 
                     $.ajax({
                         type: 'GET',
-                        url: '{!! url("/api/work?all=n&paginate=3&agency_id=") !!}'+data.agency.id,
+                        url: '{!! url("/api/work?all=n&paginate=3&except=$id&agency_id=") !!}'+data.agency.id,
                         dataType: 'json',
                         success: function (data) {
                             var data = data;

@@ -16,6 +16,7 @@ class NewsController extends Controller
      * order_by - value: [*id|date] - ordering data by
      * order_type - value: [asc|*desc] - ordering data ascending or descending
      * paginate - value: [number ex:5,13 | *null] - get all data include deleted data
+     * except - value: [number ex:1,13 | *null] - remove except id
      * @return string
      */
     public function list(Request $request)
@@ -37,11 +38,16 @@ class NewsController extends Controller
             in_array($filter['order_type'], $filterCondition['order_type'])) ? $filter['order_type'] : 'desc';
         $paginate = (isset($filter['paginate']) &&
             is_numeric($filter['paginate'])) ? $filter['paginate'] : null;
+        $except = (isset($filter['except']) &&
+            is_numeric($filter['except'])) ? $filter['except'] : null;
 
         $data = News::orderBy($orderBy, $orderType);
 
         if ($all == 'y')
             $data = $data->withTrashed();
+
+        if($except != null)
+            $data = $data->where('id', '!=', $except);
 
         $data = $data->paginate($paginate);
 

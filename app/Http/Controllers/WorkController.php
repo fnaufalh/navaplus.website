@@ -45,6 +45,9 @@ class WorkController extends Controller
             in_array($filter['order_type'], $filterCondition['order_type'])) ? $filter['order_type'] : 'desc';
         $paginate = (isset($filter['paginate']) &&
             is_numeric($filter['paginate'])) ? $filter['paginate'] : null;
+        $except = (isset($filter['except']) &&
+            is_numeric($filter['except'])) ? $filter['except'] : null;
+
 
         $data = Work::orderBy($orderBy, $orderType);
 
@@ -57,10 +60,10 @@ class WorkController extends Controller
         if ($all == 'y')
             $data = $data->withTrashed();
 
+        if($except != null)
+            $data = $data->where('id', '!=', $except);
 
         $data = $data
-//            ->with('agency')
-//            ->with('categories')
             ->paginate($paginate);
 
         foreach ($data as $item) {
