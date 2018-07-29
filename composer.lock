@@ -590,7 +590,11 @@
                 "framework",
                 "laravel"
             ],
+<<<<<<< HEAD
             "time": "2018-07-26T16:01:26+00:00"
+=======
+            "time": "2018-07-26 16:01:26"
+>>>>>>> a1f938ab1fdb7caa58db5c8215241af5b62d9bca
         },
         {
             "name": "laravel/tinker",

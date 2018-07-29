@@ -46,7 +46,7 @@
     <div class="text-center">
         <div class="load-more">
             <div class="display-flex text-center">
-                  <a class="more" href="#">
+                  <a class="" href="#load-more">
                     <span class="text-more">
                         More
                     </span>
@@ -162,63 +162,86 @@
 @endsection
 @section('script')
     <script type="text/javascript">
-    $(document).ready(function(){
-      var color;
-      $.ajax({
-        type: 'GET',
-        url: '{{url('/api/agency/'.$id)}}',
-        dataType: 'json',
-        success: function(data){
-          var data = data;
-          $('#site-banner .max-width').css('background-image', 'url(\'' + data.banner_link + '\')');
-          $('.about-left').html('<img src="'+ data.logo_link +'" alt="'+ data.name +'">');
-          $('.about-right').find('h1').html(data.motto);
-          $('.about-right').find('p').html(data.description);
-          $('#site-about > .max-width').css('background-color', data.background_color);
-          $('.text-more').css('color', data.background_color);
-          $('.icon-more').css('color', data.background_color);
-          $('#key-people > .section-header').css('background-color', data.background_color);
-          $('#lets-connect').css('background-color', data.background_color);
-           color = data.background_color;
-           $('.load-more').find('a').css('color', color);
+        var color;
+        var page;
 
-           $.ajax({
-             type: 'GET',
-             url: '{{url('/api/people?agency_id='.$id)}}',
-             dataType: 'json',
-             success: function(data){
-               var data = data;
-               if (data.length != 0 ) {
-                 for (var i = 0; i < data.length; i++) {
-                   $('#key-people').find('.section-content').append('<div class="section-content-item p-3"><div><div class="info"><ul class="flex-container"><li class="flex-item"><div class="picture"><img src="'+ data[i].image_link +'" alt="'+ data[i].name +'"></div><h5>'+ data[i].name +'</h5><h6>'+ data[i].department +'</h6><div class="email-holder"><div class="email"><span class="email-icon align-middle" style="color:'+ color +'"><i class="fa fa-envelope-square fa-1x"></i></span><a href="mailto:'+ data[i].email +'"><span class="align-middle" style="padding-left:5px;">'+ data[i].email +'</span></a></div></div><p>'+ data[i].description +'</p></li></ul></div></div></div>');
-                 }
-               }
-             }
-           });
-        }
-      });
-    });
+        $(document).ready(function(){
+            page = 1;
+            loadAgency();
+            loadPeople();
+            loadWork(page);
 
-    $.ajax({
-        type: 'GET',
-        url: '{{url('/api/work?agency_id='.$id)}}',
-        dataType: 'json',
-        success: function (data) {
-            var data = data;
-            var section = $('#section-container');
+            $(".load-more").click(function () {
+                page++;
+                loadWork(page);
+            });
+        });
 
-            $.each(data, function (i, val) {
-                var template = $('#template').clone();
-                $(template.find('a')).attr('href', "{{url('/work')}}/"+val.id);
-                $(template.find('.image-project')).css('background-image', 'url(\'' + val.main_image_link + '\')');
-                $(template.find('.title h5')).html(val.name);
-                $(template.find('.sub-title')).html(val.client);
-                template.removeAttr('id');
-                section.append(template);
-
+        var loadAgency = function () {
+            $.ajax({
+                type: 'GET',
+                url: '{{url('/api/agency/'.$id)}}',
+                dataType: 'json',
+                success: function(data){
+                    var data = data;
+                    $('#site-banner .max-width').css('background-image', 'url(\'' + data.banner_link + '\')');
+                    $('.about-left').html('<img src="'+ data.logo_link +'" alt="'+ data.name +'">');
+                    $('.about-right').find('h1').html(data.motto);
+                    $('.about-right').find('p').html(data.description);
+                    $('#site-about > .max-width').css('background-color', data.background_color);
+                    $('.text-more').css('color', data.background_color);
+                    $('.icon-more').css('color', data.background_color);
+                    $('#key-people > .section-header').css('background-color', data.background_color);
+                    $('#lets-connect').css('background-color', data.background_color);
+                    color = data.background_color;
+                }
             });
         }
-    });
+
+        var loadPeople = function () {
+            $.ajax({
+                type: 'GET',
+                url: '{!! url('/api/people?order_type=asc&agency_id='.$id) !!}',
+                dataType: 'json',
+                success: function(data){
+                    var data = data;
+                    if (data.length != 0 ) {
+                        for (var i = 0; i < data.length; i++) {
+                            $('#key-people').find('.section-content').append('<div class="section-content-item p-3"><div><div class="info"><ul class="flex-container"><li class="flex-item"><div class="picture"><img src="'+ data[i].image_link +'" alt="'+ data[i].name +'"></div><h5>'+ data[i].name +'</h5><h6>'+ data[i].department +'</h6><div class="email-holder"><div class="email"><span class="email-icon align-middle" style="color:'+ color +'"><i class="fa fa-envelope-square fa-1x"></i></span><span class="align-middle" style="padding-left:5px;">'+ data[i].email +'</span></div></div><p>'+ data[i].description +'</p></li></ul></div></div></div>');
+                        }
+                    }
+                }
+            });
+        }
+
+        var loadWork = function (page) {
+
+            $.ajax({
+                type: 'GET',
+                url: '{!! url('/api/work') !!}' + '?order_type=desc&all=n&paginate=1&agency_id={{$id}}&page=' + page,
+                dataType: 'json',
+                success: function (data) {
+                    var data = data;
+                    var section = $('#section-container');
+
+                    $.each(data.data, function (i, val) {
+                        var template = $('#template').clone();
+                        $(template.find('a')).attr('href', "{{url('/work')}}/" + val.id);
+                        $(template.find('.image-project')).css('background-image', 'url(\'' + val.main_image_link + '\')');
+                        $(template.find('.title h5')).html(val.name);
+                        $(template.find('.sub-title')).html(val.client);
+                        template.removeAttr('id');
+                        section.append(template);
+                    });
+
+                    if (data.current_page >= data.last_page) {
+                        $('.load-more').fadeOut();
+                    } else {
+                        $('.load-more').fadeIn();
+                    }
+                }
+            });
+        }
 
     </script>
 @endsection

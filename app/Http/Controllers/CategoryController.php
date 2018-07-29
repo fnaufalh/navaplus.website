@@ -9,165 +9,6 @@ use Illuminate\Support\Facades\DB;
 class CategoryController extends Controller
 {
 
-    private $response;
-
-    public function index()
-    {
-        return view('categories.index');
-    }
-
-    public function addView()
-    {
-        return view('categories.add');
-    }
-
-    public function store(Request $request)
-    {
-        $input = $request->all();
-
-        try {
-            DB::beginTransaction();
-
-            for ($i = 0; $i < count($input['name']); $i++) {
-
-                $data = [
-                    'name' => $input['name'][$i]
-                ];
-
-                Category::create($data);
-
-            }
-
-            DB::commit();
-
-            $this->response = [
-                'status' => true,
-                'message' => 'Success add category.',
-            ];
-        } catch (\Exception $e) {
-            DB::rollback();
-
-            $this->response = [
-                'status' => false,
-                'message' => 'Failed add category, please try again.',
-                'error' => $e->getMessage()
-            ];
-        }
-
-        return redirect()
-            ->back()
-            ->with('response', $this->response);
-    }
-
-    public function editView($id)
-    {
-        $data = Category::where('id', $id)
-            ->withTrashed()
-            ->first();
-
-        return view('categories.update')
-            ->with('category', $data);
-    }
-
-    public function update(Request $request, $id)
-    {
-        $input = $request->all();
-
-        try {
-            DB::beginTransaction();
-
-            $data = [
-                'name' => $input['name']
-            ];
-
-            Category::where('id', $id)
-                ->withTrashed()
-                ->update($data);
-
-            DB::commit();
-
-            $this->response = [
-                'status' => true,
-                'message' => 'Success edit category'
-            ];
-        } catch (\Exception $e) {
-            DB::rollback();
-
-            $this->response = [
-                'status' => false,
-                'message' => 'Failed edit category, please try again.',
-                'error' => $e->getMessage()
-            ];
-        }
-
-        return redirect()
-            ->back()
-            ->with('response', $this->response);
-    }
-
-    public function destroy($id)
-    {
-
-        try {
-            DB::beginTransaction();
-
-            Category::where('id', $id)
-                ->delete();
-
-            DB::commit();
-
-            $this->response = [
-                'status' => true,
-                'message' => 'Success delete category'
-            ];
-        } catch (\Exception $e) {
-            DB::rollback();
-
-            $this->response = [
-                'status' => false,
-                'message' => 'Failed delete category, please try again.',
-                'error' => $e->getMessage()
-            ];
-        }
-
-        return redirect()
-            ->back()
-            ->with('response', $this->response);
-
-    }
-
-    public function restore($id)
-    {
-
-        try {
-            DB::beginTransaction();
-
-            Category::where('id', $id)
-                ->withTrashed()
-                ->restore();
-
-            DB::commit();
-
-            $this->response = [
-                'status' => true,
-                'message' => 'Success restore category'
-            ];
-        } catch (\Exception $e) {
-            DB::rollback();
-
-            $this->response = [
-                'status' => false,
-                'message' => 'Failed restore category, please try again.',
-                'error' => $e->getMessage()
-            ];
-        }
-
-        return redirect()
-            ->back()
-            ->with('response', $this->response);
-
-    }
-
     /**
      * @param Request $request
      * $request include :
@@ -210,13 +51,40 @@ class CategoryController extends Controller
         return json_encode($data);
     }
 
-    public function detail($id)
+    /**
+     * @param Request $request
+     * $request include :
+     * paginate - value: [number ex:5,13 | *9]
+     * page - value: [number ex:5,13 | *1]
+     * @return string
+     */
+    public function workByCategory(Request $request, $id)
     {
+
+        $filter = $request->all();
+
+        $paginate = (isset($filter['paginate']) &&
+            is_numeric($filter['paginate'])) ? $filter['paginate'] : 9;
+        $page = (isset($filter['page']) &&
+            is_numeric($filter['page'])) ? $filter['page'] : 1;
+        $offset = ($page * $paginate) - $paginate;
+
         $data = Category::where('id', $id)
             ->with('works')
             ->first();
 
-        return json_encode($data);
+        $works = collect($data)['works'];
+        $data = array_slice($works, $offset, $paginate);
+        $currentPage = $page;
+        $lastPage = round(count($works) / $paginate);
+
+        return json_encode([
+            'data' => $data,
+            'total_data' => count($works),
+            'paginate' => (int)$paginate,
+            'current_page' => $currentPage,
+            'last_page' => $lastPage
+        ]);
     }
 
 }

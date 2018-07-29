@@ -31,7 +31,7 @@
                         </a>
                     </div>
                     <div class="pull-left">
-                        <a class="display-flex" href="#">
+                        <a class="display-flex" id="news" href="" data-toggle="modal" data-target="#share-modal">
                             <div class="icon-share">
                                 <i class="fa fa-share"></i>
                             </div>
@@ -65,6 +65,23 @@
 
         </div>
     </section>
+
+    <div class="modal" tabindex="-1" role="dialog" id="share-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Share this news!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" readonly class="form-control url-news" value="function()">
+                    <p style="text-align: right"><small>Copy this link to share.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 @section('script')
     <script>
@@ -81,32 +98,30 @@
                     $('#date').html(data.date_formated + " | " + data.type);
                     $('#headline').html(data.headline);
                     $('#description').html(data.description);
+                }
+            });
 
-                    $.ajax({
-                        type: 'GET',
-                        url: '{{url('/api/news?take=3')}}',
-                        dataType: 'json',
-                        success: function (data) {
-                            var data = data;
-                            var section = $('#section-container');
+            $.ajax({
+                type: 'GET',
+                url: '{!! url("/api/news?all=n&except=$id&paginate=3")  !!}',
+                dataType: 'json',
+                success: function (data) {
+                    var data = data;
+                    var section = $('#section-container');
 
-                            $.each(data, function (i, val) {
-                                var template = $('#template').clone();
-                                $(template.find('a')).attr('href', "{{url('/news')}}/" + val.id);
-                                $(template.find('.image-project')).css('background-image', 'url(\'' + val.image_link + '\')');
-                                $(template.find('.title h5')).html(val.name);
-                                $(template.find('.sub-title')).html(val.date_formated + " | " + val.type);
-                                template.removeAttr('id');
-                                section.append(template);
+                    $.each(data.data, function (i, val) {
+                        var template = $('#template').clone();
+                        $(template.find('a')).attr('href', "{{url('/news')}}/" + val.id);
+                        $(template.find('.image-project')).css('background-image', 'url(\'' + val.image_link + '\')');
+                        $(template.find('.title h5')).html(val.name);
+                        $(template.find('.sub-title')).html(val.date_formated + " | " + val.type);
+                        template.removeAttr('id');
+                        section.append(template);
 
-                            });
-                        }
                     });
-
                 }
             });
 
         });
-
     </script>
 @endsection
