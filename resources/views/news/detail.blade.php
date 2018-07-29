@@ -87,10 +87,6 @@
     <script>
 
         $(document).ready(function () {
-            $('.url-news').val(window.location.hrefp);
-            $('#share-modal').on('shown.bs.modal', function () {
-                $('#news').trigger('focus')
-            })
 
             $.ajax({
                 type: 'GET',
@@ -102,32 +98,30 @@
                     $('#date').html(data.date_formated + " | " + data.type);
                     $('#headline').html(data.headline);
                     $('#description').html(data.description);
+                }
+            });
 
-                    $.ajax({
-                        type: 'GET',
-                        url: '{{url('/api/news?take=3')}}',
-                        dataType: 'json',
-                        success: function (data) {
-                            var data = data;
-                            var section = $('#section-container');
+            $.ajax({
+                type: 'GET',
+                url: '{{url('/api/news?all=n&paginate=3')}}',
+                dataType: 'json',
+                success: function (data) {
+                    var data = data;
+                    var section = $('#section-container');
 
-                            $.each(data, function (i, val) {
-                                var template = $('#template').clone();
-                                $(template.find('a')).attr('href', "{{url('/news')}}/" + val.id);
-                                $(template.find('.image-project')).css('background-image', 'url(\'' + val.image_link + '\')');
-                                $(template.find('.title h5')).html(val.name);
-                                $(template.find('.sub-title')).html(val.date_formated + " | " + val.type);
-                                template.removeAttr('id');
-                                section.append(template);
+                    $.each(data.data, function (i, val) {
+                        var template = $('#template').clone();
+                        $(template.find('a')).attr('href', "{{url('/news')}}/" + val.id);
+                        $(template.find('.image-project')).css('background-image', 'url(\'' + val.image_link + '\')');
+                        $(template.find('.title h5')).html(val.name);
+                        $(template.find('.sub-title')).html(val.date_formated + " | " + val.type);
+                        template.removeAttr('id');
+                        section.append(template);
 
-                            });
-                        }
                     });
-
                 }
             });
 
         });
-
     </script>
 @endsection

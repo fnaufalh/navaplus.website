@@ -292,19 +292,20 @@
                     $('#career_email').html(data.career_email);
 
                     $('#general_email').attr('href', 'mailto:'+data.general_email);
-                    $('#career_email').attr('href', 'mail_to:'+data.career_email);
+                    $('#career_email').attr('href', 'mailto:'+data.career_email);
                 }
             });
 
             $.ajax({
                 type: 'GET',
-                url: '{!! url('/api/news?take=3&all=n') !!}',
+                url: '{!! url('/api/news?all=n&paginate=3') !!}',
                 dataType: 'json',
                 success: function (data) {
+                    console.log(data);
                     var data = data;
                     var section = $('#section-container');
 
-                    $.each(data, function (i, val) {
+                    $.each(data.data, function (i, val) {
                         var template = $('#template').clone();
                         $(template.find('a')).attr('href', "{{url('/news')}}/" + val.id);
                         $(template.find('.image-project')).css('background-image', 'url(\'' + val.image_link + '\')');
@@ -316,7 +317,6 @@
                     });
                 }
             });
-
             {{--$.ajax({--}}
               {{--type: 'GET',--}}
               {{--url: '{!! url('/api/slider') !!}',--}}

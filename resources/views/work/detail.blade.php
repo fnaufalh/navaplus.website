@@ -100,13 +100,13 @@
 
                     $.ajax({
                         type: 'GET',
-                        url: '{!! url("/api/work?take=3&agency_id=") !!}'+data.agency.id,
+                        url: '{!! url("/api/work?all=n&paginate=3&agency_id=") !!}'+data.agency.id,
                         dataType: 'json',
                         success: function (data) {
                             var data = data;
                             var section = $('#section-container');
 
-                            $.each(data, function (i, val) {
+                            $.each(data.data, function (i, val) {
                                 var template = $('#template').clone();
                                 $(template.find('a')).attr('href', "{{url('/work')}}/"+val.id);
                                 $(template.find('.image-project')).css('background-image', 'url(\'' + val.main_image_link + '\')');

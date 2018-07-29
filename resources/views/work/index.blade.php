@@ -5,53 +5,15 @@
         <div class="section-header">
             <div class="max-width display-flex">
                 <div><h3 class="text-white">Our Works</h3></div>
-                <div class="btn-dropdow no-mobile">
-                  <div class="select select-category" is_active="false">
-                      <div class="selected dropdown-selected dropdown-category">
-                          <div class="arrow-down"><img src="{{asset('images/arrow.svg')}}" alt="">
-                          </div>
-                          <div class="label-category">Category</div>
-                      </div>
-                      <div class="category selectList">
-                      </div>
-                  </div>
-                  <div class="select select-agency" is_active="false">
-                      <div class="selected dropdown-selected dropdown-agency">
-                          <div class="arrow-down"><img src="{{asset('images/arrow.svg')}}" alt="">
-                          </div>
-                          <div class="label-agency">Agency</div>
-                      </div>
-                      <div class="agency selectList">
-                      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-        <div class="section-header mobile">
-          <div class="max-width display-flex">
-            <div class="dropdow-mobile">
-              <div class="btn-dropdow">
-                <div class="select select-category" is_active="false">
-                    <div class="selected dropdown-selected dropdown-category">
-                        <div class="arrow-down"><img src="{{asset('images/arrow.svg')}}" alt="">
-                        </div>
-                        Category
-                    </div>
-                    <div class="category selectList">
-                    </div>
-                </div>
-                <div class="select select-agency" is_active="false">
-                    <div class="selected dropdown-selected dropdown-agency">
-                        <div class="arrow-down"><img src="{{asset('images/arrow.svg')}}" alt="">
-                        </div>
-                        Agency
-                    </div>
-                    <div class="agency selectList">
-                    </div>
+                <div class="btn-dropdow">
+                    <select class="category select form-control">
+                        <option value="0">Category</option>
+                    </select>
+                    <select class="agency select form-control">
+                        <option value="0">Agency</option>
+                    </select>
                 </div>
             </div>
-            </div>
-          </div>
         </div>
     </section>
 
@@ -76,34 +38,24 @@
 
         </div>
 
+        <div class="text-center">
+            <div class="load-more">
+                <div class="display-flex text-center">
+                    <a href="#load-more">
+                        <span class="text-more" style="color:#676767;">More</span>
+                        <span class="icon-more" style="color:#676767;"><i class="fa fa-arrow-circle-down"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 @endsection
 @section('script')
 
     <script>
-    $(document).on('click', '.dropdown-selected', function () {
-        var isActive = $(this).parent().eq(0).attr('is_active');
-        if (isActive === 'true') {
-            $(this).parent().eq(0).attr('is_active', 'false');
-            $(this).parent().eq(0).children('.selectList').removeClass('active');
-        } else {
-            $(this).parent().eq(0).attr('is_active', 'true');
-            $(this).parent().eq(0).children('.selectList').addClass('active');
-        }
-    });
-
-    $(document).on('click', '.dropdown-category', function(){
-      $('.agency.selectList').removeClass('active');
-      $('.dropdown-selected.dropdown-agency').parent().removeAttr('is_active');
-    });
-
-    $(document).on('click', '.dropdown-agency', function(){
-      $('.category.selectList').removeClass('active');
-      $('.dropdown-selected.dropdown-category').parent().removeAttr('is_active');
-    });
-
+        var page = 1;
+        var apiLink = '';
         $(document).ready(function () {
-
             $.ajax({
                 type: 'GET',
                 url: '{{url('/api/category?order_type=asc&all=n')}}',
@@ -111,13 +63,11 @@
                 success: function (data) {
                     var data = data;
                     var section = $('.category');
-
                     $.each(data, function (i, val) {
-                        section.append('<div class="select" data-id="' + val.id + '" onclick="workByCategory(\''+ val.id +'\')"><div>' + val.name + '</div></div>');
+                        section.append("<option value='" + val.id + "'>" + val.name + "</option>");
                     });
                 }
             });
-
             $.ajax({
                 type: 'GET',
                 url: '{{url('/api/agency?order_type=asc&all=n')}}',
@@ -125,96 +75,102 @@
                 success: function (data) {
                     var data = data;
                     var section = $('.agency');
-
                     $.each(data, function (i, val) {
-                        section.append('<div class="select" data-id=' + val.id + '" onclick="workByAgency(\''+ val.id +'\')"><div>' + val.name + '</div></div>');
+                        section.append("<option value='" + val.id + "'>" + val.name + "</option>");
                     });
                 }
             });
+            workByAgency();
+            $('.agency').change(function () {
+                workByAgency();
+            });
+            $('.category').change(function () {
+                workByCategory();
+            });
+            $('.load-more').click(function (){
+                var agencyId = $('.agency').val();
+                var categoryId = $('.category').val();
+                page++;
+                if(categoryId != 0) {
+                    apiLink = '{!! url('/api/work/category') !!}' + '/' + categoryId + '?paginate=9&page=' + page;
+                    callAjaxCategory(apiLink);
+                }
+                else {
+                    apiLink = '{!! url('/api/work') !!}' + '?order_type=desc&all=n&paginate=9&agency_id=' + agencyId + '&page=' + page;
+                    callAjaxAgency(apiLink);
+                }
+            });
         });
-
-        var workByAgency = function workByAgency(c) {
-
+        var workByAgency = function () {
+            var agencyId = $('.agency').val();
+            page = 1;
+            apiLink = '{!! url('/api/work') !!}' + '?order_type=desc&all=n&paginate=9&agency_id=' + agencyId + '&page=' + page;
             $('.category').val(0);
-            var agencyId = c;
             $('#section-container').html('');
+            callAjaxAgency(apiLink);
+        }
+        var callAjaxAgency = function (apiLink) {
             $.ajax({
                 type: 'GET',
-                url: '{!! url('/api/work?order_type=desc&all=n&agency_id=') !!}' + agencyId,
+                url: apiLink,
                 dataType: 'json',
                 success: function (data) {
                     var data = data;
                     var section = $('#section-container');
-
-                    $.each(data, function (i, val) {
+                    $.each(data.data, function (i, val) {
                         var template = $('#template').clone();
-                        $(template.find('a')).attr('href', "{{url('/work')}}/"+val.id);
+                        $(template.find('a')).attr('href', "{{url('/work')}}/" + val.id);
                         $(template.find('.image-project')).css('background-image', 'url(\'' + val.main_image_link + '\')');
                         $(template.find('.title h5')).html(val.name);
                         $(template.find('.sub-title')).html(val.client);
                         template.removeAttr('id');
                         section.append(template);
-
                     });
+                    if (data.current_page >= data.last_page) {
+                        $('.load-more').fadeOut();
+                    } else {
+                        $('.load-more').fadeIn();
+                    }
                 }
             });
-            $('.agency.selectList').removeClass('active');
-            console.log(a); $('.dropdown-selected.dropdown-agency').parent().removeAttr('is_active');
         }
-
-        var workByCategory = function workByCategory(c) {
-
-            $('.agency').val(0);
-            var categoryId = c;
-            if (categoryId == 0)
+        var workByCategory = function () {
+            var categoryId = $('.category').val();
+            if (categoryId == 0) {
+                page = 1;
                 workByAgency();
-
+            }
+            page = 1;
+            apiLink = '{!! url('/api/work/category') !!}' + '/' + categoryId + '?paginate=9&page=' + page;
+            $('.agency').val(0);
             $('#section-container').html('');
+            callAjaxCategory(apiLink);
+        }
+        var callAjaxCategory = function (apiLink) {
             $.ajax({
                 type: 'GET',
-                url: '{{url('/api/category')}}' + '/' + categoryId,
+                url: apiLink,
                 dataType: 'json',
                 success: function (data) {
                     var data = data;
                     var section = $('#section-container');
-
-                    $.each(data.works, function (i, val) {
+                    $.each(data.data, function (i, val) {
                         var template = $('#template').clone();
-                        $(template.find('a')).attr('href', "{{url('/work')}}/"+val.id);
+                        $(template.find('a')).attr('href', "{{url('/work')}}/" + val.id);
                         $(template.find('.title h5')).html(val.name);
                         $(template.find('.sub-title')).html(val.client);
                         template.removeAttr('id');
                         section.append(template);
-
                     });
+                    if(data.current_page >= data.last_page) {
+                        $('.load-more').fadeOut();
+                    }else {
+                        $('.load-more').fadeIn();
+                    }
                 }
             });
-            $('.category.selectList').removeClass('active');
-            $('.dropdown-selected.dropdown-category').parent().removeAttr('is_active');
         }
-
-        $(document).ready(function () {
-            $.ajax({
-                type: 'GET',
-                url: '{{url('/api/work?all=n')}}',
-                dataType: 'json',
-                success: function (data) {
-                    var data = data;
-                    var section = $('#section-container');
-
-                    $.each(data, function (i, val) {
-                        var template = $('#template').clone();
-                        $(template.find('a')).attr('href', "{{url('/news')}}/" + val.id);
-                        $(template.find('.image-project')).css('background-image', 'url(\'' + val.image_link + '\')');
-                        $(template.find('.title h5')).html(val.name);
-                        $(template.find('.sub-title')).html(val.date_formated + " | " + val.type);
-                        template.removeAttr('id');
-                        section.append(template);
-
-                    });
-                }
-            });
-        });
     </script>
+
 
 @endsection
