@@ -55,6 +55,7 @@ class NewsController extends Controller
             $temp = explode(" ", $item->date);
             $item->date_formated = $temp[1] . " " . $temp[2];
 
+            $item->preview_image_link = env('IMAGE_PATH') . $item->preview_image;
             $item->image_link = env('IMAGE_PATH') . $item->image;
         }
 
