@@ -76,8 +76,13 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <input type="text" readonly class="form-control url-news" value="function()">
-                    <p style="text-align: right"><small>Copy this link to share.</small></p>
+                    <div class="input-group">
+                      <input type="text" readonly class="form-control url-news">
+                      <div class="input-group-append">
+                        <button class="btn btn-info copy">Copy</button>
+                      </div>
+                    </div>
+                    <p style="text-align: right" class="note"><small>Copy this link to share.</small></p>
                 </div>
             </div>
         </div>
@@ -87,6 +92,13 @@
     <script>
 
         $(document).ready(function () {
+            $('.url-news').val(window.location.href);
+            $('.copy').on('click', function(){
+              var copy_text = $('.url-news');
+              copy_text.select();
+              document.execCommand('copy');
+              $('.note > small').html('Copied').css('color', 'red');
+            });
 
             $.ajax({
                 type: 'GET',
