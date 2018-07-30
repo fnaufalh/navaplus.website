@@ -219,7 +219,6 @@
                 url: '{!! url('/api/news?all=n&paginate=3') !!}',
                 dataType: 'json',
                 success: function (data) {
-                    console.log(data);
                     var data = data;
                     var section = $('#section-container');
 

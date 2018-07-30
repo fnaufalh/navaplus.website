@@ -218,7 +218,7 @@
 
             $.ajax({
                 type: 'GET',
-                url: '{!! url('/api/work') !!}' + '?order_type=desc&all=n&paginate=1&agency_id={{$id}}&page=' + page,
+                url: '{!! url('/api/work') !!}' + '?order_type=desc&all=n&paginate=3&agency_id={{$id}}&page=' + page,
                 dataType: 'json',
                 success: function (data) {
                     var data = data;
