@@ -4,159 +4,55 @@
     <div class="max-width display-flex">
         <div class="left-section">
             <div class="quotes-home">
-                <div id="carousel-nava-landscape" class="carousel slide" data-ride="carousel">
+                <div id="carousel-nava-landscape" class="carousel slide mobile" data-ride="carousel">
                     <ol class="carousel-indicators">
-
-                        {{-- TEMPLATE-BEGIN --}}
-                        <li data-target="#carousel-nava-landscape" data-slide-to="0" class="indicators active"></li>
-                        {{-- TEMPLATE-END --}}
+                      {{-- TEMPLATE - BEGIN --}}
+                        <li data-target="#carousel-nava-landscape" data-slide-to="0" class="indicators active" id="landscape_indicators_template"></li>
+                        {{-- TEMPLATE - END --}}
                     </ol>
                     <div class="carousel-inner">
-                        {{-- TEMPLATE-BEGIN --}}
-                        <div class="carousel-item item active">
-                            <img class="d-block w-100 img-slider">
+                      {{-- TEMPLATE - BEGIN --}}
+                        <div class="carousel-item item active" id="landscape_template">
+                            <img class="d-block w-100 img-slider" src="https://placeimg.com/350/510/any/grayscale">
                             <div class="carousel-caption d-md-block">
                                 <h5></h5>
                             </div>
                         </div>
-                        {{-- TEMPLATE-END --}}
+                        {{-- TEMPLATE - END --}}
                     </div>
                 </div>
-                <div id="carousel-nava-potrait" class="carousel slide" data-ride="carousel">
+                <div id="carousel-nava-potrait" class="carousel slide no-mobile" data-ride="carousel">
                     <ol class="carousel-indicators">
-                        {{-- TEMPLATE-BEGIN --}}
-                        <li data-target="#carousel-nava-potrait" data-slide-to="0" class="indicators active"></li>
-                        {{-- TEMPLATE-END --}}
+                      {{-- TEMPLATE - BEGIN --}}
+                        <li data-target="#carousel-nava-potrait" data-slide-to="0" class="indicators active" id="potrait_indicators_template"></li>
+                        {{-- TEMPLATE - END --}}
                     </ol>
                     <div class="carousel-inner">
-                      {{-- TEMPLATE-BEGIN --}}
-                        <div class="carousel-item item active">
-                            <img class="d-block w-100 img-slider">
+                        {{-- TEMPLATE - BEGIN --}}
+                        <div class="carousel-item item active" id="potrait_template">
+                            <img class="d-block w-100 img-slider" src="https://placeimg.com/350/510/any/animal">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5></h5>
                             </div>
                         </div>
-                        {{-- TEMPLATE-END --}}
+                        {{-- TEMPLATE - END --}}
                     </div>
                 </div>
             </div>
         </div>
         <div class="right-section site-holder">
-            <div class="display-flex">
-                <a href="{{url('/agency/1')}}" class="site-item" style="background-color: #5a2b81;">
+            <div class="display-flex agency-section">
+                {{-- TEMPLATE - BEGIN --}}
+                <a id="agency-template" href="{{url('/agency/1')}}" class="site-item" style="background-color: #5a2b81;">
                     <div class="hover-holder display-flex">
-                        <div>Every brand has it's own path</div>
+                        <div class="tagline">Every brand has it's own path</div>
                         <div><img src="{{asset("images/right-arrow.png")}}" alt=""></div>
                     </div>
                     <div class="site-name">Pathfinders</div>
-                    <div class="site-logo" style="right: 0">
-                        <img src="{{asset("images/00%20Homepage/icon_pathfindrs@2x.png")}}" style="left: auto;" alt="">
-                    </div>
-                    <div class="site-description">Every brand has it's own path</div>
-                    <div class="bar-white-vertical"></div>
-                    <div class="bar-white-horizontal"></div>
+                    <!-- logo and description agency -->
+                    <!-- acc plus-->
                 </a>
-                <a href="{{url('/agency/2')}}" class="site-item" style="background-color: #f93958">
-                    <div class="hover-holder display-flex">
-                        <div>For the Forward</div>
-                        <div><img src="{{asset("images/right-arrow.png")}}" alt=""></div>
-                    </div>
-                    <div class="site-name">Iris</div>
-                    <div class="site-description">For the Forward</div>
-                    <div class="site-logo" style="text-align: center;">
-                        <img src="{{asset("images/00%20Homepage/icon_iris@2x.png")}}" alt="">
-                    </div>
-                    <div class="bar-white-vertical left"></div>
-                    <div class="bar-white-horizontal left"></div>
-                    <div class="bar-white-vertical"></div>
-                    <div class="bar-white-horizontal"></div>
-                </a>
-                <a href="{{url('/agency/3')}}" class="site-item" style="background-color: #00a4bd">
-                    <div class="hover-holder display-flex">
-                        <div>Engagement Strategies for Your Digital Business</div>
-                        <div><img src="{{asset("images/right-arrow.png")}}" alt=""></div>
-                    </div>
-                    <div class="site-name">Tribecloud</div>
-                    <div class="site-logo" style="text-align: right;">
-                        <img src="{{asset("images/00%20Homepage/icon_tribecloud@2x.png")}}" alt="">
-                    </div>
-                    <div class="site-description">Engagement Strategies for Your Digital Business</div>
-                    <div class="bar-white-vertical left"></div>
-                    <div class="bar-white-horizontal left"></div>
-                    <div class="bar-white-vertical"></div>
-                    <div class="bar-white-horizontal"></div>
-                </a>
-                <a href="{{url('/agency/4')}}" class="site-item" style="background-color: #676767">
-                    <div class="hover-holder display-flex">
-                        <div>Unleashing the power of collaboration</div>
-                        <div><img src="{{asset("images/right-arrow.png")}}" alt=""></div>
-                    </div>
-                    <div class="site-name">Interface</div>
-                    <div class="site-description">Unleashing the power of collaboration</div>
-                    <div class="site-logo" style="text-align: center;">
-                        <img src="{{asset("images/00%20Homepage/icon_interface@2x.png")}}" alt="">
-                    </div>
-                    <div class="bar-white-vertical left"></div>
-                    <div class="bar-white-horizontal left"></div>
-                </a>
-                <a href="{{url('/agency/5')}}" class="site-item" style="background-color: #ef4d24">
-                    <div class="hover-holder display-flex">
-                        <div>Work is more rewarding</div>
-                        <div><img src="{{asset("images/right-arrow.png")}}" alt=""></div>
-                    </div>
-                    <div class="site-name">Skor</div>
-                    <div class="site-logo">
-                        <img src="{{asset("images/00%20Homepage/icon_skor@2x.png")}}" alt="">
-                    </div>
-                    <div class="site-description">Work is more rewarding</div>
-                    <div class="bar-white-vertical top"></div>
-                    <div class="bar-white-horizontal top"></div>
-                </a>
-                <a href="{{url('/agency/6')}}" class="site-item" style="background-color: #00adee">
-                    <div class="hover-holder display-flex">
-                        <div>Creativity & innovation in media science</div>
-                        <div><img src="{{asset("images/right-arrow.png")}}" alt=""></div>
-                    </div>
-                    <div class="site-name">Optima Media</div>
-                    <div class="site-description">Creativity & innovation in media science</div>
-                    <div class="site-logo" style="text-align: center;">
-                        <img src="{{asset("images/00%20Homepage/icon_optima@2x.png")}}" alt="">
-                    </div>
-                    <div class="bar-white-vertical left top"></div>
-                    <div class="bar-white-horizontal left top"></div>
-                    <div class="bar-white-vertical top"></div>
-                    <div class="bar-white-horizontal top"></div>
-                </a>
-                <a href="{{url('/agency/7')}}" class="site-item" style="background-color: #c70651">
-                    <div class="hover-holder display-flex">
-                        <div></div>
-                        <div><img src="{{asset("images/right-arrow.png")}}" alt=""></div>
-                    </div>
-                    <div class="site-name">Diageo</div>
-                    <div class="site-logo">
-                        <img src="{{asset("images/icon%20diageo@2x.png")}}" alt="">
-                    </div>
-                    <div class="site-description"></div>
-                    <div class="bar-white-vertical left top"></div>
-                    <div class="bar-white-horizontal left top"></div>
-                    <div class="bar-white-vertical top"></div>
-                    <div class="bar-white-horizontal top"></div>
-                </a>
-                <a href="{{url('/agency/8')}}" class="site-item" style="background-color: #d62027">
-                    <div class="hover-holder display-flex">
-                        <div>Delivering Products and Brands Into
-                            the Indonesian Market
-                        </div>
-                        <div><img src="{{asset("images/right-arrow.png")}}" alt=""></div>
-                    </div>
-                    <div class="site-name">Advis</div>
-                    <div class="site-description">Delivering Products and Brands</div>
-                    <div class="site-logo" style="text-align: center;">
-                        <img src="{{asset("images/00%20Homepage/icon_advis@2x.png")}}" alt="">
-                    </div>
-                    <div class="bar-white-vertical left top"></div>
-                    <div class="bar-white-horizontal left top"></div>
-                </a>
+                {{-- TEMPLATE - END --}}
             </div>
         </div>
     </div>
@@ -189,7 +85,7 @@
     </section>
 
     <section id="lets-connect" class="section-holder">
-        <div class="section-header">
+        <div class="section-header p-2">
             <div class="max-width display-flex">
                 <div><h3 class="text-white">Let's connect and collaborate</h3></div>
             </div>
@@ -255,31 +151,78 @@
     <script>
         $(document).ready(function () {
 
+          $.ajax({
+              type: 'GET',
+              url: '{!! url('/api/agency?order_by=id&order_type=asc') !!}',
+              dataType: 'json',
+              success: function (data) {
+                  var data = data;
+                  var agency_template = $('.agency-section');
+                  $.each(data, function(i, val){
+                    var template = $('#agency-template').clone();
+                    template.attr('href', "{{url('/agency')}}/"+i).attr('style', 'background-color:'+ val.background_color);
+                    template.find('.tagline').html(val.motto);
+                    template.find('.site-name').html(val.name);
+
+
+                    if (i % 2 !== 0) {
+                        template.append('<div class="site-description">'+ val.motto +'</div><div class="site-logo" style="right: 0"><img src="'+ val.icon_link +'" '+ (val.id == 1 ? 'style="left:auto;"' : 'eee') +' alt="'+ val.name+ '"></div>').after('.site-name');
+                    } else {
+                      template.append('<div class="site-logo" style="right: 0"><img src="'+ val.icon_link +'" alt="'+ val.name+ '"></div><div class="site-description">'+ val.motto +'</div>').after('.site-name');
+                    }
+
+                    if (i == 0) {
+                      template.append('<div class="bar-white-vertical"></div><div class="bar-white-horizontal"></div>');
+                    }
+                    else if(i == 1) {
+                      template.append('<div class="bar-white-vertical left"></div><div class="bar-white-horizontal left"></div><div class="bar-white-vertical"></div><div class="bar-white-horizontal"></div>');
+                    }
+                    else if(i == 2) {
+                      template.append('<div class="bar-white-vertical left"></div><div class="bar-white-horizontal left"></div><div class="bar-white-vertical"></div><div class="bar-white-horizontal"></div>');
+                    }else if(i == 3) {
+                      template.append('<div class="bar-white-vertical left"></div><div class="bar-white-horizontal left"></div>');
+                    }
+                    else if(i == 4) {
+                      template.append('<div class="bar-white-vertical top"></div><div class="bar-white-horizontal top"></div>');
+                    }else if(i == 5) {
+                      template.append('<div class="bar-white-vertical left top"></div><div class="bar-white-horizontal left top"></div><div class="bar-white-vertical top"></div><div class="bar-white-horizontal top"></div>');
+                    }else if(i == 6) {
+                      template.append('<div class="bar-white-vertical left top"></div><div class="bar-white-horizontal left top"></div><div class="bar-white-vertical top"></div><div class="bar-white-horizontal top"></div>');
+                    }else if(i == 7) {
+                      template.append('<div class="bar-white-vertical left top"></div><div class="bar-white-horizontal left top"></div>');
+                    }
+                    template.removeAttr('id');
+                    agency_template.append(template);
+
+                  });
+                  agency_template.find('a').first().remove();
+              }
+          });
+
             $.ajax({
                 type: 'GET',
                 url: '{{ url('/api/setting') }}',
                 dataType: 'json',
                 success: function (data) {
-                    console.log(data);
                     var data = data;
 
                     $('#general_email').html(data.general_email);
                     $('#career_email').html(data.career_email);
 
                     $('#general_email').attr('href', 'mailto:'+data.general_email);
-                    $('#career_email').attr('href', 'mail_to:'+data.career_email);
+                    $('#career_email').attr('href', 'mailto:'+data.career_email);
                 }
             });
 
             $.ajax({
                 type: 'GET',
-                url: '{!! url('/api/news?take=3&all=n') !!}',
+                url: '{!! url('/api/news?all=n&paginate=3') !!}',
                 dataType: 'json',
                 success: function (data) {
                     var data = data;
                     var section = $('#section-container');
 
-                    $.each(data, function (i, val) {
+                    $.each(data.data, function (i, val) {
                         var template = $('#template').clone();
                         $(template.find('a')).attr('href', "{{url('/news')}}/" + val.id);
                         $(template.find('.image-project')).css('background-image', 'url(\'' + val.image_link + '\')');
@@ -297,35 +240,46 @@
               url: '{!! url('/api/slider') !!}',
               dataType: 'json',
               success: function (data) {
-                var x = 0;
+                // var x = 0;
                 var data = data;
-                var landscape = $('#carousel-nava-landscape');
-                var landscape_item = $('#carousel-nava-landscape').find('.carousel-item');
-                var potrait = $('#carousel-nava-potrait');
-                var potrait_item = $('#carousel-nava-potrait').find('.carousel-item');
+                var landscape_indicators = $('#carousel-nava-landscape > ol.carousel-indicators');
+                var landscape_item = $('#carousel-nava-landscape > .carousel-inner');
+                var potrait_item = $('#carousel-nava-potrait > .carousel-inner');
+                var potrait_indicators = $('#carousel-nava-potrait > ol.carousel-indicators');
+                for (var i = 0; i < data.length; i++) {
+                  var landscape_indicators_template = landscape_indicators.find('#landscape_indicators_template').clone();
+                  landscape_indicators_template.data('slide-to', i).removeClass('active');
+                  landscape_indicators_template.removeAttr('id');
+                  landscape_indicators.append(landscape_indicators_template);
 
-                $.each(data, function (i, val) {
-                  var potrait_template = potrait.find('.indicators').clone();
-                  potrait_template.data('slide-to', x).removeClass('active');
-                  potrait.find('ol').append(potrait_template);
+                  var potrait_indicators_template = potrait_indicators.find('#potrait_indicators_template').clone();
+                  potrait_indicators_template.data('slide-to', i).removeClass('active');
+                  potrait_indicators_template.removeAttr('id');
+                  potrait_indicators.append(potrait_indicators_template);
 
-                  var potrait_slider =  potrait_item.removeClass('active');
-                  potrait_item.find('img').attr('src', data.image_potrait).attr('alt', data.quote);
-                  potrait_item.find('h5').html(data.quote);
-                  potrait_item.append(potrait_slider);
+                  var landscape_template = landscape_item.find('#landscape_template').clone();
+                  landscape_template.removeClass('active')
+                  $(landscape_template.find('img')).attr('src', data[i].image_horizontal_link).attr('alt', data[i].quote);
+                  $(landscape_template.find('h5')).html(data[i].quote);
+                  landscape_template.removeAttr('id');
+                  landscape_item.append(landscape_template);
 
-                  var landscape_template = landscape.find('.indicators').clone();
-                  landscape.find('.indicators').data('slide-to', x).removeClass('active');
-                  landscape.append(landscape_template);
+                  var potrait_template = potrait_item.find('#potrait_template').clone();
+                  potrait_template.removeClass('active')
+                  $(potrait_template.find('img')).attr('src', data[i].image_potrait_link).attr('alt', data[i].quote);
+                  $(potrait_template.find('h5')).html(data[i].quote);
+                  potrait_template.removeAttr('id');
+                  potrait_item.append(potrait_template);
+                }
+                landscape_item.find('.carousel-item').first().remove();
+                landscape_indicators.find('.indicators').first().remove();
+                landscape_item.find('.carousel-item').first().addClass('active');
+                landscape_item.find('.indicators').first().addClass('active');
 
-                  var landscape_slider =  landscape_item.removeClass('active');
-                  landscape_item.find('img').attr('src', data.image_horizontal).attr('alt', data.quote);
-                  landscape_item.find('h5').html(data.quote);
-                  landscape_item.append(landscape_slider);
-
-                  x++;
-
-                });
+                potrait_item.find('.carousel-item').first().remove();
+                potrait_indicators.find('.indicators').first().remove();
+                potrait_item.find('.carousel-item').first().addClass('active');
+                potrait_item.find('.indicators').first().addClass('active');
               }
             });
 

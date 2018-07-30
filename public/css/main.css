@@ -5,7 +5,7 @@ html, body {
     background-color: #f7f7f7;
 }
 
-#template {
+#template, #potrait_template, #potrait_indicators_template, #landscape_template, #landscape_indicators_template, #agency_template {
     display: none !important;
 }
 
@@ -612,7 +612,7 @@ header .title-holder img {
 }
 
 #lets-connect .section-content .section-right .map-holder {
-    width: 400px;
+    width: auto;
     height: 270px;
     margin: auto;
 }
@@ -1130,12 +1130,24 @@ footer a:hover {
 
 @media only screen and (max-width: 1024px) {
 
+  .mobile {
+    display: block;
+  }
+
+  .no-mobile {
+    display: none;
+  }
+
     #carousel-nava-portrait {
       display: none;
     }
 
     #carousel-nava-landscape {
       display: block;
+    }
+
+    #sites-section > .display-flex {
+      flex-direction: column;
     }
 
     header .logo-holder .menu-holder {
@@ -1170,6 +1182,14 @@ footer a:hover {
 }
 
 @media only screen and (max-width: 768px) {
+
+  .mobile {
+    display: block;
+  }
+
+  .no-mobile {
+    display: none;
+  }
 
     header .logo-holder .menu-holder {
       left: -20px;
@@ -1397,7 +1417,6 @@ footer a:hover {
     }
 
     #whats-going-on > .section-content > .section-content-item > div {
-        width: 100%;
         height: 325px;
     }
 
