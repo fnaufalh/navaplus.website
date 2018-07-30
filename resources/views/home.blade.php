@@ -225,7 +225,7 @@
                     $.each(data.data, function (i, val) {
                         var template = $('#template').clone();
                         $(template.find('a')).attr('href', "{{url('/news')}}/" + val.id);
-                        $(template.find('.image-project')).css('background-image', 'url(\'' + val.image_link + '\')');
+                        $(template.find('.image-project')).css('background-image', 'url(\'' + val.preview_image_link + '\')');
                         $(template.find('.title h5')).html(val.name);
                         $(template.find('.sub-title')).html(val.date_formated + " | " + val.type);
                         template.removeAttr('id');
