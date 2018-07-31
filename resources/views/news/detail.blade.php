@@ -19,18 +19,16 @@
                 <h2 id="date"></h2>
                 <h3 id="headline"></h3>
                 <p id="description"></p>
-                <div style="padding-top: 45px;padding-bottom: 71px;text-align: right">
-                    <div class="text-right" style="display: inline-block">
+                <div style="padding-top: 45px;padding-bottom: 71px;text-align: right; display:flex;justify-content:space-between;width:610px;">
+                    <div class="text-right">
                         <a class="display-flex" href="{{url('/news')}}">
-                            <div class="icon-back">
-                                <i class="fa fa-chevron-left"></i>
-                            </div>
+                            <i class="fa fa-chevron-left text-color"></i>
                             <div class="text-back">
                                 Back to news
                             </div>
                         </a>
                     </div>
-                    <div class="pull-left">
+                    <div class="">
                         <a class="display-flex" id="news" href="" data-toggle="modal" data-target="#share-modal">
                             <div class="icon-share">
                                 <i class="fa fa-share"></i>

@@ -192,7 +192,7 @@ header .logo-holder .menu-holder {
   display: none;
 }
 
-.no-mobile {
+.no-mobile, .no-mobile-work {
   display: block;
 }
 
@@ -857,9 +857,12 @@ footer a:hover {
 .text-back {
   font-size: 12px;
   font-weight: 600;
-  text-align: right;
   color: #333333;
-  width: 150px !important;
+  margin-left: 5px;
+}
+
+.text-color {
+  color: #333;
 }
 
 .text-back-works {
@@ -1084,7 +1087,6 @@ footer a:hover {
     width: 115px;
     height: 115px;
     align-self: center;
-    background-color: #d8d8d8;
 }
 
 .section-content-item .title {
@@ -1144,8 +1146,16 @@ footer a:hover {
     display: block;
   }
 
+  .mobile-work {
+    display: none;
+  }
+
   .no-mobile {
     display: none;
+  }
+
+  .no-mobile-work {
+    display: block;
   }
 
     #carousel-nava-portrait {
@@ -1197,8 +1207,16 @@ footer a:hover {
     display: block;
   }
 
+  .mobile-work {
+    display: none;
+  }
+
   .no-mobile {
     display: none;
+  }
+
+  .no-mobile-work {
+    display: block;
   }
 
     header .logo-holder .menu-holder {
@@ -1232,11 +1250,19 @@ footer a:hover {
     display: block;
   }
 
+  .mobile-work {
+    display: block
+  }
+
   .mobile {
     min-height: 80px !important;
   }
 
   .no-mobile {
+    display: none;
+  }
+
+  .no-mobile-work {
     display: none;
   }
 
@@ -1396,7 +1422,7 @@ footer a:hover {
         padding: 0 0;
     }
 
-    #whats-going-on .section-header, #lets-connect .section-header {
+    #whats-going-on .section-header {
         padding: 0 20px;
     }
 
