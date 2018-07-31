@@ -74,6 +74,11 @@ class CategoryController extends Controller
             ->first();
 
         $works = collect($data)['works'];
+        $works = collect($works)->map(function ($item, $key) {
+            $item['preview_image_link'] = env('IMAGE_PATH') . $item['preview_image'];
+            return $item;
+        })->toArray();
+
         $data = array_slice($works, $offset, $paginate);
         $currentPage = $page;
         $lastPage = round(count($works) / $paginate);

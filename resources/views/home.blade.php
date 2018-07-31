@@ -164,11 +164,10 @@
                     template.find('.tagline').html(val.motto);
                     template.find('.site-name').html(val.name);
 
-
                     if (i % 2 !== 0) {
-                        template.append('<div class="site-description">'+ val.motto +'</div><div class="site-logo" style="right: 0"><img src="'+ val.icon_link +'" '+ (val.id == 1 ? 'style="left:auto;"' : 'eee') +' alt="'+ val.name+ '"></div>').after('.site-name');
+                        template.append('<div class="site-description">'+ val.motto +'</div><div class="site-logo" style="right: 0"><img src="'+ val.icon_link +'" alt="'+ val.name+ '"></div>').after('.site-name');
                     } else {
-                      template.append('<div class="site-logo" style="right: 0"><img src="'+ val.icon_link +'" alt="'+ val.name+ '"></div><div class="site-description">'+ val.motto +'</div>').after('.site-name');
+                      template.append('<div class="site-logo" style="right: 0"><img src="'+ val.icon_link +'"'+ (val.id == 1 ? 'style="left:auto"' : '') +' alt="'+ val.name+ '"></div><div class="site-description">'+ val.motto +'</div>').after('.site-name');
                     }
 
                     if (i == 0) {
@@ -225,7 +224,7 @@
                     $.each(data.data, function (i, val) {
                         var template = $('#template').clone();
                         $(template.find('a')).attr('href', "{{url('/news')}}/" + val.id);
-                        $(template.find('.image-project')).css('background-image', 'url(\'' + val.image_link + '\')');
+                        $(template.find('.image-project')).css('background-image', 'url(\'' + val.preview_image_link + '\')');
                         $(template.find('.title h5')).html(val.name);
                         $(template.find('.sub-title')).html(val.date_formated + " | " + val.type);
                         template.removeAttr('id');

@@ -22,6 +22,7 @@ Route::get('/agency/{id}', 'AgencyController@detail');
 
 Route::get('/work', 'WorkController@list');
 Route::get('/work/{id}', 'WorkController@detail');
+Route::get('work/category/{id}', 'CategoryController@workByCategory');
 
 Route::get('/people', 'PeopleController@list');
 Route::get('/people/{id}', 'PeopleController@detail');

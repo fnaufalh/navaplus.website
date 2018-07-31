@@ -67,6 +67,7 @@ class WorkController extends Controller
             ->paginate($paginate);
 
         foreach ($data as $item) {
+            $item->preview_image_link = env('IMAGE_PATH') . $item->preview_image;
             $item->main_image_link = env('IMAGE_PATH') . $item->main_image;
             $item->main_1_link = env('IMAGE_PATH') . $item->image_1;
             $item->main_2_link = env('IMAGE_PATH') . $item->image_2;
