@@ -326,16 +326,7 @@ header .title-holder img {
     width: 100%;
 }
 
-#sites-section .right-section .site-item .hover-holder {
-    width: 0;
-    display: flex;
-    transition: 0.5s;
-    opacity: 0;
-}
-
 #sites-section .right-section .site-item:hover .hover-holder {
-    width: 100%;
-    opacity: 1;
     display: flex;
 }
 
@@ -628,7 +619,6 @@ header .title-holder img {
 }
 
 #lets-connect .section-content .section-right iframe {
-    width: 400px;
     height: 270px;
 }
 
@@ -1175,7 +1165,7 @@ footer a:hover {
     }
 
     .max-width {
-        max-width: 1024px;
+        max-width: 834px;
     }
 
     #whats-going-on > .section-content > .section-content-item .info {
@@ -1224,7 +1214,7 @@ footer a:hover {
     }
 
     .max-width {
-        max-width: 768px;
+        max-width: 720px;
         padding: 0 20px;
     }
 
