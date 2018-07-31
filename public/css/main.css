@@ -188,7 +188,7 @@ header .logo-holder .menu-holder {
     overflow-y: scroll;
 }
 
-.mobile {
+.mobile, .mobile-work {
   display: none;
 }
 
