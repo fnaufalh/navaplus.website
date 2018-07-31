@@ -5,7 +5,7 @@
         <div class="section-header">
             <div class="max-width display-flex">
                 <div><h3 class="text-white">Our Works</h3></div>
-                <div class="btn-dropdow">
+                <div class="btn-dropdow no-mobile-work">
                     <select class="category select form-control">
                         <option value="0">Category</option>
                     </select>
@@ -16,7 +16,18 @@
             </div>
         </div>
     </section>
-
+    <section>
+      <div class="max-width display-flex mobile-work">
+        <div class="btn-dropdow">
+            <select class="category select form-control">
+                <option value="0">Category</option>
+            </select>
+            <select class="agency select form-control">
+                <option value="0">Agency</option>
+            </select>
+        </div>
+      </div>
+    </section>
     <section id="whats-going-on" class="section-holder whats-going-on-site">
 
         {{-- TEMPLATE - BEGIN --}}

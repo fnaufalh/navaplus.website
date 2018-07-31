@@ -85,7 +85,7 @@
     </section>
 
     <section id="lets-connect" class="section-holder">
-        <div class="section-header p-2">
+        <div class="section-header">
             <div class="max-width display-flex">
                 <div><h3 class="text-white">Let's connect and collaborate</h3></div>
             </div>
