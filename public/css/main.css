@@ -530,6 +530,7 @@ header .title-holder img {
     background-color: #e9e9e9;
     text-decoration: none;
     transition: 0.5s;
+    text-align: left;
 }
 
 #our-works > .section-content > .section-content-item .title,
@@ -1405,7 +1406,7 @@ footer a:hover {
     }
 
     #whats-going-on > .section-content > .section-content-item .info {
-      text-align: right;
+      text-align: left;
     }
 
     #key-people .info .picture img {
