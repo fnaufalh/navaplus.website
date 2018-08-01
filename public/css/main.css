@@ -369,7 +369,7 @@ header .title-holder img {
 }
 
 #sites-section .right-section .site-item .hover-holder > div:last-child {
-    width: 25px;
+    width: 40px;
     padding-right: 15px;
     text-align: right;
 }
@@ -378,7 +378,16 @@ header .title-holder img {
     width: 100%;
 }
 
+#sites-section .right-section .site-item .hover-holder {
+    width: 0;
+    display: flex;
+    transition: 0.5s;
+    opacity: 0;
+}
+
 #sites-section .right-section .site-item:hover .hover-holder {
+    width: 100%;
+    opacity: 1;
     display: flex;
 }
 

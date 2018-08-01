@@ -76,7 +76,7 @@
                 <i class="fa fa-instagram"></i>
               </div>
             </a>
-            <a target="_blank" href="#">
+            <a target="_blank" href="https://id.linkedin.com/company/nava-group">
               <div class="social-logo text-white">
                 <i class="fa fa-linkedin"></i>
               </div>
