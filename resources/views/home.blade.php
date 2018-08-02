@@ -155,7 +155,7 @@
               type: 'GET',
               url: '{!! url('/api/agency?order_by=id&order_type=asc') !!}',
               dataType: 'json',
-              success: function (data) {console.log(data);
+              success: function (data) {
                   var data = data;
                   var agency_template = $('.agency-section');
                   $.each(data, function(i, val){
