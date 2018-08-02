@@ -33,7 +33,7 @@
             </div>
             <h3 id="headline"></h3>
             <p id="description"></p>
-            <div style="padding-top: 45px;padding-bottom: 71px;text-align: right;width:610px;">
+            <div class="work-nav">
                 <div class="text-right" style="display: inline-block">
                     <a class="display-flex" href="{{url('/work')}}">
                         <div class="icon-back">
