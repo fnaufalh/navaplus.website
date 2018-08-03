@@ -161,13 +161,14 @@
                   $.each(data, function(i, val){
                     var template = $('#agency-template').clone();
                     template.attr('href', "{{url('/agency')}}/"+val.id).attr('style', 'background-color:'+ val.background_color);
-                    template.find('.tagline').html(val.motto);
+                    template.find('.tagline').html(val.title);
                     template.find('.site-name').html(val.name);
 
                     if (i % 2 !== 0) {
-                        template.append('<div class="site-description">'+ val.motto +'</div><div class="site-logo" '+ (val.id == 1 ? 'style="right:0"' : 'style="text-align:center"') +'><img src="'+ val.icon_link +'" alt="'+ val.name+ '"></div>').after('.site-name');
+                        template.append('<div class="site-description">'+ (val.title == null ? '' : val.title) +'</div><div class="site-logo" '+ (val.id == 1 ? 'style="right:0"' : 'style="text-align:center"') +'><img src="'+ val.icon_link +'" alt="'+ val.name+ '"></div>').after('.site-name');
                     } else {
-                      template.append('<div class="site-logo"'+ (val.id == 1 ? 'style="right:0"' : 'style="text-align:center"') +'><img src="'+ val.icon_link +'"'+ (val.id == 1 ? 'style="left:auto"' : '') +' alt="'+ val.name+ '"></div><div class="site-description">'+ val.motto +'</div>').after('.site-name');
+                      template.append('<div class="site-logo"'+ (val.id == 1 ? 'style="right:0"' : 'style="text-align:center"') +'><img src="'+ val.icon_link +'"'+ (val.id == 1 ? 'style="left:auto"' : '') +' alt="'+ val.name+ '"></div><div class="site-description">'+
+                      (val.title == null ? '' : val.title) +'</div>').after('.site-name');
                     }
 
                     if (i == 0) {
