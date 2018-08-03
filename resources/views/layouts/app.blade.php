@@ -7,6 +7,7 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{asset("css/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("css/main.css?v=201808031116")}}">
+    @yield('style')
 </head>
 
 <body>

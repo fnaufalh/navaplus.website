@@ -1,5 +1,21 @@
 @extends('layouts.app')
 
+@section('style')
+    <style type="text/css">
+        @media only screen and (max-width: 600px) {
+            #sites-section > .display-flex {
+                flex-direction: initial !important;
+            }
+        }
+
+        @media only screen and (max-width: 1024px) {
+            #sites-section > .display-flex {
+                flex-direction: initial !important;
+            }
+        }
+    </style>
+@endsection
+
 @section('content')
 <section id="work-detail-banner" class="max-width">
     <div id="main_image" style="object-fit:cover;background-position:center;"></div>

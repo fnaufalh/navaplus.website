@@ -1,5 +1,21 @@
 @extends('layouts.app')
 
+@section('style')
+    <style type="text/css">
+        @media only screen and (max-width: 600px) {
+            #sites-section > .display-flex {
+                flex-direction: initial !important;
+            }
+        }
+
+        @media only screen and (max-width: 1024px) {
+            #sites-section > .display-flex {
+                flex-direction: initial !important;
+            }
+        }
+    </style>
+@endsection
+
 @section('content')
     <section class="section-holder" style="background-color: white">
         <div class="section-header">

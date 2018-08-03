@@ -1185,7 +1185,7 @@ footer a:hover {
     }
 
     #sites-section > .display-flex {
-      /*flex-direction: column;*/
+      flex-direction: column;
     }
 
     header .logo-holder .menu-holder {
@@ -1325,7 +1325,7 @@ footer a:hover {
   }
 
   #sites-section > .display-flex {
-    /*flex-direction: column;*/
+    flex-direction: column;
   }
 
   #sites-section .left-section {
