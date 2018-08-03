@@ -1,5 +1,21 @@
 @extends('layouts.app')
 
+@section('style')
+    <style type="text/css">
+        @media only screen and (max-width: 600px) {
+            #sites-section > .display-flex {
+                flex-direction: initial;
+            }
+        }
+
+        @media only screen and (max-width: 1024px) {
+            #sites-section > .display-flex {
+                flex-direction: initial;
+            }
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="max-width display-flex agency-logo">
         <div class="left-section">
