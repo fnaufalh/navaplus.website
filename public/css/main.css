@@ -9,8 +9,12 @@ html, body {
     display: none !important;
 }
 
-#lets-connect h3, #whats-going-on h3 {
+#lets-connect h3, #whats-going-on h3, #key-people h3 {
   margin-bottom: 0px !important;
+}
+
+.fa {
+  line-height: 26px !important;
 }
 
 .max-width {
@@ -661,7 +665,6 @@ footer .social-logo {
     border-radius: 4px;
     background-color: #676767;
     margin: 0 7.5px;
-    padding: 2px;
     font-size: 21px !important;
 }
 
