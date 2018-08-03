@@ -91,6 +91,10 @@ Route::get('/clients', function () {
     return view('clients');
 });
 
+Route::get('/autocomplete', function () {
+    return view('autocomplete');
+});
+
 /**
  * Semua return view disini balikinnya .blade.php yang ada di resources/views
  * Untuk aksesnya pake . ex: news.index
