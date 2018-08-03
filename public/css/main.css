@@ -1491,6 +1491,11 @@ footer a:hover {
         text-align: center;
     }
 
+    #our-works > .section-content > .section-content-item:not(:last-child),
+    #whats-going-on > .section-content > .section-content-item:not(:last-child) {
+        margin-bottom: 90px;
+    }
+
     #whats-going-on > .section-content > .section-content-item .info {
       text-align: left;
     }
@@ -1512,7 +1517,7 @@ footer a:hover {
         width: 100%;
         padding: 20px 45px;
         height: auto;
-        bottom: 0;
+        bottom: -90;
     }
 
     #whats-going-on > .section-content > .section-content-item .sub-title {
