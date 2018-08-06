@@ -64,7 +64,9 @@ class AgencyController extends Controller
             ->with('works')
             ->with('people')
             ->first();
-            
+
+        $data->description = nl2br($data->description);
+
         $data->icon_link = env('IMAGE_PATH').$data->icon;
         $data->logo_link = env('IMAGE_PATH').$data->logo;
         $data->banner_link = env('IMAGE_PATH').$data->banner;
