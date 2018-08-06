@@ -166,7 +166,7 @@
                     if (i % 2 !== 0) {
                         template.append('<div class="site-description">'+ (val.title == null ? '' : val.title) +'</div><div class="site-logo" '+ (val.id == 1 ? 'style="right:0"' : 'style="text-align:center"') +'><img src="'+ val.icon_link +'" alt="'+ val.name+ '"></div>').after('.site-name');
                     } else {
-                      template.append('<div class="site-logo"'+ (val.id == 1 ? 'style="right:0"' : 'style="text-align:center"') +'><img src="'+ val.icon_link +'"'+ (val.id == 1 ? 'style="left:auto"' : '') +' alt="'+ val.name+ '"></div><div class="site-description">'+
+                      template.append('<div class="site-logo"'+ (val.id == 1 ? 'style="right:0"' : 'style="text-align:center"') +'><img src="'+ val.icon_link +'"'+ (val.id == 1 ? 'style="left:auto; top: 5px;"' : '') +' alt="'+ val.name+ '"></div><div class="site-description">'+
                       (val.title == null ? '' : val.title) +'</div>').after('.site-name');
                     }
 
