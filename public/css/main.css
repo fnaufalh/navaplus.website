@@ -325,9 +325,7 @@ header .title-holder img {
 }
 
 #sites-section .right-section .site-item .hover-holder > div:last-child {
-    width: 40px;
     padding-right: 15px;
-    text-align: right;
 }
 
 #sites-section .right-section .site-item .hover-holder > div:last-child img {
