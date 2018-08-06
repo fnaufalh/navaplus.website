@@ -67,6 +67,8 @@ class NewsController extends Controller
         $data = News::where('id', $id)
             ->first();
 
+        $data->description = nl2br($data->description);
+
         $temp = explode(" ", $data->date);
         $data->date_formated = $temp[1] . " " . $temp[2];
 

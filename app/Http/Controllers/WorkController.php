@@ -83,6 +83,7 @@ class WorkController extends Controller
             ->with('categories')
             ->first();
 
+        $data->description = nl2br($data->description);
         $data->main_image_link = env('IMAGE_PATH').$data->main_image;
         $data->main_1_link = env('IMAGE_PATH').$data->image_1;
         $data->main_2_link = env('IMAGE_PATH').$data->image_2;
