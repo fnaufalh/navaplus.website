@@ -14,44 +14,7 @@
 use App\News;
 
 Route::get('/', function () {
-
-//    $filterCondition = [
-//        'all' => ['y', 'n'],
-//        'order_by' => ['id', 'name'],
-//        'order_type' => ['asc', 'desc']
-//    ];
-//
-//    $filter = $request->all();
-//
-//    $all = (isset($filter['all']) &&
-//        in_array($filter['all'], $filterCondition['all'])) ? $filter['all'] : 'y';
-//    $orderBy = (isset($filter['order_by']) &&
-//        in_array($filter['order_by'], $filterCondition['order_by'])) ? $filter['order_by'] : 'id';
-//    $orderType = (isset($filter['order_type']) &&
-//        in_array($filter['order_type'], $filterCondition['order_type'])) ? $filter['order_type'] : 'desc';
-//    $take = (isset($filter['take']) &&
-//        is_numeric($filter['take'])) ? $filter['take'] : null;
-
-    $data = \App\Slider::orderBy('id', 'asc')
-        ->get();
-
-//    if ($all == 'y')
-//        $data = $data->withTrashed();
-//    if ($take)
-//        $data = $data->take($take);
-
-//    $data = $data->get();
-
-    foreach ($data as $item) {
-        $item->image_horizontal_link = env('IMAGE_PATH').$item->image_horizontal;
-        $item->image_potrait_link = env('IMAGE_PATH').$item->image_potrait;
-    };
-
-    $slider = json_encode($data);
-//   dd($slider);
-    return view('home')->with([
-        'slider' => $slider
-    ]);
+    return view('home');
 });
 
 Route::get('/news', function () {
@@ -87,7 +50,7 @@ Route::get('/agency/{id}', function ($id) {
         ]);
 });
 
-Route::get('/clients', function () {
+Route::get('/specialty', function () {
     return view('clients');
 });
 
