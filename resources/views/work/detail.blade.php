@@ -56,7 +56,7 @@
                             <i class="fa fa-chevron-left"></i>
                         </div>
                         <div class="text-back-works">
-                            Back to works
+                            See all case studies
                         </div>
                     </a>
                 </div>
