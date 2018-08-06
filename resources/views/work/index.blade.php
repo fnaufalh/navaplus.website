@@ -4,7 +4,7 @@
     <section id="our-works" class="section-holder">
         <div class="section-header">
             <div class="max-width display-flex">
-                <div><h3 class="text-white">Our Works</h3></div>
+                <div><h3 class="text-white">Our Work</h3></div>
                 <div class="btn-dropdow no-mobile-work">
                     <select class="category select form-control">
                         <option value="0">Category</option>

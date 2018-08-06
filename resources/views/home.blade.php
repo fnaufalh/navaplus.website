@@ -62,7 +62,6 @@
                 <a id="agency-template" href="{{url('/agency/1')}}" class="site-item" style="background-color: #5a2b81;">
                     <div class="hover-holder display-flex">
                         <div class="tagline">Every brand has it's own path</div>
-                        <div><img src="{{asset("images/right-arrow.png")}}" alt=""></div>
                     </div>
                     <div class="site-name">Pathfinders</div>
                     <!-- logo and description agency -->
@@ -177,7 +176,7 @@
                   $.each(data, function(i, val){
                     var template = $('#agency-template').clone();
                     template.attr('href', "{{url('/agency')}}/"+val.id).attr('style', 'background-color:'+ val.background_color);
-                    template.find('.tagline').html(val.title);
+                    template.find('.tagline').html(val.motto);
                     template.find('.site-name').html(val.name);
 
                     if (i % 2 !== 0) {

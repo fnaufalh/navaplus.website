@@ -186,7 +186,7 @@
                     var data = data;
                     $('#site-banner .max-width').css('background-image', 'url(\'' + data.banner_link + '\')');
                     $('.about-left').html('<img src="'+ data.logo_link +'" alt="'+ data.name +'">');
-                    $('.about-right').find('h1').html(data.motto);
+                    $('.about-right').find('h1').html(data.title);
                     $('.about-right').find('p').html(data.description);
                     $('#site-about > .max-width').css('background-color', data.background_color);
                     $('.text-more').css('color', data.background_color);
