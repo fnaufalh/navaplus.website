@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Encode+Sans:400,600" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{asset("css/bootstrap.min.css")}}">
-    <link rel="stylesheet" href="{{asset("css/main.css?v=201808061709")}}">
+    <link rel="stylesheet" href="{{asset("css/main.css?v=201808062217")}}">
     @yield('style')
 </head>
 
@@ -90,7 +90,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-<script src="{{asset("js/main.js?v=201807161935")}}"></script>
+<script src="{{asset("js/main.js?v=201808062217")}}"></script>
 <script src="{{asset("js/hamburger.js")}}"></script>
 @yield('script')
 </body>
