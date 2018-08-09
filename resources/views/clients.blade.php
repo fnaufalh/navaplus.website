@@ -4,7 +4,7 @@
 <section id="our-works" class="section-holder" style="padding-bottom:50px;">
     <div class="section-header">
         <div class="max-width display-flex">
-            <div><h3 class="text-white">Specialty</h3></div>
+            <div><h3 class="text-white">Integrated Services</h3></div>
         </div>
     </div>
     <div class="section-content max-width display-flex flex-wrap" style="margin-top: 50px">

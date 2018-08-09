@@ -50,7 +50,7 @@ Route::get('/agency/{id}', function ($id) {
         ]);
 });
 
-Route::get('/specialty', function () {
+Route::get('/services', function () {
     return view('clients');
 });
 
