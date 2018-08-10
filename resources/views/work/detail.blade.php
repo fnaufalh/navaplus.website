@@ -52,11 +52,8 @@
             <div class="work-nav">
                 <div class="text-right" style="display: inline-block">
                     <a class="display-flex" href="{{url('/work')}}">
-                        <div class="icon-back">
-                            <i class="fa fa-chevron-left"></i>
-                        </div>
                         <div class="text-back-works">
-                            See all case studies
+                            <i class="fa fa-chevron-left"></i> See all case studies
                         </div>
                     </a>
                 </div>

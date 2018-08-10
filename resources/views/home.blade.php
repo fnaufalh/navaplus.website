@@ -1,60 +1,61 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="max-width display-flex agency-logo">
-        <div class="left-section">
-            <div class="quotes-home">
-                <div id="carousel-nava-landscape" class="carousel slide mobile" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                      {{-- TEMPLATE - BEGIN --}}
-                        <li data-target="#carousel-nava-landscape" data-slide-to="0" class="indicators active" id="landscape_indicators_template"></li>
-                        {{-- TEMPLATE - END --}}
-                    </ol>
-                    <div class="carousel-inner">
-                      {{-- TEMPLATE - BEGIN --}}
-                        <div class="carousel-item item active" id="landscape_template">
-                            <img class="d-block w-100 img-slider" src="https://placeimg.com/350/510/any/grayscale">
-                            <div class="carousel-caption d-md-block">
-                                <h5></h5>
-                            </div>
-                        </div>
-                        {{-- TEMPLATE - END --}}
-                    </div>
-                </div>
-                <div id="carousel-nava-potrait" class="carousel slide no-mobile" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                      {{-- TEMPLATE - BEGIN --}}
-                        <li data-target="#carousel-nava-potrait" data-slide-to="0" class="indicators active" id="potrait_indicators_template"></li>
-                        {{-- TEMPLATE - END --}}
-                    </ol>
-                    <div class="carousel-inner">
+      <div class="max-width display-flex agency-logo">
+          <div class="left-section">
+              <div class="quotes-home">
+                  <div id="carousel-nava-landscape" class="carousel slide mobile" data-ride="carousel">
+                      <ol class="carousel-indicators">
                         {{-- TEMPLATE - BEGIN --}}
-                        <div class="carousel-item item active" id="potrait_template">
-                            <img class="d-block w-100 img-slider" src="https://placeimg.com/350/510/any/animal">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5></h5>
-                            </div>
-                        </div>
-                        {{-- TEMPLATE - END --}}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="right-section site-holder">
-            <div class="display-flex agency-section">
-                {{-- TEMPLATE - BEGIN --}}
-                <a id="agency-template" href="{{url('/agency/1')}}" class="site-item" style="background-color: #5a2b81;">
-                    <div class="hover-holder display-flex">
-                        <div class="tagline">Every brand has it's own path</div>
-                    </div>
-                    <div class="site-name">Pathfinders</div>
-                    <!-- logo and description agency -->
-                    <!-- acc plus-->
-                </a>
-                {{-- TEMPLATE - END --}}
-            </div>
-        </div>
-    </div>
+                          <li data-target="#carousel-nava-landscape" data-slide-to="0" class="indicators active" id="landscape_indicators_template"></li>
+                          {{-- TEMPLATE - END --}}
+                      </ol>
+                      <div class="carousel-inner">
+                        {{-- TEMPLATE - BEGIN --}}
+                          <div class="carousel-item item active" id="landscape_template">
+                              <img class="d-block w-100 img-slider" src="https://placeimg.com/350/510/any/grayscale">
+                              <div class="carousel-caption d-md-block">
+                                  <h5></h5>
+                              </div>
+                          </div>
+                          {{-- TEMPLATE - END --}}
+                      </div>
+                  </div>
+                  <div id="carousel-nava-potrait" class="carousel slide no-mobile" data-ride="carousel">
+                      <ol class="carousel-indicators">
+                        {{-- TEMPLATE - BEGIN --}}
+                          <li data-target="#carousel-nava-potrait" data-slide-to="0" class="indicators active" id="potrait_indicators_template"></li>
+                          {{-- TEMPLATE - END --}}
+                      </ol>
+                      <div class="carousel-inner">
+                          {{-- TEMPLATE - BEGIN --}}
+                          <div class="carousel-item item active" id="potrait_template">
+                              <img class="d-block w-100 img-slider" src="https://placeimg.com/350/510/any/animal">
+                              <div class="carousel-caption d-none d-md-block">
+                                  <h5></h5>
+                              </div>
+                          </div>
+                          {{-- TEMPLATE - END --}}
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="right-section site-holder">
+              <div class="display-flex agency-section">
+                  {{-- TEMPLATE - BEGIN --}}
+                  <a id="agency-template" href="{{url('/agency/1')}}" class="site-item" style="background-color: #5a2b81;">
+                      <div class="hover-holder display-flex">
+                          <div class="tagline">Every brand has it's own path</div>
+                      </div>
+                      <div class="site-name">Pathfinders</div>
+                      <!-- logo and description agency -->
+                      <!-- acc plus-->
+                  </a>
+                  {{-- TEMPLATE - END --}}
+              </div>
+          </div>
+      </div>
+    </section>
 
     <section id="whats-going-on" class="section-holder">
         <div class="section-header">
