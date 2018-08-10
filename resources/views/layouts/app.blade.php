@@ -12,46 +12,46 @@
 
 <body>
 
-  <header>
-      <div class="max-width display-flex">
-          <div class="logo-holder">
-              <div class="hamburger hamburger--spin js-hamburger">
-                  <div class="hamburger-box">
-                      <div class="hamburger-inner">
-                      </div>
-                  </div>
-              </div>
-              <div class="menu-holder">
-                  <div class="nav-menu-holder">
-                      <ul>
-                          <li><a href="{{url('/')}}">Home</a></li>
-                          <li><a href="{{url('/about')}}">About</a></li>
-                          <li><a href="#" onclick="return false" class="open-agencies">Agency</a>
-                              <ul class="ml-1">
-                                  <li><a href="{{url('/agency/1')}}">Pathfinders</a></li>
-                                  <li><a href="{{url('/agency/2')}}">Iris</a></li>
-                                  <li><a href="{{url('/agency/3')}}">Tribecloud</a></li>
-                                  <li><a href="{{url('/agency/4')}}">Interface</a></li>
-                                  <li><a href="{{url('/agency/5')}}">Skor</a></li>
-                                  <li><a href="{{url('/agency/6')}}">Optima Media</a></li>
-                                  <li><a href="{{url('/agency/7')}}">Diageo</a></li>
-                                  <li><a href="{{url('/agency/8')}}">Advis</a></li>
-                              </ul>
-                          </li>
-                          <li><a href="{{url('/work')}}">Work</a></li>
-                          <li><a href="{{url('/specialty')}}">Specialty</a></li>
-                          <li><a href="{{url('/news')}}">News</a></li>
-                          <li><a href="{{url('/'.'#lets-connect')}}">Contact</a></li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-          <div class="title-holder text-center">
-              <a href="{{url('/')}}">
-                  <img src="{{asset("images/title.png")}}" alt="Nava+">
-              </a>
-          </div>
-          <div class="right-holder">
+<header>
+    <div class="max-width display-flex">
+        <div class="logo-holder">
+            <div class="hamburger hamburger--spin js-hamburger">
+                <div class="hamburger-box">
+                    <div class="hamburger-inner">
+                    </div>
+                </div>
+            </div>
+            <div class="menu-holder">
+                <div class="nav-menu-holder">
+                    <ul>
+                        <li><a href="{{url('/')}}">Home</a></li>
+                        <li><a href="{{url('/about')}}">About</a></li>
+                        <li><a href="#" onclick="return false" class="open-agencies">Agency</a>
+                            <ul class="ml-1">
+                                <li><a href="{{url('/agency/1')}}">Pathfinders</a></li>
+                                <li><a href="{{url('/agency/2')}}">Iris</a></li>
+                                <li><a href="{{url('/agency/3')}}">Tribecloud</a></li>
+                                <li><a href="{{url('/agency/4')}}">Interface</a></li>
+                                <li><a href="{{url('/agency/5')}}">Skor</a></li>
+                                <li><a href="{{url('/agency/6')}}">Optima Media</a></li>
+                                <li><a href="{{url('/agency/7')}}">Diageo</a></li>
+                                <li><a href="{{url('/agency/8')}}">Advis</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{url('/work')}}">Work</a></li>
+                        <li><a href="{{url('/services')}}">Integrated Services</a></li>
+                        <li><a href="{{url('/news')}}">News</a></li>
+                        <li><a href="{{url('/'.'#lets-connect')}}">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="title-holder text-center">
+            <a href="{{url('/')}}">
+                <img src="{{asset("images/title.png")}}" alt="Nava+">
+            </a>
+        </div>
+        <div class="right-holder">
 
           </div>
       </div>
