@@ -37,7 +37,7 @@
 
         </div>
 
-        <div class="text-center">
+        <div class="text-center" id="load-more">
             <div class="load-more">
                 <div class="display-flex text-center">
                     <a href="#load-more">

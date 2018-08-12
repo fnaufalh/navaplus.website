@@ -2,12 +2,20 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Encode Sans', sans-serif;
+    position: relative;
 }
 
 h3 {
   margin-bottom: 0px;
 }
 
+.form-control {
+  border-radius: 0px;
+}
+
+#load-more {
+  padding-bottom: 120px;
+}
 
 #template, #potrait_template, #potrait_indicators_template, #landscape_template, #landscape_indicators_template, #agency_template {
     display: none !important;
@@ -18,7 +26,7 @@ h3 {
 }
 
 .fa {
-  line-height: 26px !important;
+  line-height: 26px;
 }
 
 .max-width {
@@ -595,11 +603,12 @@ header .title-holder img {
 
 #lets-connect {
     background-color: #c52529;
+    margin-top: 70px;
 }
 
 #lets-connect .section-content {
     padding-top: 60px;
-    padding-bottom: 60px;
+    padding-bottom: 160px;
     color: white;
 }
 
@@ -649,6 +658,9 @@ header .title-holder img {
 footer {
     height: 100px;
     background-color: #f7f7f7;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
 }
 
 footer .display-flex {
@@ -740,6 +752,10 @@ h5 {
     font-weight: bold;
 }
 
+#whats-going-on {
+  padding-bottom: 15px;
+}
+
 #whats-going-on h5 {
   font-size: 18px;
 }
@@ -799,6 +815,7 @@ footer a:hover {
 
 .section-content.bod {
   background-color: #fff;
+  padding-bottom: 50px;
 }
 
 #key-people .picture img {
@@ -1229,12 +1246,17 @@ footer a:hover {
 }
 
 @media only screen and (max-width: 768px) {
+  .#load-more {
+    padding-bottom: 120px !important;
+  }
+
   .map-holder > iframe {
     padding-right: 39px;
   }
 
   .social-logo > .fa {
-    font-size: 18px;
+    font-size: 20px;
+    line-height: 26px;
   }
 
   .mobile {
@@ -1273,13 +1295,16 @@ footer a:hover {
 
 /* @media 600px */
 @media only screen and (max-width: 600px) {
+  #load-more {
+    padding-bottom: 120px;
+  }
+
+  .clients {
+    margin-bottom: 100px;
+  }
 
   .map-holder > iframe {
     padding-right: 0px;
-  }
-  
-  .load-more {
-    margin-top: 80px;
   }
 
   .work-nav {
@@ -1495,8 +1520,11 @@ footer a:hover {
     }
 
     #whats-going-on .max-width {
-        padding: 0 0;
-        padding-bottom: 90px;
+        padding: 0 0 0 0;
+    }
+
+    #load-more {
+        padding-bottom: 120px;
     }
 
     #whats-going-on .section-header {
@@ -1561,10 +1589,6 @@ footer a:hover {
         margin-top: 3px;
     }
 
-    #lets-connect, #key-people {
-      margin-top: 80px;
-    }
-
     #lets-connect .section-content {
         padding-top: 20px;
         flex-direction: column;
@@ -1572,6 +1596,7 @@ footer a:hover {
 
     #lets-connect .section-content.max-width {
         padding: 0 0;
+        padding-bottom: 50px;
     }
 
     #lets-connect .section-content .section-left {
@@ -1714,6 +1739,19 @@ footer a:hover {
 
   .carousel-indicators {
     bottom: -10px;
+  }
+
+  #whats-going-on > .section-content > .section-content-item > div {
+    width: 290px;
+  }
+
+  footer .left-holder {
+    font-size: 8px;
+  }
+
+  .social-logo > .fa {
+    font-size: 19px;
+    line-height: 27px;
   }
 }
 
