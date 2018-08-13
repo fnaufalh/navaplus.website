@@ -21,10 +21,10 @@
         </div>
         {{-- TEMPLATE - END --}}
 
-        <div class="section-content max-width d-flex flex-wrap" id="section-container">
+        <div class="section-content max-width d-flex flex-wrap allnews" id="section-container">
 
         </div>
-        <div class="text-center">
+        <div class="section-content-item text-center" id="load-more">
             <div class="load-more">
                 <div class="display-flex text-center">
                     <a class="" href="#load-more">

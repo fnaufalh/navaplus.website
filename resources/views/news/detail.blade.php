@@ -31,30 +31,34 @@
 
     <section id="sites-section" class="work-detail-page" style="background-color: white">
         <div class="max-width display-flex">
-            <div class="left-section">
-                <h2 id="date"></h2>
-                <h3 id="headline"></h3>
-                <p id="description"></p>
-                <div style="padding-top: 45px;padding-bottom: 71px;text-align: right; display:flex;justify-content:space-between;width:610px;">
-                    <div class="text-right">
-                        <a class="display-flex" href="{{url('/news')}}">
-                            <i class="fa fa-chevron-left text-color"></i>
-                            <div class="text-back">
-                                Back to news
-                            </div>
-                        </a>
-                    </div>
-                    <div class="">
-                        <a class="display-flex" id="news" href="" data-toggle="modal" data-target="#share-modal">
-                            <div class="icon-share">
-                                <i class="fa fa-share"></i>
-                            </div>
-                            <div class="text-share">
-                                Share this news
-                            </div>
-                        </a>
-                    </div>
+            <div class="container padding-detail-news">
+              <div class="row">
+                <div class="col-md-8 col-xs-12 col-md-push-4">
+                  <h2 id="date"></h2>
+                  <h3 id="headline"></h3>
+                  <p id="description"></p>
+                  <div style="padding-top: 45px;padding-bottom: 71px; display:flex;justify-content:space-between;" class="icons">
+                      <div class="text-right">
+                          <a class="display-flex" href="{{url('/news')}}">
+                              <i class="fa fa-chevron-left text-color"></i>
+                              <div class="text-back">
+                                  Back to news
+                              </div>
+                          </a>
+                      </div>
+                      <div class="">
+                          <a class="display-flex" id="news" href="" data-toggle="modal" data-target="#share-modal">
+                              <div class="icon-share">
+                                  <i class="fa fa-share-square-o"></i>
+                              </div>
+                              <div class="text-share">
+                                  Share this news
+                              </div>
+                          </a>
+                      </div>
+                  </div>
                 </div>
+              </div>
             </div>
         </div>
     </section>

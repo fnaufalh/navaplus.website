@@ -43,7 +43,7 @@
     <div class="section-content max-width d-flex flex-wrap">
 
     </div>
-    <div class="text-center">
+    <div class="text-center" id="load-more">
         <div class="load-more">
             <div class="display-flex text-center">
                   <a class="" href="#load-more">

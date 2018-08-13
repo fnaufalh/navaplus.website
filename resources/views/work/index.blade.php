@@ -16,6 +16,16 @@
             </div>
         </div>
     </section>
+    <section class="mobile-work">
+      <div class="btn-dropdow">
+          <select class="category select form-control">
+              <option value="0">Category</option>
+          </select>
+          <select class="agency select form-control">
+              <option value="0">Agency</option>
+          </select>
+      </div>
+    </section>
     <section id="whats-going-on" class="section-holder whats-going-on-site">
 
         {{-- TEMPLATE - BEGIN --}}
@@ -37,7 +47,7 @@
 
         </div>
 
-        <div class="text-center">
+        <div class="text-center" id="load-more">
             <div class="load-more">
                 <div class="display-flex text-center">
                     <a href="#load-more">

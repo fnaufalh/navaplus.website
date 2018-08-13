@@ -53,45 +53,44 @@
         </div>
         <div class="right-holder">
 
-        </div>
-    </div>
-</header>
+          </div>
+      </div>
+  </header>
 
-<section id="sites-section">
+  <section id="sites-section">
 @yield('content')
-</section>
 
-<footer>
-    <div class="max-width display-flex">
-        <div class="left-holder">
-            &copy;2018 NAVAPLUS GROUP INDONESIA
-        </div>
-        <div class="center-holder text-center">
-            <a target="_blank" href="https://www.facebook.com/navaplusid/">
-              <div class="social-logo text-white">
-                <i class="fa fa-facebook"></i>
-              </div>
-            </a>
-            <a target="_blank" href="https://www.instagram.com/navaplus.id/">
-              <div class="social-logo text-white">
-                <i class="fa fa-instagram"></i>
-              </div>
-            </a>
-            <a target="_blank" href="https://id.linkedin.com/company/nava-group">
-              <div class="social-logo text-white">
-                <i class="fa fa-linkedin"></i>
-              </div>
-            </a>
-        </div>
-        <div class="right-holder"></div>
-    </div>
-</footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-<script src="{{asset("js/main.js?v=201808062217")}}"></script>
-<script src="{{asset("js/hamburger.js")}}"></script>
+  <footer>
+      <div class="max-width display-flex">
+          <div class="left-holder">
+              &copy;2018 NAVAPLUS GROUP INDONESIA
+          </div>
+          <div class="center-holder text-center">
+              <a target="_blank" href="https://www.facebook.com/navaplusid/">
+                <div class="social-logo text-white">
+                  <i class="fa fa-facebook"></i>
+                </div>
+              </a>
+              <a target="_blank" href="https://www.instagram.com/navaplus.id/">
+                <div class="social-logo text-white">
+                  <i class="fa fa-instagram"></i>
+                </div>
+              </a>
+              <a target="_blank" href="https://id.linkedin.com/company/nava-group">
+                <div class="social-logo text-white">
+                  <i class="fa fa-linkedin"></i>
+                </div>
+              </a>
+          </div>
+          <div class="right-holder"></div>
+      </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script>
+  <script src="{{asset("js/main.js?v=201808062217")}}"></script>
+  <script src="{{asset("js/hamburger.js")}}"></script>
 @yield('script')
 </body>
 

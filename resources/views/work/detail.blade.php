@@ -26,40 +26,41 @@
 </section>
 <section id="sites-section" class="work-detail-page" style="background-color: white">
     <div class="max-width display-flex">
-        <div class="left-section">
-            <div class="quotes">
-                <div class="metainfo">
-                    <div class="display-flex">
-                        <div>Project</div>
-                        <div id="project"></div>
-                    </div>
-                    <div class="display-flex">
-                        <div>Client</div>
-                        <div id="client"></div>
-                    </div>
-                    <div class="display-flex">
-                        <div>Agency</div>
-                        <div id="agency"></div>
-                    </div>
-                    <div class="display-flex">
-                        <div>Service</div>
-                        <div id="service"></div>
+        <div class="container padding-detail-work">
+            <div class="row">
+              <div class="col-md-8 col-md-push-4 col-xs-12">
+                <div class="quotes">
+                    <div class="metainfo">
+                        <div class="display-flex">
+                            <div>Project</div>
+                            <div id="project"></div>
+                        </div>
+                        <div class="display-flex">
+                            <div>Client</div>
+                            <div id="client"></div>
+                        </div>
+                        <div class="display-flex">
+                            <div>Agency</div>
+                            <div id="agency"></div>
+                        </div>
+                        <div class="display-flex">
+                            <div>Service</div>
+                            <div id="service"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <h3 id="headline"></h3>
-            <p id="description"></p>
-            <div class="work-nav">
-                <div class="text-right" style="display: inline-block">
-                    <a class="display-flex" href="{{url('/work')}}">
-                        <div class="icon-back">
-                            <i class="fa fa-chevron-left"></i>
-                        </div>
-                        <div class="text-back-works">
-                            See all case studies
-                        </div>
-                    </a>
+                <h3 id="headline"></h3>
+                <p id="description"></p>
+                <div class="work-nav icons">
+                    <div>
+                        <a href="{{url('/work')}}">
+                            <div class="text-back-works">
+                                <i class="fa fa-chevron-left"></i> See all case studies
+                            </div>
+                        </a>
+                    </div>
                 </div>
+              </div>
             </div>
         </div>
     </div>
