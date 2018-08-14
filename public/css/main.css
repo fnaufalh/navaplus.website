@@ -2,7 +2,33 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Encode Sans', sans-serif;
+    background-color: #fff;
+    height: 100%;
+}
+
+.section-holder:last-child:after {
+  content: "";
+  display: block;
+}
+
+footer, .section-holder:last-child:after {
+  height: 100px;
+}
+
+footer {
+    height: 100px;
     background-color: #f7f7f7;
+    margin-top: 100px;
+}
+
+.bottom-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer .display-flex {
+    height: 100%;
 }
 
 select > option:nth-child(odd) {
@@ -14,7 +40,7 @@ option {
 }
 
 .form-control {
-  border-radius: 0px; 
+  border-radius: 0px;
 }
 
 #template, #potrait_template, #potrait_indicators_template, #landscape_template, #landscape_indicators_template, #agency_template {
@@ -655,15 +681,6 @@ header .title-holder img {
     height: 270px;
 }
 
-footer {
-    height: 100px;
-    background-color: #f7f7f7;
-}
-
-footer .display-flex {
-    height: 100%;
-}
-
 #key-people .p-3 {
     padding-top: 1rem!important;
     padding-left: 4rem!important;
@@ -692,15 +709,10 @@ footer .left-holder {
     color: #676767;
 }
 
-#work-detail-banner > div,
 #site-banner > .max-width {
     height: 300px;
     background-size: cover;
     background-position: center center;
-}
-
-#work-detail-banner > div {
-    height: 500px;
 }
 
 #work-detail-banner > div.display-flex {
@@ -913,8 +925,8 @@ footer a:hover {
 
 .icon-share {
   text-align: left;
-  margin-right: 10px;
-  color: #333333;
+  margin-right: 5px;
+  color: #333;
   width: 15px !important;
 }
 
@@ -1265,6 +1277,11 @@ footer a:hover {
 
 /* @media 600px */
 @media only screen and (max-width: 600px) {
+  #work-detail-banner > div {
+    height: auto;
+    width: 100%;
+  }
+
   .padding-detail-work, .padding-detail-news {
     padding: 42px 22px;
   }
@@ -1668,10 +1685,6 @@ footer a:hover {
     #sites-section .right-section .site-item .site-logo img {
         width: 45px;
         position: relative;
-    }
-
-    #work-detail-banner > div.display-flex {
-      height: 400px;
     }
 
 }

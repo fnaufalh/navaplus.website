@@ -42,7 +42,6 @@
             </div>
         </div>
         {{-- TEMPLATE - END --}}
-
         <div class="section-content max-width d-flex flex-wrap" id="section-container">
 
         </div>
@@ -139,6 +138,12 @@
                         $('.load-more').fadeOut();
                     } else {
                         $('.load-more').fadeIn();
+                    }
+
+                    if ($('#sites-section').height() <= 800) {
+                      $('footer').addClass('bottom-footer');
+                    }else {
+                      $('footer').removeClass('bottom-footer');
                     }
                 }
             });

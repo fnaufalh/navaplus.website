@@ -18,10 +18,18 @@
 
 @section('content')
 <section id="work-detail-banner" class="max-width">
-    <div id="main_image" style="object-fit:cover;background-position:center;"></div>
-    <div class="display-flex flex-wrap">
-        <div id="image_1" class="col-md-6 col-xs-12" style="object-fit:cover;background-position:center;"></div>
-        <div id="image_2" class="col-md-6 col-xs-12" style="object-fit:cover;background-position:center;"></div>
+    <div class="row no-gutters">
+      <div class="column">
+        <img id="main_image" class="img-responsive img-fluid" src="" alt="main_image">
+      </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="column">
+        <img id="second_image" class="img-responsive img-fluid" src="" alt="second_image">
+      </div>
+      <div class="column">
+        <img id="third_image" class="img-responsive img-fluid" src="" alt="third_image">
+      </div>
     </div>
 </section>
 <section id="sites-section" class="work-detail-page" style="background-color: white">
@@ -99,9 +107,12 @@
                 dataType: 'json',
                 success: function (data) {
                     var data = data;
-                    $('#main_image').css('background-image', 'url(\'' + data.main_image_link + '\')');
-                    $('#image_1').css('background-image', 'url(\'' + data.main_1_link + '\')');
-                    $('#image_2').css('background-image', 'url(\'' + data.main_2_link + '\')');
+                    $('#main_image').attr('src', 'http://cms.navaplus.com/assets/images/1532664553_29ubYxBaoiD5CKef_Box1Homemade.png');
+                    $('#second_image').attr('src', 'http://cms.navaplus.com/assets/images/1532664553_XgbEleMygKmZf9rJ_Box2Homemade.png');
+                    $('#third_image').attr('src', 'http://cms.navaplus.com/assets/images/1532664553_qKbqPFjDhAG0Mw0y_Box3Homemade.png');
+                    // $('#main_image').attr('src', data.main_image_link);
+                    // $('#second_image').attr('src', data.main_1_link);
+                    // $('#third_image').attr('src', data.main_2_link);
                     $('#project').html(data.name);
                     $('#client').html(data.client);
                     $('#agency').html(data.agency.name);

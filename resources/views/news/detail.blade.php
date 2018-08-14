@@ -37,7 +37,7 @@
                   <h2 id="date"></h2>
                   <h3 id="headline"></h3>
                   <p id="description"></p>
-                  <div style="padding-top: 45px;padding-bottom: 71px; display:flex;justify-content:space-between;" class="icons">
+                  <div style="padding-top: 45px;padding-bottom: 71px; display:flex;justify-content:space-between;line-height:20px;" class="icons">
                       <div class="text-right">
                           <a class="display-flex" href="{{url('/news')}}">
                               <i class="fa fa-chevron-left text-color"></i>
@@ -48,12 +48,10 @@
                       </div>
                       <div class="">
                           <a class="display-flex" id="news" href="" data-toggle="modal" data-target="#share-modal">
-                              <div class="icon-share">
-                                  <i class="fa fa-share-square-o"></i>
-                              </div>
-                              <div class="text-share">
-                                  Share this news
-                              </div>
+                            <i class="icon-share fa fa-share-square-o"></i>
+                            <div class="text-share">
+                                Share this news
+                            </div>
                           </a>
                       </div>
                   </div>

@@ -10,7 +10,6 @@ $(document).ready(function(){
                 $('#whats-going-on').find('.section-content').append('');
             }
         }
-        console.log(data);
     }
   });
 });
