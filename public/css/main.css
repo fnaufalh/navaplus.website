@@ -50,6 +50,10 @@ option {
   margin-bottom: 0px !important;
 }
 
+#lets-connect {
+  margin-bottom: 0px;
+}
+
 .icons > .fa {
   line-height: 21px !important;
 }
@@ -1567,6 +1571,10 @@ footer a:hover {
     #lets-connect .section-content {
         padding-top: 20px;
         flex-direction: column;
+    }
+
+    #lets-connect {
+      margin-bottom: -100px;
     }
 
     #lets-connect .section-content.max-width {
