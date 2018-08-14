@@ -26,7 +26,11 @@
     </section>
 
     <section id="site-banner" class='max-width'>
-        <div class="max-width" id="image-banner"></div>
+        <div class="row no-gutters">
+          <div class="column">
+            <img id="image_banner" class="img-responsive img-fluid" src="https://dummyimage.com/768x225/000/000" alt="banner_image">
+          </div>
+        </div>
     </section>
 
     <section id="sites-section" class="work-detail-page" style="background-color: white">
@@ -122,7 +126,7 @@
                 dataType: 'json',
                 success: function (data) {
                     var data = data;
-                    $('#image-banner').css('background-image', 'url(\'' + data.image_link + '\')');
+                    $('#image-banner').attr('src', data.image_link);
                     $('#date').html(data.date_formated + " | " + data.type);
                     $('#headline').html(data.headline);
                     $('#description').html(data.description);

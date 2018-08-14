@@ -20,15 +20,15 @@
 <section id="work-detail-banner" class="max-width">
     <div class="row no-gutters">
       <div class="column">
-        <img id="main_image" class="img-responsive img-fluid" src="" alt="main_image">
+        <img id="main_image" class="img-responsive img-fluid" src="https://dummyimage.com/768x375/000000/000" alt="main_image">
       </div>
     </div>
     <div class="row no-gutters">
-      <div class="column">
-        <img id="second_image" class="img-responsive img-fluid" src="" alt="second_image">
+      <div class="column col-md-6 col-sm-12">
+        <img id="second_image" class="img-responsive img-fluid" src="https://dummyimage.com/512x300/000000/000" alt="second_image">
       </div>
-      <div class="column">
-        <img id="third_image" class="img-responsive img-fluid" src="" alt="third_image">
+      <div class="column col-md-6 col-sm-12">
+        <img id="third_image" class="img-responsive img-fluid" src="https://dummyimage.com/512x300/000000/000" alt="third_image">
       </div>
     </div>
 </section>
@@ -107,12 +107,9 @@
                 dataType: 'json',
                 success: function (data) {
                     var data = data;
-                    $('#main_image').attr('src', 'http://cms.navaplus.com/assets/images/1532664553_29ubYxBaoiD5CKef_Box1Homemade.png');
-                    $('#second_image').attr('src', 'http://cms.navaplus.com/assets/images/1532664553_XgbEleMygKmZf9rJ_Box2Homemade.png');
-                    $('#third_image').attr('src', 'http://cms.navaplus.com/assets/images/1532664553_qKbqPFjDhAG0Mw0y_Box3Homemade.png');
-                    // $('#main_image').attr('src', data.main_image_link);
-                    // $('#second_image').attr('src', data.main_1_link);
-                    // $('#third_image').attr('src', data.main_2_link);
+                    $('#main_image').attr('src', data.main_image_link);
+                    $('#second_image').attr('src', data.main_1_link);
+                    $('#third_image').attr('src', data.main_2_link);
                     $('#project').html(data.name);
                     $('#client').html(data.client);
                     $('#agency').html(data.agency.name);

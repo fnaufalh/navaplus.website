@@ -18,7 +18,6 @@ footer, .section-holder:last-child:after {
 footer {
     height: 100px;
     background-color: #f7f7f7;
-    margin-top: 100px;
 }
 
 .bottom-footer {
@@ -1650,6 +1649,7 @@ footer a:hover {
 
     footer {
         height: 50px;
+        margin-top: 100px;
     }
 
     footer .left-holder {
@@ -1689,9 +1689,17 @@ footer a:hover {
 
 }
 
-@media only screen and (min-width: 320px) {
+@media only screen and (max-width: 320px) {
+  footer .left-holder {
+    font-size: 8px;
+  }
+
   .section-holder .section-header h3 {
     font-size: 20px;
+  }
+
+  #whats-going-on > .section-content > .section-content-item > div {
+    width: 290px;
   }
 }
 
