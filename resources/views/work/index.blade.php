@@ -42,7 +42,6 @@
             </div>
         </div>
         {{-- TEMPLATE - END --}}
-
         <div class="section-content max-width d-flex flex-wrap" id="section-container">
 
         </div>
@@ -139,6 +138,15 @@
                         $('.load-more').fadeOut();
                     } else {
                         $('.load-more').fadeIn();
+                    }
+
+                    var height = $('#sites-section').height();
+                    var width = $('#sites-section').width()
+
+                    if ((width > 1024 && height <= 800) || (width <= 1024 && width > 768 && height < 1366)) {
+                      $('footer').addClass('bottom-footer');
+                    }else {
+                      $('footer').removeClass('bottom-footer');
                     }
                 }
             });

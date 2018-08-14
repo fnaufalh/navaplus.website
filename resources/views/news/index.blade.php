@@ -78,6 +78,15 @@
                     if(data.current_page >= data.last_page) {
                         $('.load-more').fadeOut();
                     }
+
+                    var height = $('#sites-section').height();
+                    var width = $('#sites-section').width()
+
+                    if ((width > 1024 && height <= 800) || (width <= 1024 && width > 768 && height < 1366)) {
+                      $('footer').addClass('bottom-footer');
+                    }else {
+                      $('footer').removeClass('bottom-footer');
+                    }
                 }
             });
 

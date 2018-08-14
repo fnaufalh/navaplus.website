@@ -26,7 +26,11 @@
     </section>
 
     <section id="site-banner" class='max-width'>
-        <div class="max-width" id="image-banner"></div>
+        <div class="row no-gutters">
+          <div class="column">
+            <img id="image_banner" class="img-responsive img-fluid" src="https://dummyimage.com/768x225/000/000" alt="banner_image">
+          </div>
+        </div>
     </section>
 
     <section id="sites-section" class="work-detail-page" style="background-color: white">
@@ -37,7 +41,7 @@
                   <h2 id="date"></h2>
                   <h3 id="headline"></h3>
                   <p id="description"></p>
-                  <div style="padding-top: 45px;padding-bottom: 71px; display:flex;justify-content:space-between;" class="icons">
+                  <div style="padding-top: 45px;padding-bottom: 71px; display:flex;justify-content:space-between;line-height:20px;" class="icons">
                       <div class="text-right">
                           <a class="display-flex" href="{{url('/news')}}">
                               <i class="fa fa-chevron-left text-color"></i>
@@ -48,12 +52,10 @@
                       </div>
                       <div class="">
                           <a class="display-flex" id="news" href="" data-toggle="modal" data-target="#share-modal">
-                              <div class="icon-share">
-                                  <i class="fa fa-share-square-o"></i>
-                              </div>
-                              <div class="text-share">
-                                  Share this news
-                              </div>
+                            <i class="icon-share fa fa-share-square-o"></i>
+                            <div class="text-share">
+                                Share this news
+                            </div>
                           </a>
                       </div>
                   </div>
@@ -124,7 +126,7 @@
                 dataType: 'json',
                 success: function (data) {
                     var data = data;
-                    $('#image-banner').css('background-image', 'url(\'' + data.image_link + '\')');
+                    $('#image-banner').attr('src', data.image_link);
                     $('#date').html(data.date_formated + " | " + data.type);
                     $('#headline').html(data.headline);
                     $('#description').html(data.description);
