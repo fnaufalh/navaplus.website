@@ -138,7 +138,7 @@
                 <div class="display-flex">
                     <div class="map-holder">
                         <iframe frameborder="0"
-                                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBUS6tYju6z62T7fW2xBdTMomZxrMSBny4&q=Generali+Tower+Gran+Rubina+Business+Park"
+                                src="https://www.google.com/maps/embed/v1/place?key={{env('API_MAP_KEY')}}&q=Generali+Tower+Gran+Rubina+Business+Park"
                                 allowfullscreen>
                         </iframe>
                     </div>
