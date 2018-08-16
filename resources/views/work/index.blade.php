@@ -136,8 +136,10 @@
                     });
                     if (data.current_page >= data.last_page) {
                         $('.load-more').fadeOut();
+                        $('#section-container > .section-content-item:last-child').css('margin-bottom', '90px');
                     } else {
                         $('.load-more').fadeIn();
+                        $('#section-container > .section-content-item:last-child').css('margin-bottom', '0px');
                     }
 
                     var height = $('#sites-section').height();
