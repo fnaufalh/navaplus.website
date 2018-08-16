@@ -77,12 +77,13 @@
 
                     if(data.current_page >= data.last_page) {
                         $('.load-more').fadeOut();
+                        $('#section-container > .section-content-item:last-child').css('margin-bottom', '90px');
                     }
 
                     var height = $('#sites-section').height();
                     var width = $('#sites-section').width()
 
-                    if ((width > 1024 && height <= 800) || (width <= 1024 && width > 768 && height < 1366)) {
+                    if (height <= 800) {
                       $('footer').addClass('bottom-footer');
                     }else {
                       $('footer').removeClass('bottom-footer');

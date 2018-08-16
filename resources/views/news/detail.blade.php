@@ -126,7 +126,7 @@
                 dataType: 'json',
                 success: function (data) {
                     var data = data;
-                    $('#image-banner').attr('src', data.image_link);
+                    $('#image_banner').attr('src', data.image_link);
                     $('#date').html(data.date_formated + " | " + data.type);
                     $('#headline').html(data.headline);
                     $('#description').html(data.description);

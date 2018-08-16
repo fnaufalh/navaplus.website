@@ -3,7 +3,6 @@ html, body {
     padding: 0;
     font-family: 'Encode Sans', sans-serif;
     background-color: #fff;
-    height: 100%;
 }
 
 .section-holder:last-child:after {
@@ -34,6 +33,14 @@ select > option:nth-child(odd) {
   background-color: #d62027;
 }
 
+.col-sm-5cols {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 20% !important;
+}
+
 option {
   width: 135px;
 }
@@ -48,10 +55,6 @@ option {
 
 #lets-connect h3, #whats-going-on h3, #key-people h3 {
   margin-bottom: 0px !important;
-}
-
-#lets-connect {
-  margin-bottom: 0px;
 }
 
 .icons > .fa {
@@ -684,6 +687,15 @@ header .title-holder img {
     height: 270px;
 }
 
+footer {
+    height: 100px;
+    background-color: #f7f7f7;
+}
+
+footer .display-flex {
+    height: 100%;
+}
+
 #key-people .p-3 {
     padding-top: 1rem!important;
     padding-left: 4rem!important;
@@ -712,10 +724,15 @@ footer .left-holder {
     color: #676767;
 }
 
+#work-detail-banner > div,
 #site-banner > .max-width {
     height: 300px;
     background-size: cover;
     background-position: center center;
+}
+
+#work-detail-banner > div {
+    height: 500px;
 }
 
 #work-detail-banner > div.display-flex {
@@ -928,8 +945,8 @@ footer a:hover {
 
 .icon-share {
   text-align: left;
-  margin-right: 5px;
-  color: #333;
+  margin-right: 10px;
+  color: #333333;
   width: 15px !important;
 }
 
@@ -1244,6 +1261,11 @@ footer a:hover {
 
 @media only screen and (max-width: 768px) {
 
+  .col-sm-5cols {
+        width: 20%;
+        float: left;
+    }
+
   .mobile {
     display: block;
   }
@@ -1280,11 +1302,6 @@ footer a:hover {
 
 /* @media 600px */
 @media only screen and (max-width: 600px) {
-  #work-detail-banner > div {
-    height: auto;
-    width: 100%;
-  }
-
   .padding-detail-work, .padding-detail-news {
     padding: 42px 22px;
   }
@@ -1573,10 +1590,6 @@ footer a:hover {
         flex-direction: column;
     }
 
-    #lets-connect {
-      margin-bottom: -100px;
-    }
-
     #lets-connect .section-content.max-width {
         padding: 0 0;
     }
@@ -1657,7 +1670,6 @@ footer a:hover {
 
     footer {
         height: 50px;
-        margin-top: 100px;
     }
 
     footer .left-holder {
@@ -1695,9 +1707,14 @@ footer a:hover {
         position: relative;
     }
 
+    #work-detail-banner > div.display-flex {
+      height: 400px;
+    }
+
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (min-width: 320px) {
+
   footer .left-holder {
     font-size: 8px;
   }
