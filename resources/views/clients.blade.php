@@ -28,7 +28,7 @@
                   var data = data;
                   if (data.length != 0 ) {
                       for (var i = 0; i < data.length; i++) {
-                          $('#our-works').find('.row').append('<div class="col-sm-5cols col-xs-6"><img class="m-2" src="'+ data[i].image_link +'"></div>');
+                          $('#our-works').find('.row').append('<div class="col-sm-5cols col-xs-6"><img class="m-2 clients-img" src="'+ data[i].image_link +'"></div>');
                       }
                   }
 
