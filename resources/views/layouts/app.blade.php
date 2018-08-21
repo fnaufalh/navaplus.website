@@ -41,12 +41,12 @@
                         <li><a href="{{url('/work')}}">Work</a></li>
                         <li><a href="{{url('/services')}}">Integrated Services</a></li>
                         <li><a href="{{url('/news')}}">News</a></li>
-                        <li><a href="{{url('/'.'#lets-connect')}}">Contact</a></li>
+                        <li><a href="{{url('/'.'#contact')}}">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="title-holder text-center">
+        <div class="title-holder title-align">
             <a href="{{url('/')}}">
                 <img src="{{asset("images/title.png")}}" alt="Nava+">
             </a>
@@ -60,7 +60,7 @@
   <section id="sites-section">
 @yield('content')
 
-  <footer>
+  <footer id="contact">
       <div class="max-width display-flex">
           <div class="left-holder">
               &copy;2018 NAVAPLUS GROUP INDONESIA

@@ -49,7 +49,7 @@
         <div class="text-center" id="load-more">
             <div class="load-more">
                 <div class="display-flex text-center">
-                    <a href="#load-more">
+                    <a href="#" onClick="return false">
                         <span class="text-more" style="color:#676767;">More</span>
                         <span class="icon-more" style="color:#676767;"><i class="fa fa-arrow-circle-down"></i></span>
                     </a>
@@ -125,6 +125,7 @@
                 success: function (data) {
                     var data = data;
                     var section = $('#section-container');
+                    $('#section-container > .section-content-item').removeAttr('style');
                     $.each(data.data, function (i, val) {
                         var template = $('#template').clone();
                         $(template.find('a')).attr('href', "{{url('/work')}}/" + val.id);
@@ -137,9 +138,11 @@
                     if (data.current_page >= data.last_page) {
                         $('.load-more').fadeOut();
                         $('#section-container > .section-content-item:last-child').css('margin-bottom', '90px');
+                        $('footer').css('margin-top', '90px');
                     } else {
                         $('.load-more').fadeIn();
                         $('#section-container > .section-content-item:last-child').css('margin-bottom', '0px');
+                        $('footer').css('margin-top', '0px');
                     }
 
                     var height = $('#sites-section').height();
@@ -173,7 +176,7 @@
                 success: function (data) {
                     var data = data;
                     var section = $('#section-container');
-                    $.each(data.data, function (i, val) {
+                    $('#section-container > .section-content-item').removeAttr('style');                    $.each(data.data, function (i, val) {
                         var template = $('#template').clone();
                         $(template.find('a')).attr('href', "{{url('/work')}}/" + val.id);
                         $(template.find('.image-project')).css('background-image', 'url(\'' + val.preview_image_link + '\')');
@@ -184,8 +187,21 @@
                     });
                     if(data.current_page >= data.last_page) {
                         $('.load-more').fadeOut();
+                        $('#section-container > .section-content-item:last-child').css('margin-bottom', '90px');
+                        $('footer').css('margin-top', '90px');
                     }else {
                         $('.load-more').fadeIn();
+                        $('#section-container > .section-content-item:last-child').css('margin-bottom', '0px');
+                        $('footer').css('margin-top', '0px');
+                    }
+
+                    var height = $('#sites-section').height();
+                    var width = $('#sites-section').width()
+
+                    if ((width > 1024 && height <= 800) || (width <= 1024 && width > 768 && height < 1366)) {
+                      $('footer').addClass('bottom-footer');
+                    }else {
+                      $('footer').removeClass('bottom-footer');
                     }
                 }
             });

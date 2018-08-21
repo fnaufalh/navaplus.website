@@ -17,22 +17,22 @@
 @endsection
 
 @section('content')
-<section id="work-detail-banner" class="max-width">
+<section id="work-detail-banner" class="max-width hidden">
     <div class="row no-gutters">
       <div class="column">
-        <img id="main_image" class="img-responsive img-fluid" src="https://dummyimage.com/768x375/000000/000" alt="main_image">
+        <img id="main_image" class="img-responsive img-fluid" src="" alt="main_image">
       </div>
     </div>
     <div class="row no-gutters">
       <div class="column col-md-6 col-sm-12">
-        <img id="second_image" class="img-responsive img-fluid" src="https://dummyimage.com/512x300/000000/000" alt="second_image">
+        <img id="second_image" class="img-responsive img-fluid" src="" alt="second_image">
       </div>
       <div class="column col-md-6 col-sm-12">
-        <img id="third_image" class="img-responsive img-fluid" src="https://dummyimage.com/512x300/000000/000" alt="third_image">
+        <img id="third_image" class="img-responsive img-fluid" src="" alt="third_image">
       </div>
     </div>
 </section>
-<section id="sites-section" class="work-detail-page" style="background-color: white">
+<section id="sites-section" class="work-detail-page hidden" style="background-color: white">
     <div class="max-width display-flex">
         <div class="container padding-detail-work">
             <div class="row">
@@ -143,6 +143,7 @@
                             });
                         }
                     });
+                    $('.hidden').removeClass('hidden');
 
                 }
             });
