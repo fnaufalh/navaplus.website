@@ -50,8 +50,12 @@ Route::get('/agency/{id}', function ($id) {
         ]);
 });
 
-Route::get('/clients', function () {
+Route::get('/services', function () {
     return view('clients');
+});
+
+Route::get('/autocomplete', function () {
+    return view('autocomplete');
 });
 
 /**

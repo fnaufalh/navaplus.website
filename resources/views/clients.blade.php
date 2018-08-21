@@ -1,19 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<section id="our-works" class="section-holder" style="padding-bottom:50px;">
+<section id="our-works" class="section-holder clients">
     <div class="section-header">
         <div class="max-width display-flex">
-            <div><h3 class="text-white">Our Clients</h3></div>
+            <div><h3 class="text-white">Integrated Services</h3></div>
         </div>
     </div>
-    <div class="section-content max-width display-flex flex-wrap" style="margin-top: 50px">
+    <div class="section-content max-width" style="margin-top: 50px">
+      <div class="container-fluid">
+        <div class="row">
+
+        </div>
+      </div>
     </div>
 </section>
 @endsection
 @section('script')
   <script>
       $(document).ready(function(){
+          $('footer').css('margin-top', '100px');
           $.ajax({
               type: 'GET',
               url: '{!! url('/api/client?order_by=id&order_type=asc&all=n') !!}',
@@ -22,10 +28,23 @@
                   var data = data;
                   if (data.length != 0 ) {
                       for (var i = 0; i < data.length; i++) {
-                          $('#our-works').find('.section-content').append('<div class="client-holder"><div class="item"><img src="'+ data[i].image_link +'"></div></div>');
+                          $('#our-works').find('.row').append('<div class="col-xs-6 col-md-5ths col-centered"><img class="img-responsive m-2 clients-img" src="'+ data[i].image_link +'"></div>');
                       }
                   }
-                  console.log(data);
+
+                  var height = $('#sites-section').height();
+                  var width = $('#sites-section').width()
+
+                  if ((width > 1024 && height <= 800) || (width <= 1024 && width > 768 && height < 1366)) {
+                    $('footer').addClass('bottom-footer');
+                  }else {
+                    $('footer').removeClass('bottom-footer');
+                  }
+
+                  if (width <= 1024) {
+                    // $('.row > div').removeClass('col-sm-5cols');
+                    $('.row > div > img').removeClass('m-2');
+                  }
               }
           });
       });

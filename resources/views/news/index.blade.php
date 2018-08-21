@@ -21,13 +21,13 @@
         </div>
         {{-- TEMPLATE - END --}}
 
-        <div class="section-content max-width d-flex flex-wrap" id="section-container">
+        <div class="section-content max-width d-flex flex-wrap allnews" id="section-container">
 
         </div>
-        <div class="text-center">
+        <div class="section-content-item text-center" id="load-more">
             <div class="load-more">
                 <div class="display-flex text-center">
-                    <a class="more" href="#">
+                    <a class="" href="#" onClick="return false">
                   <span class="text-more" style="color:#676767;">
                       More
                   </span>
@@ -44,26 +44,54 @@
     <script>
 
         $(document).ready(function () {
+            page = 1;
+
+            $('.load-more').click(function(){
+                page++;
+                getNews(page);
+                window.location.hash = 'whats-going-on';
+            });
+
+            getNews(page);
+
+        });
+
+        var getNews = function(page) {
+
             $.ajax({
                 type: 'GET',
-                url: '{{url('/api/news?all=n')}}',
+                url: '{!! url('/api/news?all=n&paginate=9&page=') !!}'+page,
                 dataType: 'json',
                 success: function (data) {
                     var data = data;
                     var section = $('#section-container');
 
-                    $.each(data, function (i, val) {
+                    $.each(data.data, function (i, val) {
                         var template = $('#template').clone();
                         $(template.find('a')).attr('href', "{{url('/news')}}/" + val.id);
-                        $(template.find('.image-project')).css('background-image', 'url(\'' + val.image_link + '\')');
+                        $(template.find('.image-project')).css('background-image', 'url(\'' + val.preview_image_link + '\')');
                         $(template.find('.title h5')).html(val.name);
                         $(template.find('.sub-title')).html(val.date_formated + " | " + val.type);
                         template.removeAttr('id');
                         section.append(template);
-
                     });
+
+                    if(data.current_page >= data.last_page) {
+                        $('.load-more').fadeOut();
+                        $('#section-container > .section-content-item:last-child').css('margin-bottom', '90px');
+                    }
+
+                    var height = $('#sites-section').height();
+                    var width = $('#sites-section').width()
+
+                    if (height <= 800) {
+                      $('footer').addClass('bottom-footer');
+                    }else {
+                      $('footer').removeClass('bottom-footer');
+                    }
                 }
             });
-        });
+
+        }
     </script>
 @endsection

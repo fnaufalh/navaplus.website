@@ -63,24 +63,6 @@ function fitAll() {
     }
 }
 
-$(document).ready(function () {
-    $('#sites-section .right-section .site-item').hover(function () {
-        $(this).children('.hover-holder').css({
-            width: '0',
-            display: 'flex'
-        });
-        $(this).children('.hover-holder').animate({
-            width: '100%',
-            display: 'flex'
-        })
-    }, function () {
-        $(this).children('.hover-holder').css({
-            width: '0',
-            display: 'none'
-        });
-    });
-});
-
 $(document).on('mouseover', '.section-content-item', function () {
     var color = $("#lets-connect").css('background-color');
     $(this).find(".info > div").css('color', color);

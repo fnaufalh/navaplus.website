@@ -7,21 +7,6 @@ use App\Setting;
 class SettingController extends Controller
 {
 
-    public function index()
-    {
-        $generalEmail = Setting::where('key', 'general_email')
-            ->first();
-
-        $careerEmail = Setting::where('key', 'career_email')
-            ->first();
-
-        return view('settings.index')
-            ->with([
-                'general_email' => $generalEmail->value,
-                'career_email' => $careerEmail->value,
-            ]);
-    }
-
     public function detail()
     {
         $data = Setting::get();
