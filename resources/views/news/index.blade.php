@@ -27,7 +27,7 @@
         <div class="section-content-item text-center" id="load-more">
             <div class="load-more">
                 <div class="display-flex text-center">
-                    <a class="" href="#load-more">
+                    <a class="" href="#" onClick="return false">
                   <span class="text-more" style="color:#676767;">
                       More
                   </span>
@@ -49,6 +49,7 @@
             $('.load-more').click(function(){
                 page++;
                 getNews(page);
+                window.location.hash = 'whats-going-on';
             });
 
             getNews(page);

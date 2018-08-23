@@ -46,11 +46,11 @@
     <div class="text-center" id="load-more">
         <div class="load-more">
             <div class="display-flex text-center">
-                  <a class="" href="#load-more">
-                    <span class="text-more">
+                  <a class="" href="#" onClick="return false">
+                    <span class="text-more" style="color:#676767;">
                         More
                     </span>
-                    <span class="icon-more">
+                    <span class="icon-more" style="color:#676767;">
                         <i class="fa fa-arrow-circle-down"></i>
                     </span>
                   </a>
@@ -67,37 +67,12 @@
         </div>
     </div>
     <div class="section-content max-width d-flex flex-wrap">
-        <!-- <div class="section-content-item p-3">
-            <div>
-                <div class="info">
-                    <ul class="flex-container">
-                      <li class="flex-item">
-                        <div class="picture">
-                            <img src="images/agency/Pathfinders/key%20people/irvan%20permana.png" alt="">
-                        </div>
-                        <h5>Ivan Permana</h5>
-                        <h6>Head of Pathfinders</h6>
-                        <div class="email-holder">
-                          <div class="email">
-                            <img src="assets/images/02%20Agency/Pathfinders/email.svg" alt="">
-                            <span class="align-middle" style="padding-left:5px;">irvan.permana@brand-pathfinders.com</span>
-                          </div>
-                        </div>
-                        <p>The Solution Provider. Irvan Permana uses his vast business analysis and branding background to
-                            guide the business towards higher profitability and success. Starting his gig with Iris Jakarta
-                            in 2012, Irvan rose quickly and has acquired Pathfinders as one of NAVA+ Group business units.
-                            Earlier in his career, Irvan served as Branding and Business Analyst at MarkPlus & Co, Makki
-                            Makki, and ibrand.</p>
-                      </li>
-                    </ul>
-                </div>
-            </div>
-        </div> -->
+
     </div>
 </section>
 
 
-<section id="lets-connect" class="section-holder" style="background-color: #5a2b81;">
+<section id="lets-connect" class="section-holder">
     <div class="section-header">
         <div class="max-width display-flex">
             <div><h3 class="text-white">Let's connect and collaborate</h3></div>
@@ -223,8 +198,9 @@
                 success: function (data) {
                     var data = data;
                     var section = $('#section-container');
-
+                    $('#section-container > .section-content-item').removeAttr('style');
                     $.each(data.data, function (i, val) {
+                      console.log(i);
                         var template = $('#template').clone();
                         $(template.find('a')).attr('href', "{{url('/work')}}/" + val.id);
                         $(template.find('.image-project')).css('background-image', 'url(\'' + val.preview_image_link + '\')');
@@ -236,8 +212,11 @@
 
                     if (data.current_page >= data.last_page) {
                         $('.load-more').fadeOut();
+                        $('#section-container > .section-content-item:last-child').css('margin-bottom', '90px');
                     } else {
                         $('.load-more').fadeIn();
+                        $('#section-container > .section-content-item:last-child').css('margin-bottom', '0px');
+                        $('#key-people').css('margin-top', '0px');
                     }
                 }
             });

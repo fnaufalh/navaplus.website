@@ -28,7 +28,7 @@
                   var data = data;
                   if (data.length != 0 ) {
                       for (var i = 0; i < data.length; i++) {
-                          $('#our-works').find('.row').append('<div class="col-sm-5cols col-xs-6"><img class="m-2 clients-img" src="'+ data[i].image_link +'"></div>');
+                          $('#our-works').find('.row').append('<div class="col-xs-6 col-md-5ths col-centered"><img class="img-responsive m-2 clients-img" src="'+ data[i].image_link +'"></div>');
                       }
                   }
 
@@ -42,7 +42,7 @@
                   }
 
                   if (width <= 1024) {
-                    $('.row > div').removeClass('col-sm-5cols');
+                    // $('.row > div').removeClass('col-sm-5cols');
                     $('.row > div > img').removeClass('m-2');
                   }
               }
