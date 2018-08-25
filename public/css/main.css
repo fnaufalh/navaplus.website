@@ -3,7 +3,6 @@ html, body {
     padding: 0;
     font-family: 'Encode Sans', sans-serif;
     background-color: #fff;
-    height: 100%;
     position: relative;
 }
 
@@ -73,7 +72,7 @@ option {
   border-radius: 0px;
 }
 
-#template, #potrait_template, #potrait_indicators_template, #landscape_template, #landscape_indicators_template, #agency_template, .hidden {
+#template, #potrait_template, #potrait_indicators_template, #landscape_template, #landscape_indicators_template, #agency-template, .hidden {
     display: none !important;
 }
 
@@ -287,10 +286,6 @@ header .logo-holder .menu-holder {
 /* width */
 .menu-holder::-webkit-scrollbar {
     width: 12px;
-}
-
-/* Track */
-.menu-holder::-webkit-scrollbar-track {
 }
 
 /* Handle */
@@ -1044,6 +1039,14 @@ footer a:hover {
     text-align: center;
     border: 0;
     color: white;
+}
+
+.btn-dropdow > .select:hover {
+  cursor: pointer;
+}
+
+.btn-dropdow > .select {
+  -webkit-appearance: none;
 }
 
 .btn-dropdow > .select .selected {
