@@ -41,7 +41,7 @@
                         <li><a href="{{url('/work')}}">Work</a></li>
                         <li><a href="{{url('/services')}}">Integrated Services</a></li>
                         <li><a href="{{url('/news')}}">News</a></li>
-                        <li><a href="{{url('/'.'#contact')}}">Contact</a></li>
+                        <li><a href="{{url('/contact-us')}}">Contact</a></li>
                     </ul>
                 </div>
             </div>

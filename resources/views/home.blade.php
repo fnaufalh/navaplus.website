@@ -148,6 +148,13 @@
     </section>
 @endsection
 @section('script')
+
+    @if(isset($contact_us))
+        <script>
+            alert("SCROLL TO!");
+        </script>
+    @endif
+
     <script>
         $(document).ready(function () {
           $('.carousel').carousel({

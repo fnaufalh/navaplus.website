@@ -17,6 +17,13 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/contact-us', function () {
+    return view('home')
+        ->with([
+            'contact_us' => true
+        ]);
+});
+
 Route::get('/news', function () {
     return view('news.index');
 });
