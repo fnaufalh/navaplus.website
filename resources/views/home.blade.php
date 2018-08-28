@@ -170,7 +170,7 @@
                   var agency_template = $('.agency-section');
                   $.each(data, function(i, val){
                     var template = $('#agency-template').clone();
-                    template.attr('href', "{{url('/agency')}}/"+val.id).attr('style', 'background-color:'+ val.background_color);
+                    template.attr('href', "{{url('/agency')}}/"+val.name).attr('style', 'background-color:'+ val.background_color);
                     template.find('.tagline').html(val.motto);
                     template.find('.site-name').html(val.name);
 

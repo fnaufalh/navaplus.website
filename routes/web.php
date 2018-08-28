@@ -50,10 +50,17 @@ Route::get('/work/{id}', function ($id) {
         ]);
 });
 
-Route::get('/agency/{id}', function ($id) {
+Route::get('/agency/{name}', function ($name) {
+
+    $agency = \App\Agency::where('name', $name)
+        ->first();
+
+    if($agency == NULL)
+        abort(404);
+
     return view('agency')
         ->with([
-            'id' => $id
+            'id' => $agency->id
         ]);
 });
 
@@ -64,33 +71,3 @@ Route::get('/services', function () {
 Route::get('/autocomplete', function () {
     return view('autocomplete');
 });
-
-/**
- * Semua return view disini balikinnya .blade.php yang ada di resources/views
- * Untuk aksesnya pake . ex: news.index
- *
- * Kalau mau terima parameter bisa pake {...} ex: /news/{id}/{page}
- * Jadi linknya localhost/news/1/20
- *
- * Dan perlu diinget, di parameter function perlu diisi sesuai nama namanya
- * ex: function($id, $page){
- *      // do something
- *      // Bisa akses $id, $page sebagai variable
- *
- *      // Kalau mau lempar variable ke viewnya pake with
- *      // Bisa pake array, atau langsung
- *      //    ex: ->with('id', $id)   Cuma satu
- *      //        ->with([
- *      //            'id' => $id,
- *      //            'cur_page' => $page
- *      //        ])
- *
- *      // Nanti disana tinggal akses pake {{$[key_name]}} ex: {{$id}} atau {{$cur_page}}
- *
- *      return view('news.detail')
- *          ->with(['id' => $id]);
- *
- * }
- *
- *
- */

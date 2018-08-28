@@ -27,15 +27,8 @@
                         <li><a href="{{url('/')}}">Home</a></li>
                         <li><a href="{{url('/about')}}">About</a></li>
                         <li><a href="#" onclick="return false" class="open-agencies">Agency</a>
-                            <ul class="ml-1">
-                                <li><a href="{{url('/agency/1')}}">Pathfinders</a></li>
-                                <li><a href="{{url('/agency/2')}}">Iris</a></li>
-                                <li><a href="{{url('/agency/3')}}">Tribecloud</a></li>
-                                <li><a href="{{url('/agency/4')}}">Interface</a></li>
-                                <li><a href="{{url('/agency/5')}}">Skor</a></li>
-                                <li><a href="{{url('/agency/6')}}">Optima Media</a></li>
-                                <li><a href="{{url('/agency/7')}}">Diageo</a></li>
-                                <li><a href="{{url('/agency/8')}}">Advis</a></li>
+                            <ul class="ml-1 nav-agency-section">
+                                <li class="template" id="nav-agency-template"><a href=""></a></li>
                             </ul>
                         </li>
                         <li><a href="{{url('/work')}}">Work</a></li>
@@ -92,6 +85,27 @@
   <script src="{{asset("js/main.js?v=201808062217")}}"></script>
   <script src="{{asset("js/hamburger.js")}}"></script>
 @yield('script')
+      <script>
+          $.ajax({
+              type: 'GET',
+              url: '{!! url('/api/agency?order_by=id&order_type=asc') !!}',
+              dataType: 'json',
+              success: function (data) {
+                  var data = data;
+                  var agency = $('.nav-agency-section');
+                  $.each(data, function(i, val){
+                      var template = $('#nav-agency-template').clone();
+                      var link = template.find('a');
+                      $(link).attr('href', "{{url('/agency')}}/"+val.name);
+                      $(link).html(val.name);
+
+                      template.removeAttr('id');
+                      agency.append(template);
+
+                  });
+              }
+          });
+      </script>
 </body>
 
 </html>
