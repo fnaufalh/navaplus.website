@@ -150,8 +150,13 @@
 @section('script')
 
     @if(isset($contact_us))
+        <script src="{{ asset('js/jquery.scrollTo.min.js') }}"></script>
         <script>
-            alert("SCROLL TO!");
+            $(document).ready(function(){
+              $( document ).ajaxStop(function() {
+                $('body').scrollTo('#contact');
+              });
+            });
         </script>
     @endif
 
