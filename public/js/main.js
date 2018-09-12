@@ -66,14 +66,14 @@ function fitAll() {
 $(document).on('mouseover', '.section-content-item', function () {
     var color = $("#lets-connect").css('background-color');
     $(this).find(".info > div").css('color', color);
-    $(this).find(".image-project").css('left', '-5px');
+    $(this).find(".image-project").css('left', '-12px');
     $(this).find(".info").css({'bottom': '-35px', 'left': '0px'});
 });
 
 $(document).on('mouseleave', '.section-content-item', function () {
     $(this).find(".info > div").css('color', "black");
-    var image = $(this).find(".image-project").css('left', '10px');
-    $(this).find(".info").css({'bottom': '-50px', 'left': '-15px'});
+    var image = $(this).find(".image-project").css('left', '14px');
+    $(this).find(".info").css({'bottom': '-50px', 'left': '-22px'});
 });
 
 $(document).ready(function(){
